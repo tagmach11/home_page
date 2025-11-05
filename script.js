@@ -4,14 +4,41 @@ function loadSidebar() {
     if (!sidebarContainer) return;
 
     fetch('sidebar.html')
-        .then(response => response.text())
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.text();
+        })
         .then(html => {
             sidebarContainer.innerHTML = html;
             setActiveSidebarItem();
         })
         .catch(error => {
             console.error('Error loading sidebar:', error);
+            // Fallback: try to load sidebar with XMLHttpRequest
+            loadSidebarFallback();
         });
+}
+
+// Fallback method using XMLHttpRequest
+function loadSidebarFallback() {
+    const sidebarContainer = document.getElementById('sidebar-container');
+    if (!sidebarContainer) return;
+
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', 'sidebar.html', true);
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4) {
+            if (xhr.status === 200 || xhr.status === 0) {
+                sidebarContainer.innerHTML = xhr.responseText;
+                setActiveSidebarItem();
+            } else {
+                console.error('Failed to load sidebar with fallback method');
+            }
+        }
+    };
+    xhr.send();
 }
 
 // Set active sidebar item based on current page
@@ -68,16 +95,10 @@ function createNoResultsMessage() {
 }
 
 function searchArticles(searchTerm) {
-    // 검색은 홈 뷰에서만 작동
-    const homeView = document.querySelector('[data-content="home"]');
-    if (!homeView || !homeView.classList.contains('active')) {
-        return;
-    }
-    
     const searchWords = searchTerm.toLowerCase().trim().split(/\s+/);
     
-    // 검색 가능한 모든 아티클 요소들 (홈 뷰 내에서만)
-    const articles = homeView.querySelectorAll('.featured-article, .article-card, .latest-article');
+    // 검색 가능한 모든 아티클 요소들
+    const articles = document.querySelectorAll('.featured-article, .article-card, .latest-article');
     
     let visibleCount = 0;
     const noResults = createNoResultsMessage();
@@ -91,13 +112,14 @@ function searchArticles(searchTerm) {
         noResults.style.display = 'none';
         
         // 섹션도 다시 표시
-        const sections = homeView.querySelectorAll('.payment-section, .latest-section');
+        const sections = document.querySelectorAll('.payment-section, .latest-section, .section-title');
         sections.forEach(section => {
             section.style.display = '';
         });
         return;
     }
     
+    // 현재 페이지 아티클 검색
     articles.forEach(article => {
         // 아티클 내의 모든 검색 가능한 텍스트 수집
         const title = article.querySelector('.article-title, .card-title, .latest-title')?.textContent || '';
@@ -126,7 +148,7 @@ function searchArticles(searchTerm) {
     }
     
     // 섹션 제목들도 함께 검색 결과에 따라 표시/숨김 처리
-    const sections = homeView.querySelectorAll('.payment-section, .latest-section');
+    const sections = document.querySelectorAll('.payment-section, .latest-section, .section-title');
     sections.forEach(section => {
         section.style.display = 'none';
     });
@@ -162,12 +184,20 @@ if (searchInput) {
 }
 
 
-// Article card click handlers
-const articleCards = document.querySelectorAll('.article-card, .featured-article, .latest-article');
-articleCards.forEach(card => {
-    card.addEventListener('click', function() {
-        // Add navigation or modal logic here
-        console.log('Article clicked');
+// Article card click handlers - 링크가 없는 카드에만 적용
+document.addEventListener('DOMContentLoaded', function() {
+    const articleCards = document.querySelectorAll('.article-card, .featured-article, .latest-article');
+    articleCards.forEach(card => {
+        const existingLink = card.querySelector('a[href]');
+        if (!existingLink) {
+            // 링크가 없는 카드에만 클릭 이벤트 추가
+            card.addEventListener('click', function() {
+                const href = card.getAttribute('data-href');
+                if (href) {
+                    window.location.href = href;
+                }
+            });
+        }
     });
 });
 
@@ -256,4 +286,42 @@ navItems.forEach(item => {
 });
 
 console.log('Blog page loaded successfully!');
+
+// Active TOC highlighting on scroll
+function initTOC() {
+    const tocLinks = document.querySelectorAll('.toc-link');
+    const sections = document.querySelectorAll('.article-section[id]');
+    
+    if (!tocLinks.length || !sections.length) return;
+    
+    // Use Intersection Observer for better performance
+    const observerOptions = {
+        root: null,
+        rootMargin: '-20% 0px -70% 0px',
+        threshold: 0
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const activeSectionId = entry.target.id;
+                tocLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === '#' + activeSectionId) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+        });
+    }, observerOptions);
+    
+    sections.forEach(section => observer.observe(section));
+}
+
+// Initialize TOC when DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initTOC);
+} else {
+    initTOC();
+}
 
