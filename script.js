@@ -13,7 +13,6 @@ function loadSidebar() {
         .then(html => {
             sidebarContainer.innerHTML = html;
             setActiveSidebarItem();
-            initReleaseModal();
         })
         .catch(error => {
             console.error('Error loading sidebar:', error);
@@ -34,7 +33,6 @@ function loadSidebarFallback() {
             if (xhr.status === 200 || xhr.status === 0) {
                 sidebarContainer.innerHTML = xhr.responseText;
                 setActiveSidebarItem();
-                initReleaseModal();
             } else {
                 console.error('Failed to load sidebar with fallback method');
             }
@@ -187,9 +185,15 @@ function searchArticles(searchTerm) {
         noResults.style.display = 'none';
         
         // 섹션도 다시 표시
-        const sections = document.querySelectorAll('.payment-section, .latest-section, .section-title');
+        const sections = document.querySelectorAll('.payment-section, .latest-section');
         sections.forEach(section => {
             section.style.display = '';
+        });
+        
+        // section-title도 다시 표시
+        const sectionTitles = document.querySelectorAll('.section-title');
+        sectionTitles.forEach(title => {
+            title.style.display = '';
         });
         
         // 전체보기 링크 다시 표시
@@ -265,6 +269,39 @@ function searchArticles(searchTerm) {
         
         // 통합 검색 결과가 있으면 표시
         if (globalResults.length > 0) {
+            // 먼저 원래 페이지 콘텐츠를 숨기기
+            // 1. section-header 숨기기 (섹션 제목 + 전체보기 포함)
+            const sectionHeaders = document.querySelectorAll('.section-header');
+            sectionHeaders.forEach(header => {
+                header.style.display = 'none';
+            });
+            
+            // 2. article-grid 숨기기
+            const articleGrids = document.querySelectorAll('.article-grid');
+            articleGrids.forEach(grid => {
+                grid.style.display = 'none';
+            });
+            
+            // 3. featured-article 숨기기
+            const featuredArticles = document.querySelectorAll('.featured-article');
+            featuredArticles.forEach(article => {
+                article.style.display = 'none';
+            });
+            
+            // 4. 뉴스룸 레이아웃 숨기기
+            const newsLayouts = document.querySelectorAll('div[style*="grid-template-columns: 250px"]');
+            newsLayouts.forEach(layout => {
+                layout.style.display = 'none';
+            });
+            
+            // 5. section-title 숨기기
+            const sectionTitles = document.querySelectorAll('.section-title');
+            sectionTitles.forEach(title => {
+                if (!title.closest('#global-search-results')) {
+                    title.style.display = 'none';
+                }
+            });
+            
             // 상세 페이지 콘텐츠 숨기기
             if (isDetailPage) {
                 if (articleDetail) articleDetail.style.display = 'none';
@@ -277,12 +314,12 @@ function searchArticles(searchTerm) {
                 globalSearchResults.id = 'global-search-results';
                 globalSearchResults.style.cssText = 'margin-top: 2rem; display: block; width: 100%;';
                 
-                // 검색창 바로 다음에 삽입
+                // 검색창 바로 다음에 삽입 (nextElementSibling 사용)
                 const searchBox = document.querySelector('.search-box');
-                if (searchBox && searchBox.nextSibling) {
-                    searchBox.parentNode.insertBefore(globalSearchResults, searchBox.nextSibling);
+                if (searchBox) {
+                    searchBox.insertAdjacentElement('afterend', globalSearchResults);
                 } else {
-                    contentArea.appendChild(globalSearchResults);
+                    contentArea.prepend(globalSearchResults);
                 }
                 console.log('검색 결과 컨테이너 생성됨');
             }
@@ -318,33 +355,6 @@ function searchArticles(searchTerm) {
             `;
             
             visibleCount += globalResults.length;
-            
-            // 원래 페이지의 모든 콘텐츠를 숨기기
-            // 1. section-header 숨기기 (섹션 제목 + 전체보기 포함)
-            const sectionHeaders = document.querySelectorAll('.section-header');
-            sectionHeaders.forEach(header => {
-                header.style.display = 'none';
-            });
-            
-            // 2. article-grid 숨기기 (검색 결과 그리드 제외)
-            const articleGrids = document.querySelectorAll('.article-grid');
-            articleGrids.forEach(grid => {
-                if (!globalSearchResults.contains(grid)) {
-                    grid.style.display = 'none';
-                }
-            });
-            
-            // 3. featured-article 숨기기
-            const featuredArticles = document.querySelectorAll('.featured-article');
-            featuredArticles.forEach(article => {
-                article.style.display = 'none';
-            });
-            
-            // 4. 뉴스룸 레이아웃 숨기기
-            const newsLayouts = document.querySelectorAll('div[style*="grid-template-columns: 250px"]');
-            newsLayouts.forEach(layout => {
-                layout.style.display = 'none';
-            });
         } else if (globalSearchResults) {
             globalSearchResults.style.display = 'none';
         }
@@ -623,43 +633,3 @@ if (document.readyState === 'loading') {
 } else {
     initRecommendedArticles();
 }
-
-// Release Notes Modal Functions
-function initReleaseModal() {
-    const versionBadge = document.getElementById('version-badge');
-    const releaseModal = document.getElementById('release-modal');
-    const closeModal = document.getElementById('close-modal');
-    
-    if (!versionBadge || !releaseModal || !closeModal) return;
-    
-    // 버전 배지 클릭 시 모달 열기
-    versionBadge.addEventListener('click', function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        releaseModal.classList.add('show');
-        document.body.style.overflow = 'hidden';
-    });
-    
-    // 닫기 버튼 클릭 시 모달 닫기
-    closeModal.addEventListener('click', function() {
-        releaseModal.classList.remove('show');
-        document.body.style.overflow = 'auto';
-    });
-    
-    // 모달 외부 클릭 시 닫기
-    releaseModal.addEventListener('click', function(e) {
-        if (e.target === releaseModal) {
-            releaseModal.classList.remove('show');
-            document.body.style.overflow = 'auto';
-        }
-    });
-    
-    // ESC 키로 모달 닫기
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && releaseModal.classList.contains('show')) {
-            releaseModal.classList.remove('show');
-            document.body.style.overflow = 'auto';
-        }
-    });
-}
-

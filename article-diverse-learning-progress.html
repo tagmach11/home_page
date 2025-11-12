@@ -41,6 +41,9 @@
                 <a href="newsroom.html" class="sidebar-item" data-page="newsroom">
                     뉴스룸
                 </a>
+                <a href="dev-update.html" class="sidebar-item" data-page="dev-update">
+                    개발 업데이트
+                </a>
             </nav>
         </aside>
 
@@ -77,7 +80,7 @@
                         <img src="assets/articles/운영과정.png" alt="운영 과정" style="max-width: 100%; height: auto; border-radius: 8px; border: 1px solid #e9ecef; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
                     </div>
                     <p>LX2의 진도 설정은 과정 → 운영과정 메뉴에서 확인할 수 있습니다.</p>
-                ㄴ
+
                     <h3>과정별 세밀한 설정</h3>
                     <p>신규 등록 과정이든 이미 개설된 과정이든 같은 방식으로 설정할 수 있으며, 과정별로 학습 진행 방식을 세밀하게 조정할 수 있죠. 각 과정의 특성에 맞게 진도 설정을 다르게 할 수 있어요.</p>
 
@@ -96,19 +99,22 @@
                     </div>
                     <p>가장 기본이 되는 설정은 학습 진행 방식이에요.</p>
                     <div style="margin: 2rem 0; text-align: center;">
-                        <img src="assets/articles/진행방식_순차.png" alt="운영 과정" style="max-width: 100%; height: auto; border-radius: 8px; border: 1px solid #e9ecef; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
                     </div>
                     <h3>순차 학습</h3>
+                    <div style="margin: 2rem 0; text-align: center;">
+                        <img src="assets/articles/진행방식_순차.png" alt="운영 과정" style="max-width: 100%; height: auto; border-radius: 8px; border: 1px solid #e9ecef; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                    </div>
                     <p>이전 차시를 모두 완료해야 다음 학습으로 이동 가능합니다. 순차 학습은 체계적인 진도 관리에 유리하고, 학습자가 단계적으로 학습할 수 있어 효과적이에요.</p>
+                    <h3>비순차 학습</h3>
                     <div style="margin: 2rem 0; text-align: center;">
                         <img src="assets/articles/진행방식_비순차.png" alt="운영 과정" style="max-width: 100%; height: auto; border-radius: 8px; border: 1px solid #e9ecef; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
                     </div>
-                    <h3>비순차 학습</h3>
                     <p>원하는 차시를 자유롭게 선택해 학습 가능합니다. 비순차 학습은 복습이나 재수강 과정에 적합합니다. 학습자가 필요한 부분만 선택적으로 학습할 수 있어요.</p>
+                   
+                    <h3>교육 목적에 맞는 선택</h3>
                     <div style="margin: 2rem 0; text-align: center;">
                         <img src="assets/articles/진행방식_비교.png" alt="운영 과정" style="max-width: 100%; height: auto; border-radius: 8px; border: 1px solid #e9ecef; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
                     </div>
-                    <h3>교육 목적에 맞는 선택</h3>
                     <p>운영자는 교육 목적에 맞게 두 방식을 선택할 수 있습니다. 체계적인 학습이 필요한 경우 순차 학습을, 자유로운 학습이 필요한 경우 비순차 학습을 선택할 수 있어요.</p>
                 </section>
 
@@ -199,77 +205,9 @@
                 </aside>
             </div>
         </main>
-    </div>
-    <!-- Release Notes Modal -->
-    <div id="release-modal" class="release-modal">
-        <div class="release-modal-content">
-            <div class="release-modal-header">
-                <h2>릴리즈 노트</h2>
-                <button class="release-modal-close" id="close-modal">&times;</button>
-            </div>
-            <div class="release-modal-body">
-                <div class="release-version">
-                    <h3>v2.0.0 <span class="release-date">2024.11.10</span></h3>
-                    <div class="release-content">
-                        <h4>🎉 주요 기능</h4>
-                        <ul>
-                            <li>전 기능 MCP 서버 지원 추가</li>
-                            <li>AI 학습 챗봇 기능 강화</li>
-                            <li>실시간 자동 번역 기능 개선</li>
-                            <li>다국어 학생 상담 시스템 업데이트</li>
-                        </ul>
-                        <h4>✨ 개선사항</h4>
-                        <ul>
-                            <li>대시보드 성능 최적화</li>
-                            <li>검색 엔진 속도 향상</li>
-                            <li>UI/UX 전반적인 개선</li>
-                        </ul>
-                        <h4>🐛 버그 수정</h4>
-                        <ul>
-                            <li>과정 관리 화면 오류 수정</li>
-                            <li>수강 신청 시 발생하던 문제 해결</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="release-version">
-                    <h3>v1.5.0 <span class="release-date">2024.09.15</span></h3>
-                    <div class="release-content">
-                        <h4>🎉 주요 기능</h4>
-                        <ul>
-                            <li>AI 매뉴얼 기능 추가</li>
-                            <li>과정 정보 자동 생성 기능</li>
-                            <li>QR 출석 관리 시스템</li>
-                        </ul>
-                        <h4>✨ 개선사항</h4>
-                        <ul>
-                            <li>학습 진도 관리 개선</li>
-                            <li>평가 시스템 안정화</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="release-version">
-                    <h3>v1.0.0 <span class="release-date">2024.06.01</span></h3>
-                    <div class="release-content">
-                        <h4>🎉 초기 릴리즈</h4>
-                        <ul>
-                            <li>LX2 블로그 런칭</li>
-                            <li>핵심 학습 관리 기능</li>
-                            <li>사용자 대시보드</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+
 
     <script src="articles-data.js"></script>
     <script src="script.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            initReleaseModal();
-        });
-    </script>
 </body>
 </html>

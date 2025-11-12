@@ -40,6 +40,9 @@
                 <a href="newsroom.html" class="sidebar-item active" data-page="newsroom">
                     뉴스룸
                 </a>
+                <a href="dev-update.html" class="sidebar-item" data-page="dev-update">
+                    개발 업데이트
+                </a>
             </nav>
         </aside>
 
@@ -94,9 +97,8 @@
                             <h2 style="font-size: 1.5rem; font-weight: 700; line-height: 1.4; color: #1a1a1a; margin: 0 0 1rem 0;">신SW상품대상<br/>멀티미디어&서비스SW 부문 수상</h2>
                             <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
                                 <div>
-                                    <div style="font-size: 0.9rem; color: #666;">2025년 6월</div>
-                                </div>
-                            </div>
+                                    <div style="font-size: 0.9rem; color: #666;">2025년 6월
+
                             
                             <p style="font-size: 1rem; line-height: 1.8; color: #333;">
                                 과학기술정보통신부 주최, 전자신문 주관 '2025년 6월 신SW상품대상' 멀티미디어&서비스SW 부문 수상. AI 기반 맞춤형 학습관리시스템으로 교육 프로세스 일원화를 실현했습니다.
@@ -130,9 +132,8 @@
                                 <span style="color: #00d4ff; font-weight: 600; font-size: 0.75rem; letter-spacing: 0.05em;">파트너십</span>
                                 <div style="margin-top: 0.75rem; background: white; border-radius: 8px; overflow: hidden;">
                                     <div style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); padding: 2rem 1rem; display: flex; align-items: center; justify-content: center;">
-                                        <div style="text-align: center; color: white; font-size: 1.5rem;">🤝</div>
-                                    </div>
-                                </div>
+                                        <div style="text-align: center; color: white; font-size: 1.5rem;">🤝
+
                                 <h4 style="font-size: 0.9rem; font-weight: 600; margin-top: 0.75rem; color: #1a1a1a;">글로벌 파트너십 체결</h4>
                                 <p style="font-size: 0.75rem; color: #666; margin-top: 0.5rem;">2025년 1월 20일</p>
                             </div>
@@ -141,8 +142,17 @@
                 </div>
             </div>
 
-            <!-- Additional News Cards Section -->
-            <div style="margin-top: 4rem;">
+            <!-- Development Update Link Section -->
+            <div style="margin-top: 4rem; text-align: center; padding: 3rem; background: #1e3a8a; border-radius: 16px; box-shadow: 0 4px 24px rgba(30, 58, 138, 0.15);">
+                <h2 style="font-size: 1.75rem; font-weight: 700; margin-bottom: 1rem; color: white;">2025 개발 업데이트</h2>
+                <p style="font-size: 1.1rem; color: rgba(255,255,255,0.95); margin-bottom: 2rem;">LX2의 최신 개발 소식과 업데이트를 확인하세요</p>
+                <a href="dev-update.html" style="display: inline-block; background: white; color: #1e3a8a; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1.1rem; transition: all 0.3s;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.2)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                    개발 업데이트 보러가기 →
+                </a>
+            </div>
+
+            <!-- Additional News Cards Section (Hidden) -->
+            <div style="margin-top: 4rem; display: none;">
                 <h2 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 2rem; color: #1a1a1a;">2025 개발 업데이트</h2>
                 
                 <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem;">
@@ -313,80 +323,11 @@
             </div>
 
         </main>
-    </div>
 
-    <!-- Release Notes Modal -->
-    <div id="release-modal" class="release-modal">
-        <div class="release-modal-content">
-            <div class="release-modal-header">
-                <h2>릴리즈 노트</h2>
-                <button class="release-modal-close" id="close-modal">&times;</button>
-            </div>
-            <div class="release-modal-body">
-                <div class="release-version">
-                    <h3>v2.0.0 <span class="release-date">2024.11.10</span></h3>
-                    <div class="release-content">
-                        <h4>🎉 주요 기능</h4>
-                        <ul>
-                            <li>전 기능 MCP 서버 지원 추가</li>
-                            <li>AI 학습 챗봇 기능 강화</li>
-                            <li>실시간 자동 번역 기능 개선</li>
-                            <li>다국어 학생 상담 시스템 업데이트</li>
-                        </ul>
-                        <h4>✨ 개선사항</h4>
-                        <ul>
-                            <li>대시보드 성능 최적화</li>
-                            <li>검색 엔진 속도 향상</li>
-                            <li>UI/UX 전반적인 개선</li>
-                        </ul>
-                        <h4>🐛 버그 수정</h4>
-                        <ul>
-                            <li>과정 관리 화면 오류 수정</li>
-                            <li>수강 신청 시 발생하던 문제 해결</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="release-version">
-                    <h3>v1.5.0 <span class="release-date">2024.09.15</span></h3>
-                    <div class="release-content">
-                        <h4>🎉 주요 기능</h4>
-                        <ul>
-                            <li>AI 매뉴얼 기능 추가</li>
-                            <li>과정 정보 자동 생성 기능</li>
-                            <li>QR 출석 관리 시스템</li>
-                        </ul>
-                        <h4>✨ 개선사항</h4>
-                        <ul>
-                            <li>학습 진도 관리 개선</li>
-                            <li>평가 시스템 안정화</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="release-version">
-                    <h3>v1.0.0 <span class="release-date">2024.06.01</span></h3>
-                    <div class="release-content">
-                        <h4>🎉 초기 릴리즈</h4>
-                        <ul>
-                            <li>LX2 블로그 런칭</li>
-                            <li>핵심 학습 관리 기능</li>
-                            <li>사용자 대시보드</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <script src="articles-data.js"></script>
     <script src="script.js"></script>
-    <script>
-        // Initialize release modal
-        document.addEventListener('DOMContentLoaded', function() {
-            initReleaseModal();
-        });
-    </script>
+    <script></script>
 </body>
 </html>
 
