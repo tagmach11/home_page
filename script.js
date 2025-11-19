@@ -62,6 +62,42 @@ if (document.readyState === 'loading') {
     loadSidebar();
 }
 
+// Add free trial button next to search box
+function addFreeTrialButton() {
+    const searchBox = document.querySelector('.search-box');
+    if (!searchBox) return;
+    
+    // 이미 버튼이 있으면 추가하지 않음
+    if (document.querySelector('.btn-free-trial')) return;
+    
+    // 검색창을 감싸는 컨테이너가 있는지 확인
+    let searchContainer = searchBox.parentElement;
+    
+    // search-container 클래스가 없으면 생성
+    if (!searchContainer.classList.contains('search-container')) {
+        const newContainer = document.createElement('div');
+        newContainer.className = 'search-container';
+        searchBox.parentNode.insertBefore(newContainer, searchBox);
+        newContainer.appendChild(searchBox);
+        searchContainer = newContainer;
+    }
+    
+    const freeTrialBtn = document.createElement('a');
+    freeTrialBtn.href = 'https://www.lx2.kr/common/greeting.do';
+    freeTrialBtn.target = '_blank';
+    freeTrialBtn.className = 'btn-free-trial';
+    freeTrialBtn.textContent = '무료체험하기';
+    
+    searchContainer.appendChild(freeTrialBtn);
+}
+
+// Initialize free trial button when DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', addFreeTrialButton);
+} else {
+    addFreeTrialButton();
+}
+
 // Smooth scroll for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -527,18 +563,36 @@ function initRecommendedArticles() {
     if (!tocContainer) return;
     
     // 현재 페이지 URL에서 article 파일명 추출
-    const currentPage = window.location.pathname.split('/').pop();
+    let currentPage = window.location.pathname.split('/').pop() || window.location.pathname;
+    // 경로에서 파일명만 추출
+    if (currentPage.includes('/')) {
+        currentPage = currentPage.split('/').pop();
+    }
+    // 확장자 제거하지 않고 그대로 사용
     
     // 현재 게시물 찾기
-    const currentArticle = allArticlesData.find(article => article.link === currentPage);
+    const currentArticle = allArticlesData.find(article => {
+        // 정확한 매칭
+        if (article.link === currentPage) return true;
+        // 파일명만 비교 (경로가 다른 경우)
+        const articleFileName = article.link.split('/').pop();
+        return articleFileName === currentPage;
+    });
     
     // 추천 게시물 선택 (같은 카테고리 또는 랜덤)
     let recommendedArticles = [];
     
+    // 현재 페이지와 비교할 때 사용할 함수
+    const isSamePage = (articleLink) => {
+        if (articleLink === currentPage) return true;
+        const articleFileName = articleLink.split('/').pop();
+        return articleFileName === currentPage;
+    };
+    
     if (currentArticle) {
         // 같은 카테고리의 다른 게시물 찾기
         const sameCategoryArticles = allArticlesData.filter(article => 
-            article.link !== currentPage && 
+            !isSamePage(article.link) && 
             (article.pageTitle === currentArticle.pageTitle || article.badge === currentArticle.badge)
         );
         
@@ -550,7 +604,7 @@ function initRecommendedArticles() {
         // 2개가 안 되면 다른 게시물로 채우기
         if (recommendedArticles.length < 2) {
             const otherArticles = allArticlesData
-                .filter(article => article.link !== currentPage && !recommendedArticles.includes(article))
+                .filter(article => !isSamePage(article.link) && !recommendedArticles.includes(article))
                 .sort(() => Math.random() - 0.5)
                 .slice(0, 2 - recommendedArticles.length);
             recommendedArticles = [...recommendedArticles, ...otherArticles];
@@ -558,7 +612,7 @@ function initRecommendedArticles() {
     } else {
         // 현재 게시물을 못 찾으면 랜덤으로 2개
         recommendedArticles = allArticlesData
-            .filter(article => article.link !== currentPage)
+            .filter(article => !isSamePage(article.link))
             .sort(() => Math.random() - 0.5)
             .slice(0, 2);
     }
@@ -632,4 +686,32 @@ if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initRecommendedArticles);
 } else {
     initRecommendedArticles();
+}
+
+// Add site footer
+function addSiteFooter() {
+    // 이미 푸터가 있으면 추가하지 않음
+    if (document.querySelector('.site-footer')) return;
+    
+    const footer = document.createElement('footer');
+    footer.className = 'site-footer';
+    footer.innerHTML = `
+        <div class="footer-container">
+            <div class="footer-content">
+                <p class="footer-copyright">© 2025 4CSoft Inc.</p>
+                <p>주식회사 포씨소프트 | 대표자 : 배정훈</p>
+                <p>사업자등록번호 : 211-86-52456</p>
+            </div>
+        </div>
+    `;
+    
+    // body 끝에 추가
+    document.body.appendChild(footer);
+}
+
+// Initialize footer when DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', addSiteFooter);
+} else {
+    addSiteFooter();
 }

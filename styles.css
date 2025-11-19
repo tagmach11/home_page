@@ -414,6 +414,43 @@ body {
     gap: 0.75rem;
 }
 
+.search-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    max-width: 1200px;
+    margin-bottom: 2rem;
+}
+
+.search-container .search-box {
+    flex: 1;
+    margin-bottom: 0;
+}
+
+.btn-free-trial {
+    background: #1E3A8A;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.2rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    height: fit-content;
+    line-height: 1;
+}
+
+.btn-free-trial:hover {
+    background: #1e40af;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(30, 58, 138, 0.3);
+}
+
 .search-icon {
     width: 20px;
     height: 20px;
@@ -515,12 +552,18 @@ body {
 }
 
 .content .search-box {
-    max-width: 1200px;
-    margin-bottom: 2rem;
+    max-width: none;
+    margin-bottom: 0;
     padding: 0.5rem 1rem;
     background: var(--bg-white);
     border: 1px solid var(--border-color);
     box-shadow: var(--shadow-sm);
+    opacity: 0;
+    transform: translateY(-10px);
+    animation: fadeInDown 0.5s ease-out forwards;
+}
+
+.content .search-container {
     opacity: 0;
     transform: translateY(-10px);
     animation: fadeInDown 0.5s ease-out forwards;
@@ -2462,6 +2505,48 @@ body {
         position: relative;
         top: 0;
         margin-bottom: 3rem;
+    }
+}
+
+/* Site Footer */
+.site-footer {
+    background: #F9FAFB;
+    border-top: 1px solid #E5E7EB;
+    padding: 2rem 0;
+    margin-top: 4rem;
+}
+
+.footer-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.footer-content {
+    text-align: center;
+    color: #6B7280;
+    font-size: 0.875rem;
+    line-height: 1.8;
+}
+
+.footer-content p {
+    margin: 0.25rem 0;
+}
+
+.footer-copyright {
+    font-weight: 600;
+    color: #1F2937;
+    margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .site-footer {
+        padding: 1.5rem 0;
+        margin-top: 3rem;
+    }
+    
+    .footer-content {
+        font-size: 0.8rem;
     }
 }
 
