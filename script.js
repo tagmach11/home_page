@@ -70,6 +70,8 @@ function addFreeTrialButton() {
     // 이미 버튼이 있으면 추가하지 않음
     if (document.querySelector('.btn-free-trial')) return;
     
+    const contentArea = document.querySelector('.content');
+    
     // 검색창을 감싸는 컨테이너가 있는지 확인
     let searchContainer = searchBox.parentElement;
     
@@ -77,9 +79,25 @@ function addFreeTrialButton() {
     if (!searchContainer.classList.contains('search-container')) {
         const newContainer = document.createElement('div');
         newContainer.className = 'search-container';
-        searchBox.parentNode.insertBefore(newContainer, searchBox);
+        newContainer.style.marginTop = '0';
+        
+        // content 영역이 있고 검색창이 content의 직접 자식이면
+        if (contentArea && searchBox.parentElement === contentArea) {
+            // content의 첫 번째 자식으로 삽입
+            contentArea.insertBefore(newContainer, contentArea.firstChild);
+        } else {
+            // 검색창의 현재 위치에 삽입
+            searchBox.parentNode.insertBefore(newContainer, searchBox);
+        }
+        
         newContainer.appendChild(searchBox);
         searchContainer = newContainer;
+    } else {
+        // 이미 search-container가 있으면 content의 첫 번째 자식으로 이동
+        if (contentArea && searchContainer.parentElement === contentArea && contentArea.firstChild !== searchContainer) {
+            contentArea.insertBefore(searchContainer, contentArea.firstChild);
+        }
+        searchContainer.style.marginTop = '0';
     }
     
     const freeTrialBtn = document.createElement('a');
@@ -194,7 +212,29 @@ function searchArticles(searchTerm) {
     let globalSearchResults = document.getElementById('global-search-results');
     
     if (searchTerm.trim() === '') {
-        // 검색어가 비어있으면 모든 아티클 표시
+        // 검색어가 비어있으면 모든 원래 콘텐츠 복원
+        // contentArea의 직접 자식 요소들을 다시 표시
+        if (contentArea) {
+            Array.from(contentArea.children).forEach(child => {
+                // 검색 결과 컨테이너는 숨기기
+                if (child.id === 'global-search-results') {
+                    child.style.display = 'none';
+                    return;
+                }
+                
+                // 검색창과 검색 컨테이너는 이미 표시되어 있으므로 그대로
+                if (child.classList.contains('search-box') || 
+                    child.classList.contains('search-container') ||
+                    child.querySelector('.search-box')) {
+                    return;
+                }
+                
+                // 나머지 콘텐츠는 다시 표시
+                child.style.display = '';
+            });
+        }
+        
+        // 모든 아티클 표시
         articles.forEach(article => {
             article.style.display = '';
             visibleCount++;
@@ -226,10 +266,12 @@ function searchArticles(searchTerm) {
             section.style.display = '';
         });
         
-        // section-title도 다시 표시
+        // section-title도 다시 표시 (검색 결과 컨테이너 안의 것 제외)
         const sectionTitles = document.querySelectorAll('.section-title');
         sectionTitles.forEach(title => {
-            title.style.display = '';
+            if (!title.closest('#global-search-results')) {
+                title.style.display = '';
+            }
         });
         
         // 전체보기 링크 다시 표시
@@ -238,62 +280,35 @@ function searchArticles(searchTerm) {
             link.style.display = '';
         });
         
-        // section-header 다시 표시
+        // section-header 다시 표시 (검색 결과 컨테이너 안의 것 제외)
         const sectionHeaders = document.querySelectorAll('.section-header');
         sectionHeaders.forEach(header => {
-            header.style.display = '';
+            if (!header.closest('#global-search-results')) {
+                header.style.display = '';
+            }
         });
         
-        // 뉴스룸 그리드 레이아웃도 다시 표시
+        // 뉴스룸 그리드 레이아웃도 다시 표시 (검색 결과 컨테이너 안의 것 제외)
         const newsLayouts = document.querySelectorAll('div[style*="grid-template-columns"]');
         newsLayouts.forEach(layout => {
-            layout.style.display = '';
+            if (!layout.closest('#global-search-results')) {
+                layout.style.display = '';
+            }
         });
         
-        // article-grid도 다시 표시
+        // article-grid도 다시 표시 (검색 결과 컨테이너 안의 것 제외)
         const articleGrids = document.querySelectorAll('.article-grid');
         articleGrids.forEach(grid => {
-            grid.style.display = '';
+            if (!grid.closest('#global-search-results')) {
+                grid.style.display = '';
+            }
         });
         
         return;
     }
     
-    // 현재 페이지 아티클 검색 (목록 페이지)
-    articles.forEach(article => {
-        // 아티클 내의 모든 검색 가능한 텍스트 수집
-        const title = article.querySelector('.article-title, .card-title, .latest-title')?.textContent || '';
-        const subtitle = article.querySelector('.article-subtitle, .card-description, .latest-subtitle')?.textContent || '';
-        const meta = article.querySelector('.article-meta, .card-meta, .latest-meta')?.textContent || '';
-        const badge = article.querySelector('.article-badge, .card-badge')?.textContent || '';
-        
-        const allText = (title + ' ' + subtitle + ' ' + meta + ' ' + badge).toLowerCase();
-        
-        // 모든 검색어가 포함되어 있는지 확인
-        const matches = searchWords.every(word => allText.includes(word));
-        
-        if (matches) {
-            article.style.display = '';
-            visibleCount++;
-        } else {
-            article.style.display = 'none';
-        }
-    });
-    
-    // newsroom.html의 카드들 검색
-    newsCards.forEach(card => {
-        const cardText = card.textContent.toLowerCase();
-        const matches = searchWords.every(word => cardText.includes(word));
-        
-        if (matches) {
-            card.style.display = '';
-            visibleCount++;
-        } else {
-            card.style.display = 'none';
-        }
-    });
-    
     // 통합 검색 (allArticlesData가 존재하는 경우)
+    let hasGlobalResults = false;
     if (typeof allArticlesData !== 'undefined') {
         const globalResults = allArticlesData.filter(article => {
             const searchableText = `${article.title} ${article.description} ${article.badge} ${article.pageTitle}`.toLowerCase();
@@ -305,35 +320,77 @@ function searchArticles(searchTerm) {
         
         // 통합 검색 결과가 있으면 표시
         if (globalResults.length > 0) {
+            hasGlobalResults = true;
+            
             // 먼저 원래 페이지 콘텐츠를 숨기기
-            // 1. section-header 숨기기 (섹션 제목 + 전체보기 포함)
+            // contentArea의 직접 자식 요소들을 확인하여 검색 결과 컨테이너를 제외한 나머지 숨기기
+            if (contentArea) {
+                Array.from(contentArea.children).forEach(child => {
+                    // 검색 결과 컨테이너는 제외
+                    if (child.id === 'global-search-results') {
+                        return;
+                    }
+                    
+                    // 검색창과 검색 컨테이너는 제외
+                    if (child.classList.contains('search-box') || 
+                        child.classList.contains('search-container') ||
+                        child.querySelector('.search-box')) {
+                        return;
+                    }
+                    
+                    // 나머지 콘텐츠는 숨기기
+                    child.style.display = 'none';
+                });
+            }
+            
+            // 추가로 명시적으로 숨기기 (더블 체크)
+            // 1. section-header 숨기기
             const sectionHeaders = document.querySelectorAll('.section-header');
             sectionHeaders.forEach(header => {
-                header.style.display = 'none';
+                if (!header.closest('#global-search-results') && 
+                    !header.closest('.search-container') &&
+                    !header.closest('.search-box')) {
+                    header.style.display = 'none';
+                }
             });
             
             // 2. article-grid 숨기기
             const articleGrids = document.querySelectorAll('.article-grid');
             articleGrids.forEach(grid => {
-                grid.style.display = 'none';
+                if (!grid.closest('#global-search-results')) {
+                    grid.style.display = 'none';
+                }
             });
             
             // 3. featured-article 숨기기
             const featuredArticles = document.querySelectorAll('.featured-article');
             featuredArticles.forEach(article => {
-                article.style.display = 'none';
+                if (!article.closest('#global-search-results')) {
+                    article.style.display = 'none';
+                }
             });
             
-            // 4. 뉴스룸 레이아웃 숨기기
-            const newsLayouts = document.querySelectorAll('div[style*="grid-template-columns: 250px"]');
+            // 4. 현재 페이지의 article-card, latest-article도 숨기기
+            articles.forEach(article => {
+                if (!article.closest('#global-search-results')) {
+                    article.style.display = 'none';
+                }
+            });
+            
+            // 5. 뉴스룸 레이아웃 숨기기
+            const newsLayouts = document.querySelectorAll('div[style*="grid-template-columns"]');
             newsLayouts.forEach(layout => {
-                layout.style.display = 'none';
+                if (!layout.closest('#global-search-results') && 
+                    !layout.closest('.search-container')) {
+                    layout.style.display = 'none';
+                }
             });
             
-            // 5. section-title 숨기기
+            // 6. section-title 숨기기
             const sectionTitles = document.querySelectorAll('.section-title');
             sectionTitles.forEach(title => {
-                if (!title.closest('#global-search-results')) {
+                if (!title.closest('#global-search-results') &&
+                    !title.closest('.search-container')) {
                     title.style.display = 'none';
                 }
             });
@@ -350,12 +407,19 @@ function searchArticles(searchTerm) {
                 globalSearchResults.id = 'global-search-results';
                 globalSearchResults.style.cssText = 'margin-top: 2rem; display: block; width: 100%;';
                 
-                // 검색창 바로 다음에 삽입 (nextElementSibling 사용)
-                const searchBox = document.querySelector('.search-box');
-                if (searchBox) {
-                    searchBox.insertAdjacentElement('afterend', globalSearchResults);
+                // 검색 컨테이너 다음에 삽입
+                const searchContainer = document.querySelector('.search-container');
+                if (searchContainer) {
+                    // search-container 다음에 삽입
+                    searchContainer.insertAdjacentElement('afterend', globalSearchResults);
                 } else {
-                    contentArea.prepend(globalSearchResults);
+                    // search-container가 없으면 search-box 다음에 삽입
+                    const searchBox = document.querySelector('.search-box');
+                    if (searchBox) {
+                        searchBox.insertAdjacentElement('afterend', globalSearchResults);
+                    } else {
+                        contentArea.prepend(globalSearchResults);
+                    }
                 }
                 console.log('검색 결과 컨테이너 생성됨');
             }
@@ -365,6 +429,15 @@ function searchArticles(searchTerm) {
             globalSearchResults.style.visibility = 'visible';
             globalSearchResults.style.position = 'relative';
             globalSearchResults.style.zIndex = '10';
+            
+            // 검색 결과 컨테이너가 search-container 다음에 오도록 위치 조정
+            const searchContainer = document.querySelector('.search-container');
+            if (searchContainer && globalSearchResults.parentElement === contentArea) {
+                // search-container 다음에 오도록 이동
+                if (searchContainer.nextSibling !== globalSearchResults) {
+                    contentArea.insertBefore(globalSearchResults, searchContainer.nextSibling);
+                }
+            }
             
             globalSearchResults.innerHTML = `
                 <h2 class="section-title" style="margin-top: 2rem; margin-bottom: 1.5rem; display: block !important;">전체 검색 결과 (${globalResults.length}개)</h2>
@@ -390,10 +463,56 @@ function searchArticles(searchTerm) {
                 </div>
             `;
             
-            visibleCount += globalResults.length;
-        } else if (globalSearchResults) {
-            globalSearchResults.style.display = 'none';
+            visibleCount = globalResults.length; // 통합 검색 결과만 카운트
+        } else {
+            // 통합 검색 결과가 없으면 숨기기
+            if (globalSearchResults) {
+                globalSearchResults.style.display = 'none';
+            }
         }
+    }
+    
+    // 통합 검색 결과가 없을 때만 현재 페이지 아티클 검색
+    if (!hasGlobalResults) {
+        // 현재 페이지 아티클 검색 (목록 페이지)
+        articles.forEach(article => {
+            // 검색 결과 컨테이너 안의 아티클은 제외
+            if (article.closest('#global-search-results')) return;
+            
+            // 아티클 내의 모든 검색 가능한 텍스트 수집
+            const title = article.querySelector('.article-title, .card-title, .latest-title')?.textContent || '';
+            const subtitle = article.querySelector('.article-subtitle, .card-description, .latest-subtitle')?.textContent || '';
+            const meta = article.querySelector('.article-meta, .card-meta, .latest-meta')?.textContent || '';
+            const badge = article.querySelector('.article-badge, .card-badge')?.textContent || '';
+            
+            const allText = (title + ' ' + subtitle + ' ' + meta + ' ' + badge).toLowerCase();
+            
+            // 모든 검색어가 포함되어 있는지 확인
+            const matches = searchWords.every(word => allText.includes(word));
+            
+            if (matches) {
+                article.style.display = '';
+                visibleCount++;
+            } else {
+                article.style.display = 'none';
+            }
+        });
+        
+        // newsroom.html의 카드들 검색
+        newsCards.forEach(card => {
+            // 검색 결과 컨테이너 안의 카드는 제외
+            if (card.closest('#global-search-results')) return;
+            
+            const cardText = card.textContent.toLowerCase();
+            const matches = searchWords.every(word => cardText.includes(word));
+            
+            if (matches) {
+                card.style.display = '';
+                visibleCount++;
+            } else {
+                card.style.display = 'none';
+            }
+        });
     }
     
     // 검색 결과가 없을 때 메시지 표시
