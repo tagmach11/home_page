@@ -8,6 +8,149 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .update-main-container {
+            display: grid;
+            grid-template-columns: 70% 30%;
+            gap: 4rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+        
+        .update-content {
+            background: #FFFFFF;
+        }
+        
+        .version-section {
+            margin-bottom: 4rem;
+            padding-bottom: 3rem;
+            border-bottom: 1px solid #E5E5E5;
+        }
+        
+        .version-section:last-child {
+            border-bottom: none;
+        }
+        
+        .version-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1A1A1A;
+            margin: 0 0 0.5rem 0;
+            scroll-margin-top: 2rem;
+        }
+        
+        .version-date {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+        
+        .section-subtitle {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1A1A1A;
+            margin: 2rem 0 1rem 0;
+        }
+        
+        .change-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 2rem;
+        }
+        
+        .change-table th {
+            text-align: left;
+            padding: 0.75rem 1rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #1A1A1A;
+            border-bottom: 1px solid #E5E5E5;
+            background: #FFFFFF;
+        }
+        
+        .change-table td {
+            padding: 1rem;
+            font-size: 0.95rem;
+            color: #333333;
+            line-height: 1.8;
+            border-bottom: 1px solid #E5E5E5;
+            vertical-align: top;
+        }
+        
+        .change-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .change-description {
+            color: #333333;
+        }
+        
+        .feedback-link {
+            color: #0067C5;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        
+        .feedback-link:hover {
+            text-decoration: underline;
+        }
+        
+        .sticky-nav {
+            position: sticky;
+            top: 2rem;
+            height: fit-content;
+            max-height: calc(100vh - 4rem);
+            overflow-y: auto;
+        }
+        
+        .nav-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+        
+        .nav-menu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            margin-bottom: 0;
+        }
+        
+        .nav-menu-item {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .nav-menu-link {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.5rem 1rem;
+            color: var(--text-dark);
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.2s;
+            font-weight: 500;
+            font-size: 0.9rem;
+            position: relative;
+        }
+        
+        .nav-menu-link:hover {
+            background: var(--bg-light);
+            color: var(--dark-blue);
+        }
+        
+        .nav-menu-link.active {
+            background: rgba(30, 58, 138, 0.1);
+            color: var(--dark-blue);
+        }
+    </style>
 </head>
 <body>
     <!-- Main Content -->
@@ -51,8 +194,7 @@
                 <img src="assets/돋보기.png" alt="검색" class="search-icon">
                 <input type="text" placeholder="검색" class="search-input">
             </div>
-            
-            
+            <h2 class="section-title">업데이트 정보</h2>
             
             <!-- Tab Navigation -->
             <div class="update-tabs" style="display: flex; gap: 0.5rem; margin-bottom: 2rem; border-bottom: 2px solid #E5E7EB;">
@@ -65,15 +207,13 @@
             </div>
             
             <!-- Updates Tab Content -->
-            <div id="updates-tab" class="tab-content active" style="display: block;">
-               
-            
+            <div id="updates-tab" class="tab-content active" style="display: block; margin-top: 2rem;">
             <!-- Update Cards with Split Layout -->
             <div style="display: grid; grid-template-columns: 1fr; gap: 2rem; max-width: 900px;">
                 
                 <!-- Card 1: 강의실 UI/UX 전면 개편 -->
                 <a href="article-classroom-renewal.html" style="text-decoration: none; display: block;">
-                    <article style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1); transition: all 0.3s; cursor: pointer; display: flex; height: 200px;" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 8px 30px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.1)'">
+                        <article style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.08); transition: all 0.3s; cursor: pointer; display: flex; height: 200px;">
                         <!-- Left Text Section -->
                         <div style="flex: 1; padding: 2rem; display: flex; flex-direction: column; justify-content: center;">
                             <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1rem;">
@@ -93,7 +233,7 @@
 
                 <!-- Card 2: 데이터 및 검색엔진 전면 개편 -->
                 <a href="article-data-search-engine.html" style="text-decoration: none; display: block;">
-                    <article style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1); transition: all 0.3s; cursor: pointer; display: flex; height: 200px;" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 8px 30px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.1)'">
+                        <article style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.08); transition: all 0.3s; cursor: pointer; display: flex; height: 200px;">
                         <!-- Left Text Section -->
                         <div style="flex: 1; padding: 2rem; display: flex; flex-direction: column; justify-content: center;">
                             <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1rem;">
@@ -113,7 +253,7 @@
 
                 <!-- Card 3: 보안 체계 강화 -->
                 <a href="article-security-enhancement.html" style="text-decoration: none; display: block;">
-                    <article style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1); transition: all 0.3s; cursor: pointer; display: flex; height: 200px;" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 8px 30px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.1)'">
+                        <article style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.08); transition: all 0.3s; cursor: pointer; display: flex; height: 200px;">
                         <!-- Left Text Section -->
                         <div style="flex: 1; padding: 2rem; display: flex; flex-direction: column; justify-content: center;">
                             <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1rem;">
@@ -133,7 +273,7 @@
 
                 <!-- Card 4: 사용자 중심 UI 개선 -->
                 <a href="article-ui-improvement.html" style="text-decoration: none; display: block;">
-                    <article style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1); transition: all 0.3s; cursor: pointer; display: flex; height: 200px;" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 8px 30px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.1)'">
+                        <article style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.08); transition: all 0.3s; cursor: pointer; display: flex; height: 200px;">
                         <div style="flex: 1; padding: 2rem; display: flex; flex-direction: column; justify-content: center;">
                             <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1rem;">
                                 <div style="display: inline-block; background: #1E3A8A15; color: #1E3A8A; padding: 0.25rem 0.75rem; border-radius: 12px; font-size: 0.75rem; font-weight: 600;">UX</div>
@@ -151,7 +291,7 @@
 
                 <!-- Card 5: 신규 기관 맞춤 기능 반영 -->
                 <a href="article-custom-features.html" style="text-decoration: none; display: block;">
-                    <article style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1); transition: all 0.3s; cursor: pointer; display: flex; height: 200px;" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 8px 30px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.1)'">
+                        <article style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.08); transition: all 0.3s; cursor: pointer; display: flex; height: 200px;">
                         <div style="flex: 1; padding: 2rem; display: flex; flex-direction: column; justify-content: center;">
                             <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1rem;">
                                 <div style="display: inline-block; background: #1E3A8A15; color: #1E3A8A; padding: 0.25rem 0.75rem; border-radius: 12px; font-size: 0.75rem; font-weight: 600;">기능확장</div>
@@ -169,7 +309,7 @@
 
                 <!-- Card 6: 통합검색 및 홍보영상 기능 강화 -->
                 <a href="article-integrated-search.html" style="text-decoration: none; display: block;">
-                    <article style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1); transition: all 0.3s; cursor: pointer; display: flex; height: 200px;" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 8px 30px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.1)'">
+                        <article style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.08); transition: all 0.3s; cursor: pointer; display: flex; height: 200px;">
                         <div style="flex: 1; padding: 2rem; display: flex; flex-direction: column; justify-content: center;">
                             <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1rem;">
                                 <div style="display: inline-block; background: #1E3A8A15; color: #1E3A8A; padding: 0.25rem 0.75rem; border-radius: 12px; font-size: 0.75rem; font-weight: 600;">검색</div>
@@ -187,7 +327,7 @@
 
                 <!-- Card 7: LX2Crypto 개발 현황 보고 -->
                 <a href="article-lx2crypto-status.html" style="text-decoration: none; display: block;">
-                    <article style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1); transition: all 0.3s; cursor: pointer; display: flex; height: 200px;" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 8px 30px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.1)'">
+                        <article style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.08); transition: all 0.3s; cursor: pointer; display: flex; height: 200px;">
                         <div style="flex: 1; padding: 2rem; display: flex; flex-direction: column; justify-content: center;">
                             <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1rem;">
                                 <div style="display: inline-block; background: #1E3A8A15; color: #1E3A8A; padding: 0.25rem 0.75rem; border-radius: 12px; font-size: 0.75rem; font-weight: 600;">보안</div>
@@ -205,7 +345,7 @@
 
                 <!-- Card 8: 콘텐츠 등록/수정 API 개발 완료 -->
                 <a href="article-content-api.html" style="text-decoration: none; display: block;">
-                    <article style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1); transition: all 0.3s; cursor: pointer; display: flex; height: 200px;" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 8px 30px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.1)'">
+                        <article style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.08); transition: all 0.3s; cursor: pointer; display: flex; height: 200px;">
                         <div style="flex: 1; padding: 2rem; display: flex; flex-direction: column; justify-content: center;">
                             <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1rem;">
                                 <div style="display: inline-block; background: #1E3A8A15; color: #1E3A8A; padding: 0.25rem 0.75rem; border-radius: 12px; font-size: 0.75rem; font-weight: 600;">자동화</div>
@@ -223,7 +363,7 @@
 
                 <!-- Card 9: 자체 암호모듈 검증 추진 -->
                 <a href="article-crypto-module.html" style="text-decoration: none; display: block;">
-                    <article style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1); transition: all 0.3s; cursor: pointer; display: flex; height: 200px;" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 8px 30px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.1)'">
+                        <article style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.08); transition: all 0.3s; cursor: pointer; display: flex; height: 200px;">
                         <div style="flex: 1; padding: 2rem; display: flex; flex-direction: column; justify-content: center;">
                             <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1rem;">
                                 <div style="display: inline-block; background: #1E3A8A15; color: #1E3A8A; padding: 0.25rem 0.75rem; border-radius: 12px; font-size: 0.75rem; font-weight: 600;">보안</div>
@@ -243,194 +383,1568 @@
             </div>
             
             <!-- Versions Tab Content -->
-            <div id="versions-tab" class="tab-content" style="display: none;">
-                <div style="max-width: 900px;">
-                    <!-- 총 건수 및 페이지 정보 -->
-                    <div style="margin-bottom: 1.5rem; color: #666; font-size: 0.9rem;">
-                        총 : <strong style="color: #1a1a1a;">6건</strong> (페이지 1/1)
-                    </div>
-                    
-                    <!-- 버전 목록 테이블 -->
-                    <div style="background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-                        <table style="width: 100%; border-collapse: collapse;">
+            <div id="versions-tab" class="tab-content" style="display: none; margin-top: 2rem;">
+                <div class="update-main-container">
+                    <!-- Left: Version Content (70%) -->
+                    <div class="update-content">
+                        <!-- Version 2.5.0 -->
+                        <section id="version-2.5.0" class="version-section">
+                            <h2 class="version-title">Version 2.5.0</h2>
+                            <div class="version-date">2025년 11월 7일 릴리즈</div>
+                            
+                            <h3 class="section-subtitle">신규기능</h3>
+                            <table class="change-table">
                             <thead>
-                                <tr style="background: #F9FAFB; border-bottom: 2px solid #E5E7EB;">
-                                    <th style="padding: 1rem; text-align: center; font-size: 0.9rem; font-weight: 600; color: #374151; width: 80px;">번호</th>
-                                    <th style="padding: 1rem; text-align: left; font-size: 0.9rem; font-weight: 600; color: #374151;">버전</th>
-                                    <th style="padding: 1rem; text-align: center; font-size: 0.9rem; font-weight: 600; color: #374151; width: 140px;">등록일</th>
+                                    <tr>
+                                        <th>설명</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr class="version-row" data-version="2.5" onclick="toggleVersionDetail('2.5')" style="border-bottom: 1px solid #E5E7EB; cursor: pointer; transition: background 0.2s;" onmouseover="this.style.background='#F9FAFB'" onmouseout="this.style.background='white'">
-                                    <td style="padding: 1rem; text-align: center; font-size: 0.9rem; color: #6B7280;">6</td>
-                                    <td style="padding: 1rem; font-size: 0.95rem; color: #1a1a1a; font-weight: 500;">
-                                        <span style="display: inline-flex; align-items: center; gap: 0.5rem;">
-                                            v2.5
-                                           
-                                        </span>
-                                    </td>
-                                    <td style="padding: 1rem; text-align: center; font-size: 0.9rem; color: #6B7280;">2025-11-07</td>
+                                    <tr>
+                                        <td class="change-description">GLightbox 기반 홍보영상 팝업 기능 정식 적용</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">전체화면 재생 기능 완전 반영</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <h3 class="section-subtitle">개선사항</h3>
+                            <table class="change-table">
+                                <thead>
+                                    <tr>
+                                        <th>설명</th>
                                 </tr>
-                                <tr id="detail-2.5" class="version-detail-row" style="display: none;">
-                                    <td colspan="3" style="padding: 0; background: #F9FAFB;">
-                                        <div id="detail-content-2.5" style="padding: 2rem;"></div>
-                                    </td>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="change-description">통합검색 UI 최종 시안 검수 및 적용</td>
                                 </tr>
-                                <tr class="version-row" data-version="2.4" onclick="toggleVersionDetail('2.4')" style="border-bottom: 1px solid #E5E7EB; cursor: pointer; transition: background 0.2s;" onmouseover="this.style.background='#F9FAFB'" onmouseout="this.style.background='white'">
-                                    <td style="padding: 1rem; text-align: center; font-size: 0.9rem; color: #6B7280;">5</td>
-                                    <td style="padding: 1rem; font-size: 0.95rem; color: #1a1a1a; font-weight: 500;">v2.4</td>
-                                    <td style="padding: 1rem; text-align: center; font-size: 0.9rem; color: #6B7280;">2025-10-29</td>
+                                    <tr>
+                                        <td class="change-description">공통 UI 구조 안정화</td>
                                 </tr>
-                                <tr id="detail-2.4" class="version-detail-row" style="display: none;">
-                                    <td colspan="3" style="padding: 0; background: #F9FAFB;">
-                                        <div id="detail-content-2.4" style="padding: 2rem;"></div>
-                                    </td>
+                                </tbody>
+                            </table>
+                            
+                            <h3 class="section-subtitle">오류수정</h3>
+                            <table class="change-table">
+                                <thead>
+                                    <tr>
+                                        <th>설명</th>
                                 </tr>
-                                <tr class="version-row" data-version="2.3" onclick="toggleVersionDetail('2.3')" style="border-bottom: 1px solid #E5E7EB; cursor: pointer; transition: background 0.2s;" onmouseover="this.style.background='#F9FAFB'" onmouseout="this.style.background='white'">
-                                    <td style="padding: 1rem; text-align: center; font-size: 0.9rem; color: #6B7280;">4</td>
-                                    <td style="padding: 1rem; font-size: 0.95rem; color: #1a1a1a; font-weight: 500;">v2.3</td>
-                                    <td style="padding: 1rem; text-align: center; font-size: 0.9rem; color: #6B7280;">2025-06-27</td>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="change-description">검색 키워드 누락 문제 수정</td>
                                 </tr>
-                                <tr id="detail-2.3" class="version-detail-row" style="display: none;">
-                                    <td colspan="3" style="padding: 0; background: #F9FAFB;">
-                                        <div id="detail-content-2.3" style="padding: 2rem;"></div>
-                                    </td>
+                                    <tr>
+                                        <td class="change-description">영상 팝업 재생 오류 수정</td>
                                 </tr>
-                                <tr class="version-row" data-version="2.2" onclick="toggleVersionDetail('2.2')" style="border-bottom: 1px solid #E5E7EB; cursor: pointer; transition: background 0.2s;" onmouseover="this.style.background='#F9FAFB'" onmouseout="this.style.background='white'">
-                                    <td style="padding: 1rem; text-align: center; font-size: 0.9rem; color: #6B7280;">3</td>
-                                    <td style="padding: 1rem; font-size: 0.95rem; color: #1a1a1a; font-weight: 500;">v2.2</td>
-                                    <td style="padding: 1rem; text-align: center; font-size: 0.9rem; color: #6B7280;">2025-04-28</td>
+                                </tbody>
+                            </table>
+                        </section>
+
+                        <!-- Version 2.4.1 -->
+                        <section id="version-2.4.1" class="version-section">
+                            <h2 class="version-title">Version 2.4.1</h2>
+                            <div class="version-date">2025년 11월 6일 릴리즈</div>
+                            
+                            <h3 class="section-subtitle">개선사항</h3>
+                            <table class="change-table">
+                                <thead>
+                                    <tr>
+                                        <th>설명</th>
                                 </tr>
-                                <tr id="detail-2.2" class="version-detail-row" style="display: none;">
-                                    <td colspan="3" style="padding: 0; background: #F9FAFB;">
-                                        <div id="detail-content-2.2" style="padding: 2rem;"></div>
-                                    </td>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="change-description">추천검색 노출 정확도 개선</td>
                                 </tr>
-                                <tr class="version-row" data-version="2.1" onclick="toggleVersionDetail('2.1')" style="border-bottom: 1px solid #E5E7EB; cursor: pointer; transition: background 0.2s;" onmouseover="this.style.background='#F9FAFB'" onmouseout="this.style.background='white'">
-                                    <td style="padding: 1rem; text-align: center; font-size: 0.9rem; color: #6B7280;">2</td>
-                                    <td style="padding: 1rem; font-size: 0.95rem; color: #1a1a1a; font-weight: 500;">v2.1</td>
-                                    <td style="padding: 1rem; text-align: center; font-size: 0.9rem; color: #6B7280;">2025-03-31</td>
+                                    <tr>
+                                        <td class="change-description">Vimeo 홍보영상 계정 연동 안정화</td>
                                 </tr>
-                                <tr id="detail-2.1" class="version-detail-row" style="display: none;">
-                                    <td colspan="3" style="padding: 0; background: #F9FAFB;">
-                                        <div id="detail-content-2.1" style="padding: 2rem;"></div>
-                                    </td>
+                                </tbody>
+                            </table>
+                            
+                            <h3 class="section-subtitle">오류수정</h3>
+                            <table class="change-table">
+                                <thead>
+                                    <tr>
+                                        <th>설명</th>
                                 </tr>
-                                <tr class="version-row" data-version="2.0" onclick="toggleVersionDetail('2.0')" style="cursor: pointer; transition: background 0.2s;" onmouseover="this.style.background='#F9FAFB'" onmouseout="this.style.background='white'">
-                                    <td style="padding: 1rem; text-align: center; font-size: 0.9rem; color: #6B7280;">1</td>
-                                    <td style="padding: 1rem; font-size: 0.95rem; color: #1a1a1a; font-weight: 500;">v2.0</td>
-                                    <td style="padding: 1rem; text-align: center; font-size: 0.9rem; color: #6B7280;">2025-03-28</td>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="change-description">GLightbox 팝업 오류 일부 수정</td>
                                 </tr>
-                                <tr id="detail-2.0" class="version-detail-row" style="display: none;">
-                                    <td colspan="3" style="padding: 0; background: #F9FAFB;">
-                                        <div id="detail-content-2.0" style="padding: 2rem;"></div>
-                                    </td>
+                                </tbody>
+                            </table>
+                        </section>
+
+                        <!-- Version 2.4.0 -->
+                        <section id="version-2.4.0" class="version-section">
+                            <h2 class="version-title">Version 2.4.0</h2>
+                            <div class="version-date">2025년 11월 1일 릴리즈</div>
+                            
+                            <h3 class="section-subtitle">신규기능</h3>
+                            <table class="change-table">
+                                <thead>
+                                    <tr>
+                                        <th>설명</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="change-description">통합검색 기능 정식 반영(추천검색 포함)</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">GLightbox 홍보영상 팝업 기능 1차 적용</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">전체화면 홍보영상 재생 기능 제공</td>
                                 </tr>
                             </tbody>
                         </table>
+                            
+                            <h3 class="section-subtitle">개선사항</h3>
+                            <table class="change-table">
+                                <thead>
+                                    <tr>
+                                        <th>설명</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="change-description">템플릿-A 강의영상 한 컷 기능 확장 적용</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">공통 CSS/JS 구조 정비</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">UI 오류 다수 수정</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <h3 class="section-subtitle">오류수정</h3>
+                            <table class="change-table">
+                                <thead>
+                                    <tr>
+                                        <th>설명</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="change-description">검색 UI 일부 비노출 문제 해결</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </section>
+
+                        <!-- Version 2.3.1 -->
+                        <section id="version-2.3.1" class="version-section">
+                            <h2 class="version-title">Version 2.3.1</h2>
+                            <div class="version-date">2025년 10월 29일 릴리즈</div>
+                            
+                            <h3 class="section-subtitle">신규기능</h3>
+                            <table class="change-table">
+                                <thead>
+                                    <tr>
+                                        <th>설명</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="change-description">스포츠윤리센터 기능 대응(검색 기능·수료증 일괄 출력)</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">OTP 2차 인증 기능 적용</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <h3 class="section-subtitle">개선사항</h3>
+                            <table class="change-table">
+                                <thead>
+                                    <tr>
+                                        <th>설명</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="change-description">통합검색 퍼블리싱 요구사항 반영</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </section>
+
+                        <!-- Version 2.3.0 -->
+                        <section id="version-2.3.0" class="version-section">
+                            <h2 class="version-title">Version 2.3.0</h2>
+                            <div class="version-date">2025년 7월 11일 릴리즈</div>
+                            
+                            <h3 class="section-subtitle">신규기능</h3>
+                            <table class="change-table">
+                                <thead>
+                                    <tr>
+                                        <th>설명</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="change-description">카카오·네이버·구글 OAuth 인증키 반영</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <h3 class="section-subtitle">개선사항</h3>
+                            <table class="change-table">
+                                <thead>
+                                    <tr>
+                                        <th>설명</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="change-description">KISA 보안약점 조치 적용</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">amCharts 불필요 파일 정리</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">세션 충돌 문제 해결</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">세션 클러스터링 구조 개선</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <h3 class="section-subtitle">오류수정</h3>
+                            <table class="change-table">
+                                <thead>
+                                    <tr>
+                                        <th>설명</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="change-description">로그인 중 세션 충돌 오류 해결</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </section>
+
+                        <!-- Version 2.2.1 -->
+                        <section id="version-2.2.1" class="version-section">
+                            <h2 class="version-title">Version 2.2.1</h2>
+                            <div class="version-date">2025년 7월 3일 릴리즈</div>
+                            
+                            <h3 class="section-subtitle">개선사항</h3>
+                            <table class="change-table">
+                                <thead>
+                                    <tr>
+                                        <th>설명</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="change-description">검색 인덱스(course/open-learning/notice) 보정</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">검색 정확도 개선</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <h3 class="section-subtitle">오류수정</h3>
+                            <table class="change-table">
+                                <thead>
+                                    <tr>
+                                        <th>설명</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="change-description">형태소 분석 오작동 문제 수정</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </section>
+
+                        <!-- Version 2.2.0 -->
+                        <section id="version-2.2.0" class="version-section">
+                            <h2 class="version-title">Version 2.2.0</h2>
+                            <div class="version-date">2025년 6월 27일 릴리즈</div>
+                            
+                            <h3 class="section-subtitle">신규기능</h3>
+                            <table class="change-table">
+                                <thead>
+                                    <tr>
+                                        <th>설명</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="change-description">OpenSearch 2.8.0 전면 전환</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">Dashboards·Logstash OSS 연동</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">학습데이터 조회 API 구축</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <h3 class="section-subtitle">개선사항</h3>
+                            <table class="change-table">
+                                <thead>
+                                    <tr>
+                                        <th>설명</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="change-description">Nori 형태소 분석기 적용</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">검색 인덱스 구조 전체 재정비</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <h3 class="section-subtitle">오류수정</h3>
+                            <table class="change-table">
+                                <thead>
+                                    <tr>
+                                        <th>설명</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="change-description">검색 매핑 오류 해결</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </section>
+
+                        <!-- Version 2.1.3 -->
+                        <section id="version-2.1.3" class="version-section">
+                            <h2 class="version-title">Version 2.1.3</h2>
+                            <div class="version-date">2025년 5월 29일 릴리즈</div>
+                            
+                            <h3 class="section-subtitle">신규기능</h3>
+                            <table class="change-table">
+                                <thead>
+                                    <tr>
+                                        <th>설명</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="change-description">SHA2·SHA3 해시함수 구현 완료</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">HMAC·CMAC 암호 알고리즘 구현 완료</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <h3 class="section-subtitle">개선사항</h3>
+                            <table class="change-table">
+                                <thead>
+                                    <tr>
+                                        <th>설명</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="change-description">KISA·TTA 인증 대비 내부 테스트 강화</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </section>
+
+                        <!-- Version 2.1.2 -->
+                        <section id="version-2.1.2" class="version-section">
+                            <h2 class="version-title">Version 2.1.2</h2>
+                            <div class="version-date">2025년 5월 21일 릴리즈</div>
+                            
+                            <h3 class="section-subtitle">신규기능</h3>
+                            <table class="change-table">
+                                <thead>
+                                    <tr>
+                                        <th>설명</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="change-description">과정 공유하기 기능 개선(QR 자동 생성·URL 복사 강화)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <h3 class="section-subtitle">개선사항</h3>
+                            <table class="change-table">
+                                <thead>
+                                    <tr>
+                                        <th>설명</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="change-description">팝업 자동 정렬(타일형/계층형) 기능 반영</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">Footer UI 최종 안정화</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <h3 class="section-subtitle">오류수정</h3>
+                            <table class="change-table">
+                                <thead>
+                                    <tr>
+                                        <th>설명</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="change-description">팝업 위치 정렬 오류 일부 수정</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </section>
+
+                        <!-- Version 2.1.1 -->
+                        <section id="version-2.1.1" class="version-section">
+                            <h2 class="version-title">Version 2.1.1</h2>
+                            <div class="version-date">2025년 4월 28일 릴리즈</div>
+                            
+                            <h3 class="section-subtitle">신규기능</h3>
+                            <table class="change-table">
+                                <thead>
+                                    <tr>
+                                        <th>설명</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="change-description">Vimeo 자동 업로드 API</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">YouTube 자동 업로드 API</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">JSON 기반 콘텐츠 등록/수정 API 제공</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">AccessToken 기반 보안 구조 반영</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <h3 class="section-subtitle">개선사항</h3>
+                            <table class="change-table">
+                                <thead>
+                                    <tr>
+                                        <th>설명</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="change-description">콘텐츠 등록·수정 자동화 프로세스 구축</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </section>
+
+                        <!-- Version 2.1.0 -->
+                        <section id="version-2.1.0" class="version-section">
+                            <h2 class="version-title">Version 2.1.0</h2>
+                            <div class="version-date">2025년 3월 31일 릴리즈</div>
+                            
+                            <h3 class="section-subtitle">신규기능</h3>
+                            <table class="change-table">
+                                <thead>
+                                    <tr>
+                                        <th>설명</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="change-description">강의실 화면 전체 리뉴얼</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">AI 학습보조 기능 적용</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">다크테마 도입</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <h3 class="section-subtitle">개선사항</h3>
+                            <table class="change-table">
+                                <thead>
+                                    <tr>
+                                        <th>설명</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="change-description">학습하기 화면 반응형 개선</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">마이크로러닝 상세 목차 구조 개선</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </section>
+
+                        <!-- Version 2.0.2 -->
+                        <section id="version-2.0.2" class="version-section">
+                            <h2 class="version-title">Version 2.0.2</h2>
+                            <div class="version-date">2025년 5월 14일 릴리즈</div>
+                            
+                            <h3 class="section-subtitle">신규기능</h3>
+                            <table class="change-table">
+                                <thead>
+                                    <tr>
+                                        <th>설명</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="change-description">'사용방법' 버튼 추가</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">블로그·인스타그램 연동 기능 추가</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <h3 class="section-subtitle">개선사항</h3>
+                            <table class="change-table">
+                                <thead>
+                                    <tr>
+                                        <th>설명</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="change-description">홈페이지 Footer UI 리뉴얼</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">메인 배너 디자인 개선</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </section>
+
+                        <!-- Version 2.0.1 -->
+                        <section id="version-2.0.1" class="version-section">
+                            <h2 class="version-title">Version 2.0.1</h2>
+                            <div class="version-date">2025년 1월 24일 릴리즈</div>
+                            
+                            <h3 class="section-subtitle">신규기능</h3>
+                            <table class="change-table">
+                                <thead>
+                                    <tr>
+                                        <th>설명</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="change-description">자체 암호모듈 LX2Crypto V1.0 개발 착수</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <h3 class="section-subtitle">개선사항</h3>
+                            <table class="change-table">
+                                <thead>
+                                    <tr>
+                                        <th>설명</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="change-description">내부 암호화 구조 설계 진행</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </section>
+
+                        <!-- Version 2.0.0 -->
+                        <section id="version-2.0.0" class="version-section">
+                            <h2 class="version-title">Version 2.0.0</h2>
+                            <div class="version-date">2025년 3월 28일 릴리즈</div>
+                            
+                            <h3 class="section-subtitle">신규기능</h3>
+                            <table class="change-table">
+                                <thead>
+                                    <tr>
+                                        <th>설명</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="change-description">콘텐츠–리소스 등록 시 포스터 영상 캡처 기능 추가</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">시스템 설정에 로그인 유지 옵션 추가</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <h3 class="section-subtitle">개선사항</h3>
+                            <table class="change-table">
+                                <thead>
+                                    <tr>
+                                        <th>설명</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="change-description">사용자 메인 화면 로고 변경</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">파비콘 및 메인 화면 로고 변경</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">동영상 리소스 포스터 삭제 기능 추가</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <h3 class="section-subtitle">오류수정</h3>
+                            <table class="change-table">
+                                <thead>
+                                    <tr>
+                                        <th>설명</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="change-description">콘텐츠 그룹 미리보기 창 짤림 현상 수정</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">메인 화면 캘린더 년/월 이동 오류 해결</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </section>
+
+                        <!-- Version 1.3.0 -->
+                        <section id="version-1.3.0" class="version-section">
+                            <h2 class="version-title">Version 1.3.0</h2>
+                            <div class="version-date">2025년 2월 18일 릴리즈</div>
+                            
+                            <h3 class="section-subtitle">신규기능</h3>
+                            <table class="change-table">
+                                <thead>
+                                    <tr>
+                                        <th>설명</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="change-description">(관리자) 로그인 후 이동 페이지 설정 기능 추가 (메인페이지 / 마이페이지)</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">(관리자) 게시판 설정에서 작성자만 표시 기능 추가</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">(관리자) 공지사항/자료실 게시글 중 최상위 글에 글자색 설정 기능 추가</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">(관리자) 동영상 리소스 등록 시 자동 재생 시간 수집 기능 추가</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">(관리자) 사전설문 기능 추가</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">(관리자) 사전시험, 과정시험 기능 추가</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">(학습자) 과정 상세에서 학습목차(재생시간, 미리보기 표시) 보이도록 기능 추가</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </section>
+
+                        <!-- Version 1.2.1 -->
+                        <section id="version-1.2.1" class="version-section">
+                            <h2 class="version-title">Version 1.2.1</h2>
+                            <div class="version-date">2025년 2월 3일 릴리즈</div>
+                            
+                            <h3 class="section-subtitle">개선사항</h3>
+                            <table class="change-table">
+                                <thead>
+                                    <tr>
+                                        <th>설명</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="change-description">(관리자) 그리드 높이 자동 처리 개선</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">(관리자) 사이트 > 템플릿 > 수강신청서 등록 시 주소/연락처/소속 항목 이름 수정 불가 설정 추가</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <h3 class="section-subtitle">오류수정</h3>
+                            <table class="change-table">
+                                <thead>
+                                    <tr>
+                                        <th>설명</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="change-description">(사용자) 메인 및 연간교육일정(목록형)에서 상태 컬럼 표시 오류 수정</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">(관리자) 운영과정 등록 시 날짜 선택 버튼 사라짐 오류 수정</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">(관리자) 운영과정(기수/상시)에 따른 날짜 선택·등록 오류 수정</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">(관리자) 사이트 템플릿 > 수료증 미리보기 오류 수정</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">(관리자) 사이트 템플릿 > 수강신청서 미리보기 오류 수정</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </section>
+
+                        <!-- Version 1.2.0 -->
+                        <section id="version-1.2.0" class="version-section">
+                            <h2 class="version-title">Version 1.2.0</h2>
+                            <div class="version-date">2025년 1월 3일 릴리즈</div>
+                            
+                            <h3 class="section-subtitle">신규기능</h3>
+                            <table class="change-table">
+                                <thead>
+                                    <tr>
+                                        <th>설명</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="change-description">(관리자) 사이트 > 분석 메뉴 추가 (대시보드, 페이지뷰, 세션, 방문, 순방문, 노출, 추적, 회원)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <h3 class="section-subtitle">오류수정</h3>
+                            <table class="change-table">
+                                <thead>
+                                    <tr>
+                                        <th>설명</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="change-description">(관리자) 과정 등록 > 상세화면에서 학습대상/선수과목 설정 불가 오류 수정</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">(관리자) 과정 등록 > 상세화면에서 키워드 설정 오류 수정</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">(관리자) 설문 주관식 통계의 기수 컬럼 및 보기 버튼 오류 수정</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </section>
+
+                        <!-- Version 1.1.3 -->
+                        <section id="version-1.1.3" class="version-section">
+                            <h2 class="version-title">Version 1.1.3</h2>
+                            <div class="version-date">2024년 12월 24일 릴리즈</div>
+                            
+                            <h3 class="section-subtitle">개선사항</h3>
+                            <table class="change-table">
+                                <thead>
+                                    <tr>
+                                        <th>설명</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="change-description">(관리자) 그리드 상세화면 → 뒤로가기 시 목록으로 정상 복귀하도록 개선</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <h3 class="section-subtitle">오류수정</h3>
+                            <table class="change-table">
+                                <thead>
+                                    <tr>
+                                        <th>설명</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="change-description">(관리자) 설문 주관식 통계의 기수 컬럼 및 보기 버튼 오류 수정</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">(관리자) 운영과정의 학습대상/선수과목/키워드 오류 수정</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </section>
+
+                        <!-- Version 1.1.2 -->
+                        <section id="version-1.1.2" class="version-section">
+                            <h2 class="version-title">Version 1.1.2</h2>
+                            <div class="version-date">2024년 12월 19일 릴리즈</div>
+                            
+                            <h3 class="section-subtitle">신규기능</h3>
+                            <table class="change-table">
+                                <thead>
+                                    <tr>
+                                        <th>설명</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="change-description">(관리자) 설정 > 약관관리 기능 추가</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">(관리자) 과정 상세에 '과정 링크 표시 및 복사' 기능 추가</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">(사용자) 소속담당자 과정관리 대시보드의 수료 메뉴에 그리드 피벗 설정 적용</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">(사용자) 소속담당자 과정관리 화면에 통계 대시보드 UI 추가</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <h3 class="section-subtitle">개선사항</h3>
+                            <table class="change-table">
+                                <thead>
+                                    <tr>
+                                        <th>설명</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="change-description">(관리자) 과정 상세 '운영상태'에서 학습중지 선택 시 경고 메시지 표시</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">(사용자) 운영 전 과정의 수강신청 버튼을 'D-23'처럼 잔여 운영일 표시로 변경</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">(사용자) 소속담당자 과정관리 대시보드 이동 시 해당 메뉴가 선택된 상태로 유지</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">(사용자) 소속담당자 과정관리 화면의 과정목록 UI 및 표시 항목 개선</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <h3 class="section-subtitle">오류수정</h3>
+                            <table class="change-table">
+                                <thead>
+                                    <tr>
+                                        <th>설명</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="change-description">(관리자) 수강신청서 등록 오류 수정</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">(사용자) 첨부파일 재등록 오류 수정</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">(사용자) 진도 체크 시 학습완료 기준이 시간일 경우 계산 오류 수정</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </section>
+
+                        <!-- Version 1.1.1 -->
+                        <section id="version-1.1.1" class="version-section">
+                            <h2 class="version-title">Version 1.1.1</h2>
+                            <div class="version-date">2024년 12월 11일 릴리즈</div>
+                            
+                            <h3 class="section-subtitle">신규기능</h3>
+                            <table class="change-table">
+                                <thead>
+                                    <tr>
+                                        <th>설명</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="change-description">(관리자) 회원 > 소속담당자 기능 개발</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">(관리자) 사이트 > 메인화면표시 > 표시과정에 노출수 설정 기능 추가</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">(관리자) 설정 > 기본에 수료증 배경이미지 설정 기능 추가</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <h3 class="section-subtitle">개선사항</h3>
+                            <table class="change-table">
+                                <thead>
+                                    <tr>
+                                        <th>설명</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="change-description">(사용자) 로그인 화면 UI 개선</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <h3 class="section-subtitle">오류수정</h3>
+                            <table class="change-table">
+                                <thead>
+                                    <tr>
+                                        <th>설명</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="change-description">(학습자) 비표준 콘텐츠의 완료유형이 동영상이 아닐 경우 진도율 계산 오류 수정</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">(관리자) 설문 문항 일괄등록 오류 수정</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </section>
+
+                        <!-- Version 1.1.0 -->
+                        <section id="version-1.1.0" class="version-section">
+                            <h2 class="version-title">Version 1.1.0</h2>
+                            <div class="version-date">2024년 12월 11일 릴리즈</div>
+                            
+                            <h3 class="section-subtitle">신규기능</h3>
+                            <table class="change-table">
+                                <thead>
+                                    <tr>
+                                        <th>설명</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="change-description">(관리자) 메인 대시보드에 회원/방문자/수료의 누적·오늘 수를 구분하여 표시</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">(관리자) 설정 > 기본에 관리자 2차비밀번호 사용 여부 추가</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">(관리자) 상세화면 우측 하단에 '맨 위로' 이동 버튼 추가</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <h3 class="section-subtitle">개선사항</h3>
+                            <table class="change-table">
+                                <thead>
+                                    <tr>
+                                        <th>설명</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="change-description">(사용자) 과정 상세 태그 UI 개선</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <h3 class="section-subtitle">오류수정</h3>
+                            <table class="change-table">
+                                <thead>
+                                    <tr>
+                                        <th>설명</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="change-description">(관리자) 시험지 출제 시 유효성 검사 순서 오류 및 붉은 박스 깨짐 현상 수정</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </section>
+
+                        <!-- Version 1.0.8 -->
+                        <section id="version-1.0.8" class="version-section">
+                            <h2 class="version-title">Version 1.0.8</h2>
+                            <div class="version-date">2024년 11월 29일 릴리즈</div>
+                            
+                            <h3 class="section-subtitle">신규기능</h3>
+                            <table class="change-table">
+                                <thead>
+                                    <tr>
+                                        <th>설명</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="change-description">(관리자) 메인화면표시 > 표시과정 메뉴에 노출유형 추가 (반전형 썸네일 목록형, 반전형 썸네일 슬라이드형)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <h3 class="section-subtitle">개선사항</h3>
+                            <table class="change-table">
+                                <thead>
+                                    <tr>
+                                        <th>설명</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="change-description">(사용자) 로그인 화면 인증코드 입력에 좌/우/삭제 키 입력 기능 추가 및 UI 개선</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">(관리자) 과정 등록·상세 화면의 목록을 구분하여 보다 직관적으로 개선</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">(관리자) 메인 '캘린더형/목록형' 버튼 위치를 좌측으로 이동</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">(관리자) 회원 권한 개선 (학습자/교수/조교만 중복 선택 가능, 운영관리자/소속담당자는 권한 중복 및 변경 불가)</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">(관리자) 상세화면 운영권한 라디오 버튼 순서를 "전체 > 등록자 > 선택" 순으로 정렬</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">(관리자) 설문현황 데이터 표시 방식 개선 (평균값 표시)</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">(관리자) 메인화면표시 메뉴 설명 문구 수정</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">(관리자) 과정 상세의 학습진행방식 설명 문구 및 위치 수정</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <h3 class="section-subtitle">오류수정</h3>
+                            <table class="change-table">
+                                <thead>
+                                    <tr>
+                                        <th>설명</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="change-description">(관리자) 동영상 리소스 포스터 이미지 설정 오류 수정</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </section>
+
+                        <!-- Version 1.0.7 -->
+                        <section id="version-1.0.7" class="version-section">
+                            <h2 class="version-title">Version 1.0.7</h2>
+                            <div class="version-date">2024년 11월 28일 릴리즈</div>
+                            
+                            <h3 class="section-subtitle">신규기능</h3>
+                            <table class="change-table">
+                                <thead>
+                                    <tr>
+                                        <th>설명</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="change-description">(관리자) 설문현황 목록에 미리보기 버튼 및 기능 추가</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <h3 class="section-subtitle">개선사항</h3>
+                            <table class="change-table">
+                                <thead>
+                                    <tr>
+                                        <th>설명</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="change-description">(관리자) 설문현황 데이터 표시 방법 개선. 평균값 표시</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">(관리자) 메인화면 표시 메뉴의 설명 문구 수정</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">(관리자) 과정상세의 학습진행방식 설명 문구 및 위치 수정</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <h3 class="section-subtitle">오류수정</h3>
+                            <table class="change-table">
+                                <thead>
+                                    <tr>
+                                        <th>설명</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="change-description">(관리자) 동영상 리소스 포스터 이미지 설정 안되는 오류 수정</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </section>
+
+                        <!-- Version 1.0.6 -->
+                        <section id="version-1.0.6" class="version-section">
+                            <h2 class="version-title">Version 1.0.6</h2>
+                            <div class="version-date">2024년 11월 25일 릴리즈</div>
+                            
+                            <h3 class="section-subtitle">개선사항</h3>
+                            <table class="change-table">
+                                <thead>
+                                    <tr>
+                                        <th>설명</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="change-description">(사용자) 버전 표시 디자인 수정, 버전 목록의 조회 수 컬럼 삭제</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">(관리자) 설정·로그인 제한 관련 문구 변경</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">(관리자) 설정·그리드 설정 문구 변경 및 라디오 버튼으로 교체</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">(관리자) 과정 상세 '학습진행방식' 항목 위치 변경 및 설명 추가</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">(관리자) 사이트 > 메인화면표시 > 표시과정에 설명 문구 추가</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <h3 class="section-subtitle">오류수정</h3>
+                            <table class="change-table">
+                                <thead>
+                                    <tr>
+                                        <th>설명</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="change-description">(사용자) 강의실 바로가기 위치 오류 수정</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </section>
+
+                        <!-- Version 1.0.5 -->
+                        <section id="version-1.0.5" class="version-section">
+                            <h2 class="version-title">Version 1.0.5</h2>
+                            <div class="version-date">2024년 11월 21일 릴리즈</div>
+                            
+                            <h3 class="section-subtitle">신규기능</h3>
+                            <table class="change-table">
+                                <thead>
+                                    <tr>
+                                        <th>설명</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="change-description">(사용자) 우측 상단에 시스템 버전 정보 표시 + 버전이력 게시판 연결</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">(관리자) 설정 > 일반에 로그인 유지시간 및 로그아웃 경고 팝업 시간 설정 기능 추가</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">(관리자) 통계 > 대시보드 차트 제목 우측에 총 인원 수 표시</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">(관리자) 과정·기수 화면에 날짜 선택 버튼 추가</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">(관리자) 과정 대시보드 > 목차구성의 '차시추가' 버튼을 마지막 차시 다음에 배치</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <h3 class="section-subtitle">개선사항</h3>
+                            <table class="change-table">
+                                <thead>
+                                    <tr>
+                                        <th>설명</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="change-description">(관리자) 관리자 로그인 화면에서 '운영관리자' 버튼 삭제</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">(관리자) 과정 상세 > 학습자 노출 항목 명칭 수정 및 라디오 선택 시 설명 추가</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <h3 class="section-subtitle">오류수정</h3>
+                            <table class="change-table">
+                                <thead>
+                                    <tr>
+                                        <th>설명</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="change-description">(사용자) 디자인 B 시안에서 질문하기 클릭 시 이전 로그인 페이지로 이동되는 오류 수정</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">(관리자) 과정 메뉴 분류표시 오타 수정</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">(관리자) 과정 > 수료현황 잘못된 컬럼표시 오류 수정</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">(관리자) 과정 대시보드 차시/구차시 버튼 명칭 오타 수정</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </section>
+
+                        <!-- Version 1.0.4 -->
+                        <section id="version-1.0.4" class="version-section">
+                            <h2 class="version-title">Version 1.0.4</h2>
+                            <div class="version-date">2024년 11월 18일 릴리즈</div>
+                            
+                            <h3 class="section-subtitle">신규기능</h3>
+                            <table class="change-table">
+                                <thead>
+                                    <tr>
+                                        <th>설명</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="change-description">(관리자) 강사 설문문항 기능 추가</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">(관리자) 통계 대시보드 차트 제목 우측에 총 인원 수 표시</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <h3 class="section-subtitle">개선사항</h3>
+                            <table class="change-table">
+                                <thead>
+                                    <tr>
+                                        <th>설명</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="change-description">(관리자) 관리자 메인의 통계를 별도 메뉴(통계 > 대시보드)로 분리 이동</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">(관리자) 운영과정 운영가능 여부 체크 로직 수정</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">이수기준 및 학습목차 설정에 따른 과정 노출 로직 보완</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <h3 class="section-subtitle">오류수정</h3>
+                            <table class="change-table">
+                                <thead>
+                                    <tr>
+                                        <th>설명</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="change-description">(사용자) 상시학습에서 설문 응시 유효성 체크 오류 수정</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">(관리자) 과정 등록 시 정원 체크 오류 수정</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">(관리자) 운영과정 강사 등록 오류 수정</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">(관리자) 시험지 문항 추가 불가 오류 수정</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">(관리자) 비밀번호 과정 생성 시 수강신청 불가 오류 수정</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">(관리자) 관리자 입력폼 유효성 체크 시 박스 깨짐 현상 수정</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </section>
+
+                        <!-- Version 1.0.3 -->
+                        <section id="version-1.0.3" class="version-section">
+                            <h2 class="version-title">Version 1.0.3</h2>
+                            <div class="version-date">2024년 11월 12일 릴리즈</div>
+                            
+                            <h3 class="section-subtitle">신규기능</h3>
+                            <table class="change-table">
+                                <thead>
+                                    <tr>
+                                        <th>설명</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="change-description">로그인 화면 인증코드 입력 단계에 뒤로가기 버튼 추가</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <h3 class="section-subtitle">개선사항</h3>
+                            <table class="change-table">
+                                <thead>
+                                    <tr>
+                                        <th>설명</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="change-description">마이페이지 시험 항목 '결과보기' → '시험결과'로 변경</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">메인 페이지 하단 바 문구를 LX2로 변경</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">과정 상세에서 교육일정·교육장소가 없을 경우 해당 영역 숨김 처리</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">(관리자) 회원 등록일·접속일을 '시:분:초'까지 표시</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">(관리자) 회원 휴면처리 아이콘 변경</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">(관리자) 학습자/교수자 '엑셀등록' 버튼을 '일괄등록'으로 변경 및 아이콘 변경</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">(관리자) 과정 > 기수 상세 '단과' 버튼을 '운영과정'으로 변경 및 아이콘 변경</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <h3 class="section-subtitle">오류수정</h3>
+                            <table class="change-table">
+                                <thead>
+                                    <tr>
+                                        <th>설명</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="change-description">마이페이지 항목 간 간격 좁게 표시되는 오류 수정</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">미수료 인원 마이너스(-) 표기 예외 처리</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </section>
+
+                        <!-- Version 1.0.2 -->
+                        <section id="version-1.0.2" class="version-section">
+                            <h2 class="version-title">Version 1.0.2</h2>
+                            <div class="version-date">2024년 11월 6일 릴리즈</div>
+                            
+                            <h3 class="section-subtitle">신규기능</h3>
+                            <table class="change-table">
+                                <thead>
+                                    <tr>
+                                        <th>설명</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="change-description">랜덤 시험지 생성 시 '필수문항' 설정 기능 추가</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">과정 비밀번호 설정 시 입력 시기(수강신청 / 학습시작) 선택 기능 추가</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <h3 class="section-subtitle">개선사항</h3>
+                            <table class="change-table">
+                                <thead>
+                                    <tr>
+                                        <th>설명</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="change-description">과정 비밀번호 설정 기능 개선</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">(관리자) 메뉴관리의 직접작성 항목 이름 html → HTML로 변경</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">강의실 AI 질문하기 버튼 UI 개선</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">동영상 등록 시 자막설정 관련 버튼 UI 개선</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <h3 class="section-subtitle">오류수정</h3>
+                            <table class="change-table">
+                                <thead>
+                                    <tr>
+                                        <th>설명</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="change-description">동영상 포스터 비율 오류 수정</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">관리자 > 회원 검색 오류 수정</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </section>
+
+                        <!-- Version 1.0.1 -->
+                        <section id="version-1.0.1" class="version-section">
+                            <h2 class="version-title">Version 1.0.1</h2>
+                            <div class="version-date">2024년 10월 30일 릴리즈</div>
+                            
+                            <h3 class="section-subtitle">신규기능</h3>
+                            <table class="change-table">
+                                <thead>
+                                    <tr>
+                                        <th>설명</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="change-description">(관리자) 설정 > 일반에 '과정 썸네일 기본 이미지' 설정 추가</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">(관리자) 설정 > 일반에 '동영상 기본 포스터 이미지' 설정 추가</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">(관리자) 설정 > 일반에 사용자·관리자 로그인 문구 설정 추가</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <h3 class="section-subtitle">개선사항</h3>
+                            <table class="change-table">
+                                <thead>
+                                    <tr>
+                                        <th>설명</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="change-description">체험판 사용자 로그인 방식을 이메일/코드인증 방식으로 전환</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">사용자·관리자 로그인 파노라마 이미지 및 문구 개선</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">(관리자) 설정 시 캐시시간을 10분으로 변경</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">(관리자) 기본 에디터를 Editor.js → Kendo로 변경</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <h3 class="section-subtitle">오류수정</h3>
+                            <table class="change-table">
+                                <thead>
+                                    <tr>
+                                        <th>설명</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="change-description">사용자 메인 하단 띠배너 문구·높이 조절</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">모바일 메인 배너 출력 오류 수정</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">마이페이지 항목 간격 오류 수정</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="change-description">(관리자) 설정 > 일반 '서비스명' 적용 오류 수정</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </section>
                     </div>
                     
+                    <!-- Right: Sticky Navigation (30%) -->
+                    <aside class="sticky-nav">
+                        <h2 class="nav-title">목차</h2>
+                        <nav class="nav-menu">
+                            <a href="#version-2.5.0" class="nav-menu-link active" onclick="scrollToVersion(event, 'version-2.5.0'); return false;">Version 2.5.0</a>
+                            <a href="#version-2.4.1" class="nav-menu-link" onclick="scrollToVersion(event, 'version-2.4.1'); return false;">Version 2.4.1</a>
+                            <a href="#version-2.4.0" class="nav-menu-link" onclick="scrollToVersion(event, 'version-2.4.0'); return false;">Version 2.4.0</a>
+                            <a href="#version-2.3.1" class="nav-menu-link" onclick="scrollToVersion(event, 'version-2.3.1'); return false;">Version 2.3.1</a>
+                            <a href="#version-2.3.0" class="nav-menu-link" onclick="scrollToVersion(event, 'version-2.3.0'); return false;">Version 2.3.0</a>
+                            <a href="#version-2.2.1" class="nav-menu-link" onclick="scrollToVersion(event, 'version-2.2.1'); return false;">Version 2.2.1</a>
+                            <a href="#version-2.2.0" class="nav-menu-link" onclick="scrollToVersion(event, 'version-2.2.0'); return false;">Version 2.2.0</a>
+                            <a href="#version-2.1.3" class="nav-menu-link" onclick="scrollToVersion(event, 'version-2.1.3'); return false;">Version 2.1.3</a>
+                            <a href="#version-2.1.2" class="nav-menu-link" onclick="scrollToVersion(event, 'version-2.1.2'); return false;">Version 2.1.2</a>
+                            <a href="#version-2.1.1" class="nav-menu-link" onclick="scrollToVersion(event, 'version-2.1.1'); return false;">Version 2.1.1</a>
+                            <a href="#version-2.1.0" class="nav-menu-link" onclick="scrollToVersion(event, 'version-2.1.0'); return false;">Version 2.1.0</a>
+                            <a href="#version-2.0.2" class="nav-menu-link" onclick="scrollToVersion(event, 'version-2.0.2'); return false;">Version 2.0.2</a>
+                            <a href="#version-2.0.1" class="nav-menu-link" onclick="scrollToVersion(event, 'version-2.0.1'); return false;">Version 2.0.1</a>
+                            <a href="#version-2.0.0" class="nav-menu-link" onclick="scrollToVersion(event, 'version-2.0.0'); return false;">Version 2.0.0</a>
+                            <a href="#version-1.3.0" class="nav-menu-link" onclick="scrollToVersion(event, 'version-1.3.0'); return false;">Version 1.3.0</a>
+                            <a href="#version-1.2.1" class="nav-menu-link" onclick="scrollToVersion(event, 'version-1.2.1'); return false;">Version 1.2.1</a>
+                            <a href="#version-1.2.0" class="nav-menu-link" onclick="scrollToVersion(event, 'version-1.2.0'); return false;">Version 1.2.0</a>
+                            <a href="#version-1.1.3" class="nav-menu-link" onclick="scrollToVersion(event, 'version-1.1.3'); return false;">Version 1.1.3</a>
+                            <a href="#version-1.1.2" class="nav-menu-link" onclick="scrollToVersion(event, 'version-1.1.2'); return false;">Version 1.1.2</a>
+                            <a href="#version-1.1.1" class="nav-menu-link" onclick="scrollToVersion(event, 'version-1.1.1'); return false;">Version 1.1.1</a>
+                            <a href="#version-1.1.0" class="nav-menu-link" onclick="scrollToVersion(event, 'version-1.1.0'); return false;">Version 1.1.0</a>
+                            <a href="#version-1.0.8" class="nav-menu-link" onclick="scrollToVersion(event, 'version-1.0.8'); return false;">Version 1.0.8</a>
+                            <a href="#version-1.0.7" class="nav-menu-link" onclick="scrollToVersion(event, 'version-1.0.7'); return false;">Version 1.0.7</a>
+                            <a href="#version-1.0.6" class="nav-menu-link" onclick="scrollToVersion(event, 'version-1.0.6'); return false;">Version 1.0.6</a>
+                            <a href="#version-1.0.5" class="nav-menu-link" onclick="scrollToVersion(event, 'version-1.0.5'); return false;">Version 1.0.5</a>
+                            <a href="#version-1.0.4" class="nav-menu-link" onclick="scrollToVersion(event, 'version-1.0.4'); return false;">Version 1.0.4</a>
+                            <a href="#version-1.0.3" class="nav-menu-link" onclick="scrollToVersion(event, 'version-1.0.3'); return false;">Version 1.0.3</a>
+                            <a href="#version-1.0.2" class="nav-menu-link" onclick="scrollToVersion(event, 'version-1.0.2'); return false;">Version 1.0.2</a>
+                            <a href="#version-1.0.1" class="nav-menu-link" onclick="scrollToVersion(event, 'version-1.0.1'); return false;">Version 1.0.1</a>
+                        </nav>
+                    </aside>
                 </div>
             </div>
 
         </main>
 
-
     <script src="articles-data.js"></script>
     <script src="script.js"></script>
     <script>
-        const versionData = {
-            '2.5': {
-                date: '2025년 11월 7일',
-                new: [
-                    '(사용자) 통합검색 기능 정식 반영 (추천검색 포함)',
-                    '(사용자) GLightbox 기반 홍보영상 팝업 기능 적용',
-                    '(사용자) 과정 공유하기 기능 개선 (QR 자동 생성)'
-                ],
-                improvement: [
-                    '(관리자) 홍보영상 전체화면 재생 지원',
-                    '(관리자) 공통 CSS/JS 구조 정리',
-                    '(사용자) 통합검색 UI 시안 점검 및 적용'
-                ],
-                bugfix: [
-                    '(사용자) 통합검색 일부 키워드 누락 문제 수정',
-                    '(사용자) 홍보영상 일부 재생 오류 수정'
-                ]
-            },
-            '2.4': {
-                date: '2025년 10월 29일',
-                new: [
-                    '(기관) 스포츠윤리센터 요구 기능 반영 (검색·수료증 출력)',
-                    '(관리자) OTP 2차 인증 기능 적용',
-                    '(관리자) 카카오·네이버·구글 OAuth 인증키 운영 반영'
-                ],
-                improvement: [
-                    '(관리자) KISA 보안약점 조치 적용',
-                    '(관리자) 불필요 파일 정리',
-                    '(관리자) 세션 충돌 문제 해결',
-                    '(관리자) 세션 클러스터링 구조 조정'
-                ],
-                bugfix: []
-            },
-            '2.3': {
-                date: '2025년 6월 27일',
-                new: [
-                    '(관리자) 학습데이터 조회 API 구축 (진도율/상태 실시간 조회)',
-                    '(관리자) Elasticsearch → OpenSearch 2.8.0 전면 전환',
-                    '(관리자) Dashboards·Logstash OSS 연동'
-                ],
-                improvement: [
-                    '(관리자) Nori 형태소 분석기 적용',
-                    '(관리자) 검색 인덱스 구조 재정비'
-                ],
-                bugfix: [
-                    '(관리자) 검색엔진 전환 과정에서 발생한 매핑 오류 해결'
-                ]
-            },
-            '2.2': {
-                date: '2025년 4월 28일',
-                new: [
-                    '(관리자) Vimeo·YouTube 자동 연동 API 개발 완료',
-                    '(관리자) 콘텐츠 등록/수정 JSON API 제공',
-                    '(관리자) AccessToken 기반 보안 구조 적용'
-                ],
-                improvement: [
-                    '(관리자) 콘텐츠 등록/수정 프로세스 자동화'
-                ],
-                bugfix: []
-            },
-            '2.1': {
-                date: '2025년 3월 31일',
-                new: [
-                    '(사용자) 강의실 신규 UI 적용 (보드형 구조·AI 학습보조 포함)',
-                    '(사용자) 다크테마 기능 도입',
-                    '(관리자) 강의실 레이아웃 전체 리뉴얼'
-                ],
-                improvement: [
-                    '(사용자) 학습하기 화면 반응형 개편',
-                    '(관리자) 마이크로러닝 상세 목차 구조 개선'
-                ],
-                bugfix: []
-            },
-            '2.0': {
-                date: '2025년',
-                new: [
-                    '(관리자) 콘텐츠–리소스 등록 시 포스터 영상 캡처 기능 추가',
-                    '(관리자) 시스템 설정에 로그인 유지 관련 설정 추가'
-                ],
-                improvement: [
-                    '(사용자) 메인 화면 로고 변경',
-                    '(관리자) 파비콘 및 메인 화면 로고 변경',
-                    '(관리자) 콘텐츠–동영상 리소스에 등록된 포스터 삭제 기능 추가'
-                ],
-                bugfix: [
-                    '(관리자) 콘텐츠–그룹 내 콘텐츠 미리보기 창 짤리는 현상 수정',
-                    '(관리자) 메인 화면 캘린더에서 년/월 이동 불가 오류 수정'
-                ]
-            }
-        };
-        
-        
         function switchTab(tabName) {
             // Hide all tab contents
             document.querySelectorAll('.tab-content').forEach(content => {
@@ -452,72 +1966,60 @@
             activeTab.classList.add('active');
             activeTab.style.color = '#1E3A8A';
             activeTab.style.borderBottomColor = '#1E3A8A';
-            
         }
         
-        function toggleVersionDetail(version) {
-            const detailRow = document.getElementById('detail-' + version);
-            const detailContent = document.getElementById('detail-content-' + version);
-            const isOpen = detailRow.style.display !== 'none';
-            
-            if (isOpen) {
-                // 닫기
-                detailRow.style.display = 'none';
-            } else {
-                // 열기 - 내용 생성
-                const data = versionData[version];
-                if (!data) return;
+        // Smooth scroll to version
+        function scrollToVersion(event, versionId) {
+            event.preventDefault();
+            const element = document.getElementById(versionId);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 
-                let html = '';
-                
-                if (data.new && data.new.length > 0) {
-                    html += `
-                        <div style="margin-bottom: 2rem;">
-                            <div style="margin-bottom: 1rem;">
-                                <h4 style="font-size: 1.1rem; font-weight: 600; color: #1a1a1a; margin: 0;">신규기능</h4>
-                            </div>
-                            <ul style="list-style: none; padding: 0; margin: 0; padding-left: 1.5rem;">
-                                ${data.new.map(item => `<li style="padding: 0.5rem 0; color: #333; font-size: 0.9rem; line-height: 1.6;">• ${item}</li>`).join('')}
-                            </ul>
-                        </div>
-                    `;
-                }
-                
-                if (data.improvement && data.improvement.length > 0) {
-                    html += `
-                        <div style="margin-bottom: 2rem;">
-                            <div style="margin-bottom: 1rem;">
-                                <h4 style="font-size: 1.1rem; font-weight: 600; color: #1a1a1a; margin: 0;">개선사항</h4>
-                            </div>
-                            <ul style="list-style: none; padding: 0; margin: 0; padding-left: 1.5rem;">
-                                ${data.improvement.map(item => `<li style="padding: 0.5rem 0; color: #333; font-size: 0.9rem; line-height: 1.6;">• ${item}</li>`).join('')}
-                            </ul>
-                        </div>
-                    `;
-                }
-                
-                if (data.bugfix && data.bugfix.length > 0) {
-                    html += `
-                        <div>
-                            <div style="margin-bottom: 1rem;">
-                                <h4 style="font-size: 1.1rem; font-weight: 600; color: #1a1a1a; margin: 0;">오류사항</h4>
-                            </div>
-                            <ul style="list-style: none; padding: 0; margin: 0; padding-left: 1.5rem;">
-                                ${data.bugfix.map(item => `<li style="padding: 0.5rem 0; color: #333; font-size: 0.9rem; line-height: 1.6;">• ${item}</li>`).join('')}
-                            </ul>
-                        </div>
-                    `;
-                }
-                
-                if (data.new.length === 0 && data.improvement.length === 0 && data.bugfix.length === 0) {
-                    html += `<p style="color: #6B7280; font-size: 0.9rem; text-align: center; padding: 2rem 0;">상세 정보가 없습니다.</p>`;
-                }
-                
-                detailContent.innerHTML = html;
-                detailRow.style.display = 'table-row';
+                // Update active link
+                document.querySelectorAll('.nav-menu-link').forEach(link => {
+                    link.classList.remove('active');
+                });
+                event.target.classList.add('active');
             }
+        }
+        
+        // Update active nav on scroll (only when versions tab is visible)
+        window.addEventListener('scroll', () => {
+            const versionsTab = document.getElementById('versions-tab');
+            if (versionsTab && versionsTab.style.display !== 'none') {
+                let versionSections = document.querySelectorAll('.version-section');
+                let navLinks = document.querySelectorAll('.nav-menu-link');
+                
+                let current = '';
+                versionSections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (window.pageYOffset >= sectionTop - 150) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === '#' + current) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+        });
+        
+        // Handle hash on page load
+        if (window.location.hash) {
+            setTimeout(() => {
+                const element = document.querySelector(window.location.hash);
+                if (element) {
+                    // Switch to versions tab if hash exists
+                    switchTab('versions');
+                    setTimeout(() => {
+                        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }, 100);
+                }
+            }, 100);
         }
     </script>
 </body>
 </html>
-

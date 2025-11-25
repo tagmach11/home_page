@@ -1,23 +1,23 @@
 // 전체 아티클 데이터 통합
 const allArticlesData = [
     // AI 교육기술 (insights.html)
-    { page: 'insights.html', pageTitle: 'AI 교육기술', title: '콘텐츠 자동 자막생성', description: '동영상, 유투브 자동 자막 추출, 편집, 다국어', badge: 'AI 교육기술', link: 'article-auto-subtitle-generation.html', thumbnail: 'assets/thumbnails/콘텐츠자막생성.png' },
-    { page: 'insights.html', pageTitle: 'AI 교육기술', title: '실시간 강의 자막•자동 번역', description: '실시간 강의, 발표 자막 생성, 다국어 번역', badge: 'AI 교육기술', link: 'article-ai-realtime-translation.html', thumbnail: 'assets/thumbnails/실시간자동번역.png' },
-    { page: 'insights.html', pageTitle: 'AI 교육기술', title: '과정 정보 자동 생성', description: '제목만 입력하면 AI가 과정 정보를 자동으로 완성합니다', badge: 'AI 교육기술', link: 'article-auto-course-info.html', thumbnail: 'assets/thumbnails/과정정보자동생성.png' },
-    { page: 'insights.html', pageTitle: 'AI 교육기술', title: '시험문항 자동 생성', description: 'AI가 학습자료를 분석하여 시험 문제와 풀이를 자동으로 생성합니다', badge: 'AI 교육기술', link: 'article-auto-question-generation.html', thumbnail: 'assets/thumbnails/시험문제자동생성.png' },
-    { page: 'insights.html', pageTitle: 'AI 교육기술', title: 'AI 학습 챗봇', description: '학습자료를 분석하여 질의응답, 학습 요약 제공', badge: 'AI 교육기술', link: 'article-ai-learning-chatbot.html', thumbnail: 'assets/thumbnails/AI학습챗봇.png' },
-    { page: 'insights.html', pageTitle: 'AI 교육기술', title: '전 기능 MCP 서버 지원', description: 'LMS 전체 기능 AI 제어', badge: 'AI 교육기술', link: 'article-mcp-server-support.html', thumbnail: 'assets/thumbnails/전기능MCP서버지원.png' },
-    { page: 'insights.html', pageTitle: 'AI 교육기술', title: 'AI 매뉴얼', description: 'RAG 기반 AI가 필요한 매뉴얼을 빠르게 검색하고 답변합니다', badge: 'AI 교육기술', link: 'article-ai-manual.html', thumbnail: 'assets/thumbnails/AI매뉴얼.png' },
-    { page: 'insights.html', pageTitle: 'AI 교육기술', title: '다국어 Q&A', description: 'AI가 실시간으로 질의응답을 번역합니다', badge: 'AI 교육기술', link: 'article-ai-multilingual-qa.html', thumbnail: 'assets/thumbnails/다국어qna.png' },
-    { page: 'insights.html', pageTitle: 'AI 교육기술', title: '다국어 학생상담', description: 'AI가 실시간으로 상담을 번역합니다', badge: 'AI 교육기술', link: 'article-ai-multilingual-counseling.html', thumbnail: 'assets/thumbnails/다국어학생상담.png' },
+    { page: 'insights.html', pageTitle: 'AI 교육기술', title: '콘텐츠 자동 자막생성', description: '동영상, 유투브 자동 자막 추출, 편집, 다국어', badge: 'AI', link: 'article-auto-subtitle-generation.html', thumbnail: 'assets/thumbnails/콘텐츠자막생성.png' },
+    { page: 'insights.html', pageTitle: 'AI 교육기술', title: '실시간 강의 자막•자동 번역', description: '실시간 강의, 발표 자막 생성, 다국어 번역', badge: 'AI', link: 'article-ai-realtime-translation.html', thumbnail: 'assets/thumbnails/실시간자동번역.png' },
+    { page: 'insights.html', pageTitle: 'AI 교육기술', title: '과정 정보 자동 생성', description: '제목만 입력하면 AI가 과정 정보를 자동으로 완성합니다', badge: 'AI', link: 'article-auto-course-info.html', thumbnail: 'assets/thumbnails/과정정보자동생성.png' },
+    { page: 'insights.html', pageTitle: 'AI 교육기술', title: '시험문항 자동 생성', description: 'AI가 학습자료를 분석하여 시험 문제와 풀이를 자동으로 생성합니다', badge: 'AI', link: 'article-auto-question-generation.html', thumbnail: 'assets/thumbnails/시험문제자동생성.png' },
+    { page: 'insights.html', pageTitle: 'AI 교육기술', title: 'AI 학습 챗봇', description: '학습자료를 분석하여 질의응답, 학습 요약 제공', badge: 'AI', link: 'article-ai-learning-chatbot.html', thumbnail: 'assets/thumbnails/AI학습챗봇.png' },
+    { page: 'insights.html', pageTitle: 'AI 교육기술', title: '전 기능 MCP 서버 지원', description: 'LMS 전체 기능 AI 제어', badge: 'AI', link: 'article-mcp-server-support.html', thumbnail: 'assets/thumbnails/전기능MCP서버지원.png' },
+    { page: 'insights.html', pageTitle: 'AI 교육기술', title: 'AI 매뉴얼', description: 'RAG 기반 AI가 필요한 매뉴얼을 빠르게 검색하고 답변합니다', badge: 'AI', link: 'article-ai-manual.html', thumbnail: 'assets/thumbnails/AI매뉴얼.png' },
+    { page: 'insights.html', pageTitle: 'AI 교육기술', title: '다국어 Q&A', description: 'AI가 실시간으로 질의응답을 번역합니다', badge: 'AI', link: 'article-ai-multilingual-qa.html', thumbnail: 'assets/thumbnails/다국어qna.png' },
+    { page: 'insights.html', pageTitle: 'AI 교육기술', title: '다국어 학생상담', description: 'AI가 실시간으로 상담을 번역합니다', badge: 'AI', link: 'article-ai-multilingual-counseling.html', thumbnail: 'assets/thumbnails/다국어학생상담.png' },
 
     // 사용자 중심 학습관리 (features.html)
-    { page: 'features.html', pageTitle: '사용자 중심 학습관리', title: '편리한 수강신청', description: '과정 찾기부터 일정 관리까지, 학습자가 직접 탐색하고 선택하는 완결된 학습 흐름', badge: '교육', link: 'article-convenient-enrollment.html', thumbnail: 'assets/thumbnails/편리한수강신청.png' },
-    { page: 'features.html', pageTitle: '사용자 중심 학습관리', title: '사용자 맞춤형 대시보드', description: '로그인 한 번으로 학습 이력, 일정, 강의실, 수료증까지 연결되는 개인화된 학습 공간', badge: '교육', link: 'article-dashboard.html', thumbnail: 'assets/thumbnails/맞춤형대시보드.png' },
-    { page: 'features.html', pageTitle: '사용자 중심 학습관리', title: '온·오프 통합 강의실', description: '온라인, 오프라인 강의 통합 관리', badge: '교육', link: 'article-integrated-classroom.html', thumbnail: 'assets/thumbnails/온오프통합강의실.png' },
-    { page: 'features.html', pageTitle: '사용자 중심 학습관리', title: '학습 커뮤니티', description: '학습자간 소통, 지식 공유', badge: '교육', link: 'article-learning-community.html', thumbnail: 'assets/thumbnails/학습커뮤니티.png' },
-    { page: 'features.html', pageTitle: '사용자 중심 학습관리', title: '학습 마일리지·쿠폰·이벤트', description: '학습 동기부여, 리워드 시스템', badge: '교육', link: 'article-learning-rewards.html', thumbnail: 'assets/thumbnails/학습마일리지:쿠폰:이벤트.png' },
-    { page: 'features.html', pageTitle: '사용자 중심 학습관리', title: '마이크로러닝', description: '짧은 학습 단위, 모바일 최적화', badge: '교육', link: 'article-microlearning.html', thumbnail: 'assets/thumbnails/마이크로러닝.png' },
+    { page: 'features.html', pageTitle: '사용자 중심 학습관리', title: '편리한 수강신청', description: '과정 찾기부터 일정 관리까지, 학습자가 직접 탐색하고 선택하는 완결된 학습 흐름', badge: '학습', link: 'article-convenient-enrollment.html', thumbnail: 'assets/thumbnails/편리한수강신청.png' },
+    { page: 'features.html', pageTitle: '사용자 중심 학습관리', title: '사용자 맞춤형 대시보드', description: '로그인 한 번으로 학습 이력, 일정, 강의실, 수료증까지 연결되는 개인화된 학습 공간', badge: '학습', link: 'article-dashboard.html', thumbnail: 'assets/thumbnails/맞춤형대시보드.png' },
+    { page: 'features.html', pageTitle: '사용자 중심 학습관리', title: '온·오프 통합 강의실', description: '온라인, 오프라인 강의 통합 관리', badge: '학습', link: 'article-integrated-classroom.html', thumbnail: 'assets/thumbnails/온오프통합강의실.png' },
+    { page: 'features.html', pageTitle: '사용자 중심 학습관리', title: '학습 커뮤니티', description: '학습자간 소통, 지식 공유', badge: '학습', link: 'article-learning-community.html', thumbnail: 'assets/thumbnails/학습커뮤니티.png' },
+    { page: 'features.html', pageTitle: '사용자 중심 학습관리', title: '학습 마일리지·쿠폰·이벤트', description: '학습 동기부여, 리워드 시스템', badge: '학습', link: 'article-learning-rewards.html', thumbnail: 'assets/thumbnails/학습마일리지:쿠폰:이벤트.png' },
+    { page: 'features.html', pageTitle: '사용자 중심 학습관리', title: '마이크로러닝', description: '짧은 학습 단위, 모바일 최적화', badge: '학습', link: 'article-microlearning.html', thumbnail: 'assets/thumbnails/마이크로러닝.png' },
 
     // 디테일한 교육관리 (portfolio.html)
     { page: 'portfolio.html', pageTitle: '디테일한 교육관리', title: '다양한 학습진도 설정', description: '순차·비순차 학습, 최소·인정 진도율', badge: '교육', link: 'article-diverse-learning-progress.html', thumbnail: 'assets/thumbnails/다양한학습진도설정.png' },
