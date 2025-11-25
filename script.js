@@ -43,14 +43,33 @@ function loadSidebarFallback() {
 
 // Set active sidebar item based on current page
 function setActiveSidebarItem() {
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    const currentPath = window.location.pathname;
+    const currentPage = currentPath.split('/').pop() || 'index.html';
     const sidebarItems = document.querySelectorAll('.sidebar-item');
     
     sidebarItems.forEach(item => {
         item.classList.remove('active');
         const href = item.getAttribute('href');
-        if (href === currentPage || (currentPage === '' && href === 'index.html')) {
-            item.classList.add('active');
+        
+        // 상대 경로를 절대 경로로 변환하여 비교
+        try {
+            const hrefPath = new URL(href, window.location.href).pathname;
+            const normalizedCurrentPath = currentPath.endsWith('/') ? currentPath.slice(0, -1) : currentPath;
+            const normalizedHrefPath = hrefPath.endsWith('/') ? hrefPath.slice(0, -1) : hrefPath;
+            
+            if (normalizedCurrentPath === normalizedHrefPath || 
+                currentPath.endsWith(href) ||
+                (currentPage === '' && (href === 'index.html' || href === '../index.html')) ||
+                (currentPage === 'index.html' && href === '../index.html')) {
+                item.classList.add('active');
+            }
+        } catch (e) {
+            // URL 생성 실패 시 간단한 비교
+            if (href === currentPage || 
+                currentPath.endsWith(href) ||
+                (currentPage === '' && href === 'index.html')) {
+                item.classList.add('active');
+            }
         }
     });
 }
@@ -439,27 +458,61 @@ function searchArticles(searchTerm) {
                 }
             }
             
+            // 현재 페이지의 경로에서 상대 경로 계산 함수
+            const getCurrentRelativePath = (link) => {
+                const currentPath = window.location.pathname;
+                // 이미 상대 경로인 경우
+                if (link.startsWith('../')) {
+                    return link;
+                }
+                // assets 경로는 그대로 유지
+                if (link.startsWith('assets/')) {
+                    // index.html이면 assets/, 다른 폴더면 ../assets/
+                    return currentPath.includes('/') && !currentPath.endsWith('index.html') ? '../' + link : link;
+                }
+                // 절대 경로인 경우 (폴더명/파일명 형식)
+                if (link.includes('/')) {
+                    const currentFolder = currentPath.split('/').slice(-2, -1)[0] || '';
+                    const targetFolder = link.split('/')[0];
+                    
+                    // index.html이면 그대로, 같은 폴더면 파일명만, 다른 폴더면 폴더명/파일명
+                    if (!currentFolder || currentPath.endsWith('index.html')) {
+                        return link;
+                    }
+                    if (currentFolder === targetFolder) {
+                        return link.split('/').pop();
+                    }
+                    return '../' + link;
+                }
+                // 파일명만 있는 경우
+                return link;
+            };
+            
             globalSearchResults.innerHTML = `
                 <h2 class="section-title" style="margin-top: 2rem; margin-bottom: 1.5rem; display: block !important;">전체 검색 결과 (${globalResults.length}개)</h2>
                 <div class="article-grid" style="display: grid !important; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;">
-                    ${globalResults.map(article => `
+                    ${globalResults.map(article => {
+                        const relativeLink = getCurrentRelativePath(article.link);
+                        const relativeThumbnail = article.thumbnail ? getCurrentRelativePath(article.thumbnail) : '';
+                        return `
                         <article class="article-card" style="display: flex; flex-direction: column; background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s; cursor: pointer;">
-                            <a href="${article.link}" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; height: 100%;">
-                                ${article.thumbnail ? `
+                            <a href="${relativeLink}" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; height: 100%;">
+                                ${relativeThumbnail ? `
                                 <div class="card-image" style="position: relative; width: 100%; padding-bottom: 60%; overflow: hidden; background: #f5f5f5;">
-                                    <img src="${article.thumbnail}" alt="${article.title}" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+                                    <img src="${relativeThumbnail}" alt="${article.title}" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
                                     <span class="card-badge" style="position: absolute; top: 0.5rem; left: 0.5rem; background: rgba(124, 58, 237, 0.9); color: white; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.7rem; font-weight: 600;">${article.badge}</span>
                                 </div>
                                 ` : ''}
                                 <div class="card-content" style="padding: 1rem; flex: 1; display: flex; flex-direction: column;">
-                                    ${!article.thumbnail ? `<span class="card-badge" style="display: inline-block; background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.7rem; font-weight: 600; margin-bottom: 0.5rem; width: fit-content;">${article.badge}</span>` : ''}
+                                    ${!relativeThumbnail ? `<span class="card-badge" style="display: inline-block; background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.7rem; font-weight: 600; margin-bottom: 0.5rem; width: fit-content;">${article.badge}</span>` : ''}
                                     <h4 class="card-title" style="font-size: 0.95rem; font-weight: 600; color: #1a1a1a; margin: 0 0 0.5rem 0; line-height: 1.4;">${article.title}</h4>
                                     <p class="card-description" style="font-size: 0.8rem; color: #666; line-height: 1.5; margin: 0 0 auto 0;">${article.description}</p>
                                     <p class="card-meta" style="margin-top: 0.75rem; color: #7c3aed; font-size: 0.75rem; font-weight: 500;">📂 ${article.pageTitle}</p>
                                 </div>
                             </a>
                         </article>
-                    `).join('')}
+                    `;
+                    }).join('')}
                 </div>
             `;
             
@@ -717,6 +770,38 @@ function initRecommendedArticles() {
     
     if (recommendedArticles.length === 0) return;
     
+    // 현재 페이지의 경로에서 상대 경로 계산
+    const currentPath = window.location.pathname;
+    const currentDir = currentPath.substring(0, currentPath.lastIndexOf('/'));
+    const rootDir = currentPath.split('/').slice(0, -2).join('/'); // 프로젝트 루트까지의 경로
+    
+    // 링크를 상대 경로로 변환하는 함수
+    const convertToRelativePath = (link) => {
+        // 이미 상대 경로인 경우 (../로 시작)
+        if (link.startsWith('../')) {
+            return link;
+        }
+        // assets 경로는 그대로 유지 (이미 상대 경로로 처리됨)
+        if (link.startsWith('assets/')) {
+            return '../' + link;
+        }
+        // 절대 경로인 경우 (폴더명/파일명 형식)
+        if (link.includes('/')) {
+            // 현재 파일이 어느 폴더에 있는지 확인
+            const currentFolder = currentPath.split('/').slice(-2, -1)[0];
+            const targetFolder = link.split('/')[0];
+            
+            // 같은 폴더면 파일명만
+            if (currentFolder === targetFolder) {
+                return link.split('/').pop();
+            }
+            // 다른 폴더면 ../폴더명/파일명
+            return '../' + link;
+        }
+        // 파일명만 있는 경우 (같은 폴더)
+        return link;
+    };
+    
     // 추천 게시물 HTML 생성
     const recommendedSection = document.createElement('div');
     recommendedSection.className = 'recommended-articles';
@@ -727,11 +812,15 @@ function initRecommendedArticles() {
             <h3 style="font-size: 1rem; font-weight: 600; color: #1a1a1a; margin: 0;">추천 게시물</h3>
         </div>
         <div style="display: flex; flex-direction: column; gap: 1rem;">
-            ${recommendedArticles.map(article => `
-                <a href="${article.link}" style="text-decoration: none; color: inherit; display: block; background: white; border-radius: 8px; overflow: hidden; transition: all 0.2s; border: 1px solid #e5e7eb; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
-                    ${article.thumbnail ? `
+            ${recommendedArticles.map(article => {
+                const relativeLink = convertToRelativePath(article.link);
+                // 썸네일 경로도 상대 경로로 변환
+                const relativeThumbnail = article.thumbnail ? convertToRelativePath(article.thumbnail) : '';
+                return `
+                <a href="${relativeLink}" style="text-decoration: none; color: inherit; display: block; background: white; border-radius: 8px; overflow: hidden; transition: all 0.2s; border: 1px solid #e5e7eb; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+                    ${relativeThumbnail ? `
                     <div style="width: 100%; height: 120px; overflow: hidden; background: #f5f5f5;">
-                        <img src="${article.thumbnail}" alt="${article.title}" style="width: 100%; height: 100%; object-fit: cover;">
+                        <img src="${relativeThumbnail}" alt="${article.title}" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
                     ` : ''}
                     <div style="padding: 0.75rem;">
@@ -740,7 +829,8 @@ function initRecommendedArticles() {
                         <div style="font-size: 0.75rem; color: #666; line-height: 1.4; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">${article.description}</div>
                     </div>
                 </a>
-            `).join('')}
+            `;
+            }).join('')}
         </div>
         <div style="margin-top: 1.5rem;">
             <a href="https://www.lx2.kr/common/greeting.do" target="_blank" style="display: block; text-decoration: none; background: #1e40af; color: white; text-align: center; padding: 1rem; border-radius: 8px; font-weight: 600; font-size: 0.95rem; transition: all 0.3s;">
