@@ -329,8 +329,26 @@ function searchArticles(searchTerm) {
     // 통합 검색 (allArticlesData가 존재하는 경우)
     let hasGlobalResults = false;
     if (typeof allArticlesData !== 'undefined') {
+        // 검색어가 영어인지 확인 (한글이 하나도 없으면 영어로 간주)
+        const isEnglishSearch = /^[a-zA-Z0-9\s]+$/.test(searchTerm.trim());
+        
         const globalResults = allArticlesData.filter(article => {
-            const searchableText = `${article.title} ${article.description} ${article.badge} ${article.pageTitle}`.toLowerCase();
+            // 영어로만 검색한 경우, badge는 검색 대상에서 제외
+            const searchableText = isEnglishSearch 
+                ? `${article.title} ${article.description} ${article.pageTitle}`.toLowerCase()
+                : `${article.title} ${article.description} ${article.badge} ${article.pageTitle}`.toLowerCase();
+            
+            // 영어로만 검색한 경우, 검색어가 실제로 텍스트에 포함되어 있는지 확인
+            if (isEnglishSearch) {
+                // 영어 검색어가 실제로 포함되어 있는지 확인 (한글 텍스트에서 우연히 매칭되는 것 방지)
+                return searchWords.every(word => {
+                    // 단어가 실제로 포함되어 있고, 단어 경계를 고려
+                    const regex = new RegExp(`\\b${word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'i');
+                    return regex.test(searchableText);
+                });
+            }
+            
+            // 한글이 포함된 검색어는 기존 로직 사용
             return searchWords.every(word => searchableText.includes(word));
         });
         
@@ -488,26 +506,38 @@ function searchArticles(searchTerm) {
                 return link;
             };
             
+            // HTML 이스케이프 함수
+            const escapeHtml = (text) => {
+                if (!text) return '';
+                const div = document.createElement('div');
+                div.textContent = text;
+                return div.innerHTML;
+            };
+            
             globalSearchResults.innerHTML = `
                 <h2 class="section-title" style="margin-top: 2rem; margin-bottom: 1.5rem; display: block !important;">전체 검색 결과 (${globalResults.length}개)</h2>
                 <div class="article-grid" style="display: grid !important; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;">
                     ${globalResults.map(article => {
                         const relativeLink = getCurrentRelativePath(article.link);
                         const relativeThumbnail = article.thumbnail ? getCurrentRelativePath(article.thumbnail) : '';
+                        const safeTitle = escapeHtml(article.title);
+                        const safeDescription = escapeHtml(article.description);
+                        const safeBadge = escapeHtml(article.badge);
+                        const safePageTitle = escapeHtml(article.pageTitle);
                         return `
                         <article class="article-card" style="display: flex; flex-direction: column; background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s; cursor: pointer;">
                             <a href="${relativeLink}" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; height: 100%;">
                                 ${relativeThumbnail ? `
                                 <div class="card-image" style="position: relative; width: 100%; padding-bottom: 60%; overflow: hidden; background: #f5f5f5;">
-                                    <img src="${relativeThumbnail}" alt="${article.title}" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
-                                    <span class="card-badge" style="position: absolute; top: 0.5rem; left: 0.5rem; background: rgba(124, 58, 237, 0.9); color: white; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.7rem; font-weight: 600;">${article.badge}</span>
+                                    <img src="${relativeThumbnail}" alt="${safeTitle}" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+                                    <span class="card-badge" style="position: absolute; top: 0.5rem; left: 0.5rem; background: rgba(124, 58, 237, 0.9); color: white; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.7rem; font-weight: 600;">${safeBadge}</span>
                                 </div>
                                 ` : ''}
                                 <div class="card-content" style="padding: 1rem; flex: 1; display: flex; flex-direction: column;">
-                                    ${!relativeThumbnail ? `<span class="card-badge" style="display: inline-block; background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.7rem; font-weight: 600; margin-bottom: 0.5rem; width: fit-content;">${article.badge}</span>` : ''}
-                                    <h4 class="card-title" style="font-size: 0.95rem; font-weight: 600; color: #1a1a1a; margin: 0 0 0.5rem 0; line-height: 1.4;">${article.title}</h4>
-                                    <p class="card-description" style="font-size: 0.8rem; color: #666; line-height: 1.5; margin: 0 0 auto 0;">${article.description}</p>
-                                    <p class="card-meta" style="margin-top: 0.75rem; color: #7c3aed; font-size: 0.75rem; font-weight: 500;">📂 ${article.pageTitle}</p>
+                                    ${!relativeThumbnail ? `<span class="card-badge" style="display: inline-block; background: rgba(124, 58, 237, 0.1); color: #7c3aed; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.7rem; font-weight: 600; margin-bottom: 0.5rem; width: fit-content;">${safeBadge}</span>` : ''}
+                                    <h4 class="card-title" style="font-size: 0.95rem; font-weight: 600; color: #1a1a1a; margin: 0 0 0.5rem 0; line-height: 1.4;">${safeTitle}</h4>
+                                    <p class="card-description" style="font-size: 0.8rem; color: #666; line-height: 1.5; margin: 0 0 auto 0;">${safeDescription}</p>
+                                    <p class="card-meta" style="margin-top: 0.75rem; color: #7c3aed; font-size: 0.75rem; font-weight: 500;">📂 ${safePageTitle}</p>
                                 </div>
                             </a>
                         </article>
@@ -522,6 +552,87 @@ function searchArticles(searchTerm) {
             if (globalSearchResults) {
                 globalSearchResults.style.display = 'none';
             }
+            
+            // 통합 검색 결과가 없으면 모든 원래 콘텐츠 숨기기
+            if (contentArea) {
+                Array.from(contentArea.children).forEach(child => {
+                    // 검색 결과 컨테이너는 제외
+                    if (child.id === 'global-search-results') {
+                        return;
+                    }
+                    
+                    // 검색창과 검색 컨테이너는 제외
+                    if (child.classList.contains('search-box') || 
+                        child.classList.contains('search-container') ||
+                        child.querySelector('.search-box')) {
+                        return;
+                    }
+                    
+                    // 나머지 콘텐츠는 숨기기
+                    child.style.display = 'none';
+                });
+            }
+            
+            // 모든 아티클 숨기기
+            articles.forEach(article => {
+                article.style.display = 'none';
+            });
+            
+            newsCards.forEach(card => {
+                card.style.display = 'none';
+            });
+            
+            // 상세 페이지 숨기기
+            if (isDetailPage && articleDetail) {
+                articleDetail.style.display = 'none';
+            }
+            if (isDetailPage && articleLayout) {
+                articleLayout.style.display = 'none';
+            }
+            
+            // 섹션 숨기기
+            const sections = document.querySelectorAll('.payment-section, .latest-section');
+            sections.forEach(section => {
+                section.style.display = 'none';
+            });
+            
+            // section-title 숨기기
+            const sectionTitles = document.querySelectorAll('.section-title');
+            sectionTitles.forEach(title => {
+                if (!title.closest('#global-search-results')) {
+                    title.style.display = 'none';
+                }
+            });
+            
+            // 전체보기 링크 숨기기
+            const viewAllLinks = document.querySelectorAll('.view-all-link');
+            viewAllLinks.forEach(link => {
+                link.style.display = 'none';
+            });
+            
+            // section-header 숨기기
+            const sectionHeaders = document.querySelectorAll('.section-header');
+            sectionHeaders.forEach(header => {
+                if (!header.closest('#global-search-results')) {
+                    header.style.display = 'none';
+                }
+            });
+            
+            // 뉴스룸 그리드 레이아웃 숨기기
+            const newsLayouts = document.querySelectorAll('div[style*="grid-template-columns"]');
+            newsLayouts.forEach(layout => {
+                if (!layout.closest('#global-search-results')) {
+                    layout.style.display = 'none';
+                }
+            });
+            
+            // article-grid 숨기기
+            const articleGrids = document.querySelectorAll('.article-grid');
+            articleGrids.forEach(grid => {
+                if (!grid.closest('#global-search-results')) {
+                    grid.style.display = 'none';
+                }
+            });
         }
     }
     
@@ -568,8 +679,91 @@ function searchArticles(searchTerm) {
         });
     }
     
-    // 검색 결과가 없을 때 메시지 표시
+    // 검색 결과가 없을 때 메시지 표시 및 모든 콘텐츠 숨기기
     if (visibleCount === 0) {
+        // 모든 원래 콘텐츠 숨기기
+        if (contentArea) {
+            Array.from(contentArea.children).forEach(child => {
+                // 검색 결과 컨테이너와 검색창은 제외
+                if (child.id === 'global-search-results' ||
+                    child.classList.contains('search-box') || 
+                    child.classList.contains('search-container') ||
+                    child.querySelector('.search-box')) {
+                    return;
+                }
+                
+                // 나머지 콘텐츠는 숨기기
+                child.style.display = 'none';
+            });
+        }
+        
+        // 모든 아티클 숨기기
+        articles.forEach(article => {
+            article.style.display = 'none';
+        });
+        
+        newsCards.forEach(card => {
+            card.style.display = 'none';
+        });
+        
+        // 상세 페이지 숨기기
+        if (isDetailPage && articleDetail) {
+            articleDetail.style.display = 'none';
+        }
+        if (isDetailPage && articleLayout) {
+            articleLayout.style.display = 'none';
+        }
+        
+        // 섹션 숨기기
+        const sections = document.querySelectorAll('.payment-section, .latest-section');
+        sections.forEach(section => {
+            section.style.display = 'none';
+        });
+        
+        // section-title 숨기기
+        const sectionTitles = document.querySelectorAll('.section-title');
+        sectionTitles.forEach(title => {
+            if (!title.closest('#global-search-results')) {
+                title.style.display = 'none';
+            }
+        });
+        
+        // 전체보기 링크 숨기기
+        const viewAllLinks = document.querySelectorAll('.view-all-link');
+        viewAllLinks.forEach(link => {
+            link.style.display = 'none';
+        });
+        
+        // section-header 숨기기
+        const sectionHeaders = document.querySelectorAll('.section-header');
+        sectionHeaders.forEach(header => {
+            if (!header.closest('#global-search-results')) {
+                header.style.display = 'none';
+            }
+        });
+        
+        // 뉴스룸 그리드 레이아웃 숨기기
+        const newsLayouts = document.querySelectorAll('div[style*="grid-template-columns"]');
+        newsLayouts.forEach(layout => {
+            if (!layout.closest('#global-search-results')) {
+                layout.style.display = 'none';
+            }
+        });
+        
+        // article-grid 숨기기
+        const articleGrids = document.querySelectorAll('.article-grid');
+        articleGrids.forEach(grid => {
+            if (!grid.closest('#global-search-results')) {
+                grid.style.display = 'none';
+            }
+        });
+        
+        // 통합 검색 결과 컨테이너 숨기기
+        if (globalSearchResults) {
+            globalSearchResults.style.display = 'none';
+        }
+        
+        // "검색 결과가 없습니다" 메시지 표시
         noResults.style.display = 'block';
     } else {
         noResults.style.display = 'none';
@@ -802,6 +996,14 @@ function initRecommendedArticles() {
         return link;
     };
     
+    // HTML 이스케이프 함수
+    const escapeHtml = (text) => {
+        if (!text) return '';
+        const div = document.createElement('div');
+        div.textContent = text;
+        return div.innerHTML;
+    };
+    
     // 추천 게시물 HTML 생성
     const recommendedSection = document.createElement('div');
     recommendedSection.className = 'recommended-articles';
@@ -816,17 +1018,20 @@ function initRecommendedArticles() {
                 const relativeLink = convertToRelativePath(article.link);
                 // 썸네일 경로도 상대 경로로 변환
                 const relativeThumbnail = article.thumbnail ? convertToRelativePath(article.thumbnail) : '';
+                const safeTitle = escapeHtml(article.title);
+                const safeDescription = escapeHtml(article.description);
+                const safeBadge = escapeHtml(article.badge);
                 return `
                 <a href="${relativeLink}" style="text-decoration: none; color: inherit; display: block; background: white; border-radius: 8px; overflow: hidden; transition: all 0.2s; border: 1px solid #e5e7eb; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
                     ${relativeThumbnail ? `
                     <div style="width: 100%; height: 120px; overflow: hidden; background: #f5f5f5;">
-                        <img src="${relativeThumbnail}" alt="${article.title}" style="width: 100%; height: 100%; object-fit: cover;">
+                        <img src="${relativeThumbnail}" alt="${safeTitle}" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
                     ` : ''}
                     <div style="padding: 0.75rem;">
-                        <div style="font-size: 0.7rem; color: #7c3aed; font-weight: 600; margin-bottom: 0.25rem;">${article.badge}</div>
-                        <div style="font-size: 0.85rem; font-weight: 600; color: #1a1a1a; line-height: 1.4; margin-bottom: 0.25rem;">${article.title}</div>
-                        <div style="font-size: 0.75rem; color: #666; line-height: 1.4; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">${article.description}</div>
+                        <div style="font-size: 0.7rem; color: #7c3aed; font-weight: 600; margin-bottom: 0.25rem;">${safeBadge}</div>
+                        <div style="font-size: 0.85rem; font-weight: 600; color: #1a1a1a; line-height: 1.4; margin-bottom: 0.25rem;">${safeTitle}</div>
+                        <div style="font-size: 0.75rem; color: #666; line-height: 1.4; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">${safeDescription}</div>
                     </div>
                 </a>
             `;

@@ -1,7 +1,7 @@
 // 전체 아티클 데이터 통합
 const allArticlesData = [
     // AI 교육기술 (insights.html)
-    { page: 'ai/insights.html', pageTitle: 'AI 교육기술', title: '콘텐츠 자동 자막생성', description: '동영상, 유투브 자동 자막 추출, 편집, 다국어', badge: 'AI', link: 'ai/article-auto-subtitle-generation.html', thumbnail: 'assets/thumbnails/콘텐츠자막생성.png' },
+    { page: 'ai/insights.html', pageTitle: 'AI 교육기술', title: '콘텐츠 자동 자막생성', description: '동영상, 유튜브 자동 자막 추출, 편집, 다국어', badge: 'AI', link: 'ai/article-auto-subtitle-generation.html', thumbnail: 'assets/thumbnails/콘텐츠자막생성.png' },
     { page: 'ai/insights.html', pageTitle: 'AI 교육기술', title: '실시간 강의 자막•자동 번역', description: '실시간 강의, 발표 자막 생성, 다국어 번역', badge: 'AI', link: 'ai/article-ai-realtime-translation.html', thumbnail: 'assets/thumbnails/실시간자동번역.png' },
     { page: 'ai/insights.html', pageTitle: 'AI 교육기술', title: '과정 정보 자동 생성', description: '제목만 입력하면 AI가 과정 정보를 자동으로 완성합니다', badge: 'AI', link: 'ai/article-auto-course-info.html', thumbnail: 'assets/thumbnails/과정정보자동생성.png' },
     { page: 'ai/insights.html', pageTitle: 'AI 교육기술', title: '시험문항 자동 생성', description: 'AI가 학습자료를 분석하여 시험 문제와 풀이를 자동으로 생성합니다', badge: 'AI', link: 'ai/article-auto-question-generation.html', thumbnail: 'assets/thumbnails/시험문제자동생성.png' },
@@ -16,13 +16,13 @@ const allArticlesData = [
     { page: 'user/features.html', pageTitle: '사용자 중심 학습관리', title: '사용자 맞춤형 대시보드', description: '로그인 한 번으로 학습 이력, 일정, 강의실, 수료증까지 연결되는 개인화된 학습 공간', badge: '학습', link: 'user/article-dashboard.html', thumbnail: 'assets/thumbnails/맞춤형대시보드.png' },
     { page: 'user/features.html', pageTitle: '사용자 중심 학습관리', title: '온·오프 통합 강의실', description: '온라인, 오프라인 강의 통합 관리', badge: '학습', link: 'user/article-integrated-classroom.html', thumbnail: 'assets/thumbnails/온오프통합강의실.png' },
     { page: 'user/features.html', pageTitle: '사용자 중심 학습관리', title: '학습 커뮤니티', description: '학습자간 소통, 지식 공유', badge: '학습', link: 'user/article-learning-community.html', thumbnail: 'assets/thumbnails/학습커뮤니티.png' },
-    { page: 'user/features.html', pageTitle: '사용자 중심 학습관리', title: '학습 마일리지·쿠폰·이벤트', description: '학습 동기부여, 리워드 시스템', badge: '학습', link: 'user/article-learning-rewards.html', thumbnail: 'assets/thumbnails/학습마일리지:쿠폰:이벤트.png' },
+    { page: 'user/features.html', pageTitle: '사용자 중심 학습관리', title: '학습 마일리지·쿠폰·이벤트', description: '학습 동기부여, 리워드 시스템', badge: '학습', link: 'user/article-learning-rewards.html', thumbnail: 'assets/thumbnails/학습마일리지쿠폰이벤트.png' },
     { page: 'user/features.html', pageTitle: '사용자 중심 학습관리', title: '마이크로러닝', description: '짧은 학습 단위, 모바일 최적화', badge: '학습', link: 'user/article-microlearning.html', thumbnail: 'assets/thumbnails/마이크로러닝.png' },
 
     // 디테일한 교육관리 (portfolio.html)
     { page: 'manage/portfolio.html', pageTitle: '디테일한 교육관리', title: '다양한 학습진도 설정', description: '순차·비순차 학습, 최소·인정 진도율', badge: '교육', link: 'manage/article-diverse-learning-progress.html', thumbnail: 'assets/thumbnails/다양한학습진도설정.png' },
     { page: 'manage/portfolio.html', pageTitle: '디테일한 교육관리', title: '편리한 학습목차 관리', description: '다양한 유형, 차시별 설정', badge: '교육', link: 'manage/article-curriculum-management.html', thumbnail: 'assets/thumbnails/편리한학습목차관리.png' },
-    { page: 'manage/portfolio.html', pageTitle: '디테일한 교육관리', title: '강의실/스튜디오 관리 예약', description: '오프라인 시설, 장비 예약 및 관리', badge: '교육', link: 'manage/article-classroom-reservation.html', thumbnail: 'assets/thumbnails/강의실:스튜디오관리예약.png' },
+    { page: 'manage/portfolio.html', pageTitle: '디테일한 교육관리', title: '강의실/스튜디오 관리 예약', description: '오프라인 시설, 장비 예약 및 관리', badge: '교육', link: 'manage/article-classroom-reservation.html', thumbnail: 'assets/thumbnails/강의실스튜디오관리예약.png' },
     { page: 'manage/portfolio.html', pageTitle: '디테일한 교육관리', title: '수료증 템플릿 관리', description: '수료증 템플릿 구성, 과정별 선택', badge: '교육', link: 'manage/article-certificate-template.html', thumbnail: 'assets/thumbnails/수료증템플릿관리.png' },
     { page: 'manage/portfolio.html', pageTitle: '디테일한 교육관리', title: '수강 신청서 템플릿 관리', description: '과정 별 수강 신청서 설정, 자유로운 폼 구성', badge: '교육', link: 'manage/article-enrollment-template.html', thumbnail: 'assets/thumbnails/수강신청서.png' },
     { page: 'manage/portfolio.html', pageTitle: '디테일한 교육관리', title: '학습 독려 자동 알림', description: '자동 발송, 발송 이력 관리', badge: '교육', link: 'manage/article-learning-reminder.html', thumbnail: 'assets/thumbnails/학습독려자동알림.png' },
@@ -48,12 +48,12 @@ const allArticlesData = [
     { page: 'news/newsroom.html', pageTitle: '뉴스룸', title: '신SW상품대상 멀티미디어&서비스SW 부문 수상', description: '2025년 6월', badge: '수상', link: 'news/article-sw-award.html', thumbnail: 'assets/articles/sw대상.png' },
     { page: 'news/newsroom.html', pageTitle: '뉴스룸', title: 'GS인증 1등급 획득', description: '2025년 9월 12일', badge: '인증', link: 'news/article-gs-certification.html', thumbnail: 'assets/articles/gs인증.png' },
     { page: 'news/newsroom.html', pageTitle: '뉴스룸', title: '강의실 UI/UX 전면 개편', description: 'AI 학습보조, 다크테마, 보드형 구조로 재설계', badge: 'UI/UX', link: 'news/article-classroom-renewal.html', thumbnail: 'assets/articles/강의실UI_UX전면개편.png' },
-    { page: 'news/newsroom.html', pageTitle: '뉴스룸', title: '데이터 및 검색엔진 전면 개편', description: '학습데이터 API 구축 및 OpenSearch 전환', badge: 'Data·Search', link: 'news/article-data-search-engine.html', thumbnail: 'assets/articles/검색엔진전면개편.png' },
-    { page: 'news/newsroom.html', pageTitle: '뉴스룸', title: '보안 체계 강화', description: 'KISA 보안약점, 세션 안정화, OAuth 인증', badge: 'Security', link: 'news/article-security-enhancement.html', thumbnail: 'assets/articles/보안체계강화.png' },
-    { page: 'news/newsroom.html', pageTitle: '뉴스룸', title: '사용자 중심 UI 개선', description: 'Footer 리뉴얼, 팝업 정렬, QR 공유 기능', badge: 'User Experience', link: 'news/article-ui-improvement.html', thumbnail: 'assets/articles/사용자중심UI개선.png' },
-    { page: 'news/newsroom.html', pageTitle: '뉴스룸', title: '신규 기관 맞춤 기능 반영', description: '검색 강화, 수료증 출력, OTP 인증 추가', badge: 'Customization', link: 'news/article-custom-features.html', thumbnail: 'assets/articles/신규기관맞춤기능반영.png' },
+    { page: 'news/newsroom.html', pageTitle: '뉴스룸', title: '데이터 및 검색엔진 전면 개편', description: '학습데이터 API 구축 및 OpenSearch 전환', badge: '데이터·검색', link: 'news/article-data-search-engine.html', thumbnail: 'assets/articles/검색엔진전면개편.png' },
+    { page: 'news/newsroom.html', pageTitle: '뉴스룸', title: '보안 체계 강화', description: 'KISA 보안약점, 세션 안정화, OAuth 인증', badge: '보안', link: 'news/article-security-enhancement.html', thumbnail: 'assets/articles/보안체계강화.png' },
+    { page: 'news/newsroom.html', pageTitle: '뉴스룸', title: '사용자 중심 UI 개선', description: 'Footer 리뉴얼, 팝업 정렬, QR 공유 기능', badge: '사용자 경험', link: 'news/article-ui-improvement.html', thumbnail: 'assets/articles/사용자중심UI개선.png' },
+    { page: 'news/newsroom.html', pageTitle: '뉴스룸', title: '신규 기관 맞춤 기능 반영', description: '검색 강화, 수료증 출력, OTP 인증 추가', badge: '맞춤화', link: 'news/article-custom-features.html', thumbnail: 'assets/articles/신규기관맞춤기능반영.png' },
     { page: 'solution/tips.html', pageTitle: '가성비의 전문 솔루션', title: '통합 검색엔진', description: '검색어 추천, 자연어 검색, 검색 통계', badge: '솔루션', link: 'solution/article-search-engine.html', thumbnail: 'assets/thumbnails/검색엔진.png' },
-    { page: 'news/newsroom.html', pageTitle: '뉴스룸', title: '통합검색 및 홍보영상 기능 강화', description: '통합 검색 및 대시보드 기능 향상', badge: 'Integration', link: 'solution/article-integrated-search.html', thumbnail: 'assets/articles/통합검색및홍보영상기능강화.png' },
+    { page: 'news/newsroom.html', pageTitle: '뉴스룸', title: '통합검색 및 홍보영상 기능 강화', description: '통합 검색 및 대시보드 기능 향상', badge: '통합', link: 'solution/article-integrated-search.html', thumbnail: 'assets/articles/통합검색및홍보영상기능강화.png' },
     
     // 개발 업데이트 (dev-update.html)
     { page: 'update/dev-update.html', pageTitle: '개발 업데이트', title: '강의실 UI/UX 전면 개편', description: 'AI 학습보조, 다크테마, 보드형 구조로 재설계', badge: 'UI/UX', link: 'news/article-classroom-renewal.html', thumbnail: 'assets/articles/강의실UI_UX전면개편.png' },
