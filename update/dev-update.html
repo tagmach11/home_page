@@ -1558,6 +1558,25 @@
                         link.classList.add('active');
                     }
                 });
+                
+                // 자동으로 더보기 활성화 (더보기 영역의 첫 번째 항목에 도달하면)
+                const moreMenu = document.getElementById('nav-menu-more');
+                const defaultMenu = document.getElementById('nav-menu-default');
+                const moreBtn = document.querySelector('.nav-more-btn');
+                
+                if (moreMenu && moreBtn && defaultMenu && !moreMenu.classList.contains('show')) {
+                    // 더보기 영역의 첫 번째 버전 섹션 찾기 (version-2.1.0)
+                    const firstMoreVersion = document.getElementById('version-2.1.0');
+                    if (firstMoreVersion) {
+                        const firstMoreVersionTop = firstMoreVersion.offsetTop;
+                        // 스크롤이 더보기 영역의 첫 번째 항목 근처에 도달하면 자동으로 더보기 활성화
+                        if (window.pageYOffset >= firstMoreVersionTop - 300) {
+                            moreMenu.classList.add('show');
+                            defaultMenu.classList.add('hide');
+                            moreBtn.textContent = '접기';
+                        }
+                    }
+                }
             }
         });
         
