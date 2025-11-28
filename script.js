@@ -860,6 +860,203 @@ navItems.forEach(item => {
 
 console.log('Blog page loaded successfully!');
 
+// Latest Cards Banner Auto Slide
+function initLatestCardsBanner() {
+    const bannerContainer = document.querySelector('.latest-cards-banner');
+    if (!bannerContainer) return;
+
+    const slides = bannerContainer.querySelectorAll('.banner-slide');
+    const indicators = bannerContainer.querySelectorAll('.banner-indicators .indicator');
+    
+    if (slides.length === 0) return;
+
+    let currentIndex = 0;
+    let slideInterval = null;
+    const slideDuration = 5000; // 5초마다 넘어감
+
+    // 특정 인덱스의 슬라이드를 활성화
+    function showSlide(index) {
+        // 인덱스 범위 체크
+        if (index < 0) index = slides.length - 1;
+        if (index >= slides.length) index = 0;
+
+        // 모든 슬라이드 비활성화
+        slides.forEach((slide, i) => {
+            slide.classList.remove('active');
+            indicators[i].classList.remove('active');
+        });
+
+        // 선택된 슬라이드 활성화
+        slides[index].classList.add('active');
+        indicators[index].classList.add('active');
+
+        currentIndex = index;
+    }
+
+    // 다음 슬라이드로 이동
+    function nextSlide() {
+        showSlide(currentIndex + 1);
+    }
+
+    // 인디케이터 클릭 이벤트
+    indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', () => {
+            // 자동 슬라이드 재시작
+            restartAutoSlide();
+            showSlide(index);
+        });
+    });
+
+    // 자동 슬라이드 시작
+    function startAutoSlide() {
+        slideInterval = setInterval(nextSlide, slideDuration);
+    }
+
+    // 자동 슬라이드 중지
+    function stopAutoSlide() {
+        if (slideInterval) {
+            clearInterval(slideInterval);
+            slideInterval = null;
+        }
+    }
+
+    // 자동 슬라이드 재시작
+    function restartAutoSlide() {
+        stopAutoSlide();
+        startAutoSlide();
+    }
+
+    // 배너에 마우스가 올라가면 자동 슬라이드 중지
+    bannerContainer.addEventListener('mouseenter', stopAutoSlide);
+    bannerContainer.addEventListener('mouseleave', startAutoSlide);
+
+    // 첫 번째 슬라이드 활성화
+    showSlide(0);
+
+    // 자동 슬라이드 시작
+    startAutoSlide();
+
+    // 페이지가 보이지 않을 때 자동 슬라이드 중지 (탭 전환 시)
+    document.addEventListener('visibilitychange', () => {
+        if (document.hidden) {
+            stopAutoSlide();
+        } else {
+            startAutoSlide();
+        }
+    });
+}
+
+// Initialize banner when DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initLatestCardsBanner);
+} else {
+    initLatestCardsBanner();
+}
+
+// Hero Card Slide Auto Slide
+function initHeroCardSlide() {
+    const heroSection = document.querySelector('.hero-testimonial');
+    if (!heroSection) return;
+
+    const slides = heroSection.querySelectorAll('.hero-card-slide');
+    
+    if (slides.length === 0) return;
+
+    let currentIndex = 0;
+    let slideInterval = null;
+    const slideDuration = 5000; // 5초마다 넘어감
+
+    // 특정 인덱스의 슬라이드를 활성화
+    function showSlide(index) {
+        // 인덱스 범위 체크
+        if (index < 0) index = slides.length - 1;
+        if (index >= slides.length) index = 0;
+
+        // 모든 슬라이드 비활성화
+        slides.forEach((slide, i) => {
+            slide.classList.remove('active');
+        });
+
+        // 모든 메뉴 언더라인 비활성화
+        const brandWrappers = document.querySelectorAll('.brand-item-wrapper');
+        brandWrappers.forEach(wrapper => {
+            wrapper.classList.remove('active');
+            const underline = wrapper.querySelector('.brand-underline');
+            if (underline) {
+                underline.style.animation = 'none';
+                // 애니메이션 재시작을 위해 약간의 지연
+                setTimeout(() => {
+                    underline.style.animation = '';
+                }, 10);
+            }
+        });
+
+        // 선택된 슬라이드 활성화
+        slides[index].classList.add('active');
+
+        // 선택된 메뉴 언더라인 활성화
+        const activeBrandWrapper = document.querySelector(`.brand-item-wrapper[data-slide="${index}"]`);
+        if (activeBrandWrapper) {
+            activeBrandWrapper.classList.add('active');
+        }
+
+        currentIndex = index;
+    }
+
+    // 다음 슬라이드로 이동
+    function nextSlide() {
+        showSlide(currentIndex + 1);
+    }
+
+    // 자동 슬라이드 시작
+    function startAutoSlide() {
+        slideInterval = setInterval(nextSlide, slideDuration);
+    }
+
+    // 자동 슬라이드 중지
+    function stopAutoSlide() {
+        if (slideInterval) {
+            clearInterval(slideInterval);
+            slideInterval = null;
+        }
+    }
+
+    // 자동 슬라이드 재시작
+    function restartAutoSlide() {
+        stopAutoSlide();
+        startAutoSlide();
+    }
+
+    // 히어로 섹션에 마우스가 올라가면 자동 슬라이드 중지
+    const heroGlassSection = document.querySelector('.hero-glass-section');
+    if (heroGlassSection) {
+        heroGlassSection.addEventListener('mouseenter', stopAutoSlide);
+        heroGlassSection.addEventListener('mouseleave', startAutoSlide);
+    }
+
+    // 첫 번째 슬라이드 활성화
+    showSlide(0);
+
+    // 자동 슬라이드 시작
+    startAutoSlide();
+
+    // 페이지가 보이지 않을 때 자동 슬라이드 중지 (탭 전환 시)
+    document.addEventListener('visibilitychange', () => {
+        if (document.hidden) {
+            stopAutoSlide();
+        } else {
+            startAutoSlide();
+        }
+    });
+}
+
+// Initialize hero card slide when DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initHeroCardSlide);
+} else {
+    initHeroCardSlide();
+}
+
 // Active TOC highlighting on scroll
 function initTOC() {
     const tocLinks = document.querySelectorAll('.toc-link');
