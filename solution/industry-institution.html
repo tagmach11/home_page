@@ -54,60 +54,234 @@
                             <p class="industry-hero-text">"다양한 교육 프로그램을 안정적으로 운영할 수 있는 통합 학습관리 솔루션을 제공합니다."</p>
                         </div>
                     </div>
-                    <div class="industry-hero-image">
-                        <div class="hero-image-bg active" data-hero="standard"></div>
-                        <div class="hero-image-bg" data-hero="certification"></div>
-                        <div class="hero-image-bg" data-hero="framework"></div>
-                        <div class="hero-image-bg" data-hero="compliance"></div>
-                        <div class="hero-ui-overlay active" data-overlay="standard">
-                            <div class="glass-card">
-                                <div class="glass-card-header">
-                                    <div class="glass-dot"></div>
-                                    <div class="glass-dot"></div>
-                                    <div class="glass-dot"></div>
+                    <!-- Movie Style Slider -->
+                    <div class="movie-slider-container">
+                        
+
+                        <div class="cards-wrapper">
+                            <div class="card" onclick="toggleCard(0)">
+                                <div class="card-bg" style="background: linear-gradient(135deg, #1a1a2e 0%, #1e3a8a 50%, #0f3460 100%)"></div>
+                                <div class="card-logo" style="background-image: url('../assets/slide/koroadlogo.png');"></div>
+                                <div class="card-main-image" style="background-image: url('../assets/slide/koroadmain.png');"></div>
+                                <div class="card-overlay" style="background: linear-gradient(135deg, #5b21b6 0%, #312e81 100%)"></div>
+                                <div class="card-content">
+                                    <div class="card-number">01</div>
+                                    <div class="card-title-vertical">
+                                        <div class="vertical-text">도로교통 공단</div>
+                                        <button class="add-btn">+</button>
+                                    </div>
                                 </div>
-                                <div class="glass-card-content">
-                                    <div class="glass-badge">공공기관 수준</div>
-                                    <div class="glass-badge">안정성·규정준수</div>
+                                <div class="expanded-content">
+                                    <button class="close-btn" onclick="closeCard(event)">&times;</button>
+                                    <div class="solution-header">
+                                        <h1>공공기관 수준</h1>
+                                        <h2>기준을 충족하는 LMS 구조</h2>
+                                        <div class="stars">
+                                            <span class="star">&#9733;</span>
+                                            <span class="star">&#9733;</span>
+                                            <span class="star">&#9733;</span>
+                                            <span class="star">&#9733;</span>
+                                            <span class="star">&#9733;</span>
+                                        </div>
+                                    </div>
+                                    <div class="solution-info">
+                                        <p class="description">
+                                            웹표준 준수, 웹취약점 점검, 개인정보보호 등 공공기관이 필수로 점검해야 하는 항목들을 LX2는 기본 구조에서 모두 충족하도록 설계되었습니다. 별도의 추가 작업이나 커스터마이징 없이도 법적·기술적 기준을 자연스럽게 만족할 수 있습니다.
+                                        </p>
+                                        <div class="details">
+                                            <div class="detail-row">
+                                                <span class="detail-label">산업 유형:</span>
+                                                <span>공공기관 솔루션</span>
+                                            </div>
+                                            <div class="detail-row">
+                                                <span class="detail-label">주요 기능:</span>
+                                                <span>웹표준 준수, 보안 체계, 개인정보보호</span>
+                                            </div>
+                                            <div class="detail-row">
+                                                <span class="detail-label">참고사항:</span>
+                                                <span>전자정부프레임워크, 공공데이터 품질관리</span>
+                                            </div>
+                                            <div class="detail-row">
+                                                <span class="detail-label">적용 범위:</span>
+                                                <span>공공기관, 교육기관, 공공서비스</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="solution-meta">
+                                        <div class="meta-item">&#9200; 즉시 운영 가능</div>
+                                        <div class="category-tag">공공기관 표준</div>
+                                        <div class="meta-item">&#128200; 검증 완료</div>
+                                    </div>
+                                    <button class="play-btn"><div class="play-icon"></div></button>
+                                    <button class="add-btn add-btn-expanded">+</button>
                                 </div>
                             </div>
-                        </div>
-                        <div class="hero-ui-overlay" data-overlay="certification">
-                            <div class="glass-card">
-                                <div class="glass-card-header">
-                                    <div class="glass-dot"></div>
-                                    <div class="glass-dot"></div>
-                                    <div class="glass-dot"></div>
+
+                            <div class="card" onclick="toggleCard(1)">
+                                <div class="card-bg" style="background: linear-gradient(135deg, #06471e 0%, #059669 50%, #03410f 100%)"></div>
+                                <div class="card-overlay" style="background: linear-gradient(135deg, #1f2937 0%, #111827 100%)"></div>
+                                <div class="card-content">
+                                    <div class="card-number">02</div>
+                                    <div class="card-title-vertical">
+                                        <div class="vertical-text">웹접근성 인증</div>
+                                        <button class="add-btn">+</button>
+                                    </div>
                                 </div>
-                                <div class="glass-card-content">
-                                    <div class="glass-badge">웹접근성 인증</div>
-                                    <div class="glass-badge">구조적 해결</div>
+                                <div class="expanded-content">
+                                    <button class="close-btn" onclick="closeCard(event)">&times;</button>
+                                    <div class="solution-header">
+                                        <h1>웹접근성 인증</h1>
+                                        <h2>구조적으로 해결</h2>
+                                        <div class="stars">
+                                            <span class="star">&#9733;</span>
+                                            <span class="star">&#9733;</span>
+                                            <span class="star">&#9733;</span>
+                                            <span class="star">&#9733;</span>
+                                            <span class="star">&#9733;</span>
+                                        </div>
+                                    </div>
+                                    <div class="solution-info">
+                                        <p class="description">
+                                            대부분의 LMS는 매년 웹접근성 인증을 받아야 하는 구조적 문제가 있습니다. LX2는 전자정부프레임워크 기반으로 구축되어 있어, 재인증 없이 접근성 요구사항을 구조적으로 충족합니다.
+                                        </p>
+                                        <div class="details">
+                                            <div class="detail-row">
+                                                <span class="detail-label">산업 유형:</span>
+                                                <span>접근성 인증 솔루션</span>
+                                            </div>
+                                            <div class="detail-row">
+                                                <span class="detail-label">주요 기능:</span>
+                                                <span>구조적 접근성, 재인증 불필요, 지속적 준수</span>
+                                            </div>
+                                            <div class="detail-row">
+                                                <span class="detail-label">참고사항:</span>
+                                                <span>웹 접근성 지침, 전자정부프레임워크</span>
+                                            </div>
+                                            <div class="detail-row">
+                                                <span class="detail-label">적용 범위:</span>
+                                                <span>모든 공공기관, 웹서비스 제공자</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="solution-meta">
+                                        <div class="meta-item">&#9200; 재인증 불필요</div>
+                                        <div class="category-tag">구조적 해결</div>
+                                        <div class="meta-item">&#128200; 지속적 준수</div>
+                                    </div>
+                                    <button class="play-btn"><div class="play-icon"></div></button>
+                                    <button class="add-btn add-btn-expanded">+</button>
                                 </div>
                             </div>
-                        </div>
-                        <div class="hero-ui-overlay" data-overlay="framework">
-                            <div class="glass-card">
-                                <div class="glass-card-header">
-                                    <div class="glass-dot"></div>
-                                    <div class="glass-dot"></div>
-                                    <div class="glass-dot"></div>
+
+                            <div class="card" onclick="toggleCard(2)">
+                                <div class="card-bg" style="background: linear-gradient(135deg, #3c1d5e 0%, #6d28d9 50%, #4c1d95 100%)"></div>
+                                <div class="card-overlay" style="background: linear-gradient(135deg, #991b1b 0%, #c2410c 100%)"></div>
+                                <div class="card-content">
+                                    <div class="card-number">03</div>
+                                    <div class="card-title-vertical">
+                                        <div class="vertical-text">전자정부 프레임워크</div>
+                                        <button class="add-btn">+</button>
+                                    </div>
                                 </div>
-                                <div class="glass-card-content">
-                                    <div class="glass-badge">전자정부프레임워크</div>
-                                    <div class="glass-badge">안정적 아키텍처</div>
+                                <div class="expanded-content">
+                                    <button class="close-btn" onclick="closeCard(event)">&times;</button>
+                                    <div class="solution-header">
+                                        <h1>전자정부 프레임워크</h1>
+                                        <h2>안정적 아키텍처</h2>
+                                        <div class="stars">
+                                            <span class="star">&#9733;</span>
+                                            <span class="star">&#9733;</span>
+                                            <span class="star">&#9733;</span>
+                                            <span class="star">&#9733;</span>
+                                            <span class="star">&#9733;</span>
+                                        </div>
+                                    </div>
+                                    <div class="solution-info">
+                                        <p class="description">
+                                            LX2는 전자정부프레임워크를 기반으로 구축되어 있어, 공공기관에서 검증된 안정적인 구조를 제공합니다. 보안, 확장성, 유지보수성 모든 측면에서 검증된 아키텍처를 활용합니다.
+                                        </p>
+                                        <div class="details">
+                                            <div class="detail-row">
+                                                <span class="detail-label">산업 유형:</span>
+                                                <span>프레임워크 기반 솔루션</span>
+                                            </div>
+                                            <div class="detail-row">
+                                                <span class="detail-label">주요 기능:</span>
+                                                <span>전자정부프레임워크, 검증된 구조, 안정적 운영</span>
+                                            </div>
+                                            <div class="detail-row">
+                                                <span class="detail-label">참고사항:</span>
+                                                <span>전자정부프레임워크, 공공기관 표준</span>
+                                            </div>
+                                            <div class="detail-row">
+                                                <span class="detail-label">적용 범위:</span>
+                                                <span>공공기관, 정부기관, 공공서비스</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="solution-meta">
+                                        <div class="meta-item">&#9200; 검증된 구조</div>
+                                        <div class="category-tag">안정적 운영</div>
+                                        <div class="meta-item">&#128200; 확장 가능</div>
+                                    </div>
+                                    <button class="play-btn"><div class="play-icon"></div></button>
+                                    <button class="add-btn add-btn-expanded">+</button>
                                 </div>
                             </div>
-                        </div>
-                        <div class="hero-ui-overlay" data-overlay="compliance">
-                            <div class="glass-card">
-                                <div class="glass-card-header">
-                                    <div class="glass-dot"></div>
-                                    <div class="glass-dot"></div>
-                                    <div class="glass-dot"></div>
+
+                            <div class="card" onclick="toggleCard(3)">
+                                <div class="card-bg" style="background: linear-gradient(135deg, #7c2d12 0%, #d97706 50%, #92410e 100%)"></div>
+                                <div class="card-overlay" style="background: linear-gradient(135deg, #1e40af 0%, #0e7490 100%)"></div>
+                                <div class="card-content">
+                                    <div class="card-number">04</div>
+                                    <div class="card-title-vertical">
+                                        <div class="vertical-text">규약 준수</div>
+                                        <button class="add-btn">+</button>
+                                    </div>
                                 </div>
-                                <div class="glass-card-content">
-                                    <div class="glass-badge">규약 준수</div>
-                                    <div class="glass-badge">감독기관 대응</div>
+                                <div class="expanded-content">
+                                    <button class="close-btn" onclick="closeCard(event)">&times;</button>
+                                    <div class="solution-header">
+                                        <h1>규약 준수</h1>
+                                        <h2>감독기관 점검에도 완벽 대응</h2>
+                                        <div class="stars">
+                                            <span class="star">&#9733;</span>
+                                            <span class="star">&#9733;</span>
+                                            <span class="star">&#9733;</span>
+                                            <span class="star">&#9733;</span>
+                                            <span class="star">&#9733;</span>
+                                        </div>
+                                    </div>
+                                    <div class="solution-info">
+                                        <p class="description">
+                                            LX2는 전자정부 UI/UX 가이드라인, 공공데이터 품질관리, 정보보안 가이드라인 등 공공 분야에서 요구되는 다양한 규약을 모두 준수하도록 설계되었습니다. 모든 규약을 준수하고 있기 때문에, 감사나 감독기관의 점검에서도 문제 없이 대응할 수 있습니다.
+                                        </p>
+                                        <div class="details">
+                                            <div class="detail-row">
+                                                <span class="detail-label">산업 유형:</span>
+                                                <span>규약 준수 솔루션</span>
+                                            </div>
+                                            <div class="detail-row">
+                                                <span class="detail-label">주요 기능:</span>
+                                                <span>규약 준수, 감사 대응, 체계적 관리</span>
+                                            </div>
+                                            <div class="detail-row">
+                                                <span class="detail-label">참고사항:</span>
+                                                <span>전자정부 가이드라인, 공공데이터 품질관리</span>
+                                            </div>
+                                            <div class="detail-row">
+                                                <span class="detail-label">적용 범위:</span>
+                                                <span>모든 공공기관, 감사 대상 기관</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="solution-meta">
+                                        <div class="meta-item">&#9200; 감사 대응</div>
+                                        <div class="category-tag">규약 준수</div>
+                                        <div class="meta-item">&#128200; 완벽 대응</div>
+                                    </div>
+                                    <button class="play-btn"><div class="play-icon"></div></button>
+                                    <button class="add-btn add-btn-expanded">+</button>
                                 </div>
                             </div>
                         </div>
@@ -128,7 +302,7 @@
                         <div class="feature-left">
                             <h2 class="feature-title">공공기관 수준의 기준을 충족하는 LMS 구조</h2>
                             <div class="feature-accordion">
-                                <div class="accordion-item">
+                                <div class="accordion-item" data-image-variant="compliance-standard">
                                     <div class="accordion-header">
                                         <span>공공기관 기준: 웹표준·보안·개인정보보호 기본 충족</span>
                                         <span class="accordion-icon">+</span>
@@ -137,7 +311,7 @@
                                         <p>웹표준 준수, 웹취약점 점검, 개인정보보호 등 공공기관이 필수로 점검해야 하는 항목들을 LX2는 기본 구조에서 모두 충족하도록 설계되었습니다. 별도의 추가 작업이나 커스터마이징 없이도 법적·기술적 기준을 자연스럽게 만족할 수 있습니다.</p>
                                     </div>
                                 </div>
-                                <div class="accordion-item">
+                                <div class="accordion-item" data-image-variant="immediate-operation">
                                     <div class="accordion-header">
                                         <span>즉시 운영: 추가 작업 없이 법적·기술적 기준 충족</span>
                                         <span class="accordion-icon">+</span>
@@ -150,18 +324,182 @@
                         </div>
                         <div class="feature-right">
                             <div class="feature-image-large">
-                                <div class="feature-bg-blur"></div>
-                                <div class="feature-ui-overlay">
-                                    <div class="glass-card large">
-                                        <div class="glass-card-header">
-                                            <div class="glass-dot"></div>
-                                            <div class="glass-dot"></div>
-                                            <div class="glass-dot"></div>
+                                <!-- 이미지 변형 1: 공공기관 기준 -->
+                                <div class="feature-image-variant active" data-variant="compliance-standard">
+                                    <!-- blog 2의 HTML 코드 -->
+                                    <div class="compliance-section-inline">
+                                        <div class="container-inline">
+                                            <!-- 배지 -->
+                                            <div class="badge">
+                                                <span class="badge-icon">✓</span>
+                                                <span class="badge-text">공공기관 기준</span>
+                                            </div>
+
+                                            <!-- 메인 타이틀 -->
+                                            <h2 class="section-title">
+                                                웹 표준·보안·개인정보보호
+                                            </h2>
+
+                                            <!-- 체크리스트 카드 -->
+                                            <div class="compliance-cards">
+                                                <div class="card">
+                                                    <div class="card-icon">
+                                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                            <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/>
+                                                            <path d="M9 12l2 2 4-4"/>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="card-content">
+                                                        <h3 class="card-title">웹 표준 준수</h3>
+                                                        <ul class="card-list">
+                                                            <li>HTML5/CSS3 표준 마크업</li>
+                                                            <li>크로스 브라우징 지원</li>
+                                                            <li>시맨틱 웹 구조</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+
+                                                <div class="card">
+                                                    <div class="card-icon">
+                                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                                            <path d="M9 12l2 2 4-4"/>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="card-content">
+                                                        <h3 class="card-title">보안 취약점 대응</h3>
+                                                        <ul class="card-list">
+                                                            <li>XSS/CSRF 방어 구조</li>
+                                                            <li>SQL Injection 방지</li>
+                                                            <li>보안 헤더 자동 설정</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+
+                                                <div class="card">
+                                                    <div class="card-icon">
+                                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                                            <circle cx="9" cy="7" r="4"/>
+                                                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                                                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="card-content">
+                                                        <h3 class="card-title">개인정보보호</h3>
+                                                        <ul class="card-list">
+                                                            <li>암호화 저장 기본 적용</li>
+                                                            <li>접근권한 관리 체계</li>
+                                                            <li>개인정보 처리방침 템플릿</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="glass-card-content">
-                                            <div class="glass-badge">웹표준</div>
-                                            <div class="glass-badge">웹취약점 대응</div>
-                                            <div class="glass-badge">개인정보보호</div>
+                                    </div>
+                                </div>
+                                <!-- 이미지 변형 2: 즉시 운영 -->
+                                <div class="feature-image-variant" data-variant="immediate-operation">
+                                    <!-- page2.html의 HTML 코드 -->
+                                    <div class="section-inline">
+                                        <div class="content-inline">
+                                            <!-- 배지 -->
+                                            <div class="badge-inline">
+                                                <span class="badge-icon-inline">
+                                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                                        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                                                    </svg>
+                                                </span>
+                                                <span>즉시 운영</span>
+                                            </div>
+
+                                            <!-- 제목 -->
+                                            <h2 class="title-inline">
+                                                추가 작업 없이<br>
+                                                법적·기술적 기준 충족
+                                            </h2>
+
+                                            <!-- 시각적 플로우 -->
+                                            <div class="visual-flow">
+                                                <div class="flow-item">
+                                                    <div class="flow-icon">
+                                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                                                            <line x1="8" y1="21" x2="16" y2="21"/>
+                                                            <line x1="12" y1="17" x2="12" y2="21"/>
+                                                        </svg>
+                                                    </div>
+                                                    <span class="flow-label">LX2 도입</span>
+                                                </div>
+                                                
+                                                <div class="flow-arrow">
+                                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                                                    </svg>
+                                                </div>
+                                                
+                                                <div class="flow-item">
+                                                    <div class="flow-icon check">
+                                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                                            <path d="M20 6L9 17l-5-5"/>
+                                                        </svg>
+                                                    </div>
+                                                    <span class="flow-label">즉시 운영</span>
+                                                </div>
+                                            </div>
+
+                                            <!-- 특징 리스트 -->
+                                            <div class="features-inline">
+                                                <div class="feature-item-inline">
+                                                    <div class="feature-icon-inline">
+                                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                                            <polyline points="22 4 12 14.01 9 11.01"/>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="feature-content-inline">
+                                                        <div class="feature-text-inline">별도 검증 작업 불필요</div>
+                                                        <div class="feature-desc-inline">사전 인증 완료된 구조로 추가 검증 없이 운영</div>
+                                                    </div>
+                                                </div>
+                                                <div class="feature-item-inline">
+                                                    <div class="feature-icon-inline">
+                                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                                                            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="feature-content-inline">
+                                                        <div class="feature-text-inline">안정적이고 안전한 운영 환경</div>
+                                                        <div class="feature-desc-inline">보안 점검 기준 기본 통과</div>
+                                                    </div>
+                                                </div>
+                                                <div class="feature-item-inline">
+                                                    <div class="feature-icon-inline">
+                                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                            <circle cx="12" cy="12" r="10"/>
+                                                            <path d="M16 8l-4 4-4-4"/>
+                                                            <path d="M12 16V12"/>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="feature-content-inline">
+                                                        <div class="feature-text-inline">운영 비용 절감</div>
+                                                        <div class="feature-desc-inline">추가 개발 및 커스터마이징 비용 최소화</div>
+                                                    </div>
+                                                </div>
+                                                <div class="feature-item-inline">
+                                                    <div class="feature-icon-inline">
+                                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                                            <path d="M9 12l2 2 4-4"/>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="feature-content-inline">
+                                                        <div class="feature-text-inline">지속적인 품질 유지</div>
+                                                        <div class="feature-desc-inline">법적·기술적 기준에 맞춘 안정적 서비스</div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -173,18 +511,223 @@
                     <div class="industry-feature-section" id="feature-certification" data-feature="certification">
                         <div class="feature-left feature-image-left">
                             <div class="feature-image-large">
-                                <div class="feature-bg-blur certification"></div>
-                                <div class="feature-ui-overlay">
-                                    <div class="glass-card large">
-                                        <div class="glass-card-header">
-                                            <div class="glass-dot"></div>
-                                            <div class="glass-dot"></div>
-                                            <div class="glass-dot"></div>
+                                <!-- 이미지 변형 1: 접근성 인증 -->
+                                <div class="feature-image-variant active" data-variant="accessibility-certification">
+                                    <!-- page3.html의 HTML 코드 -->
+                                    <div class="section-inline-page3">
+                                        <div class="content-inline-page3">
+                                            <!-- 배지 -->
+                                            <div class="badge-inline-page3">
+                                                <span class="badge-icon-inline-page3">
+                                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                                        <circle cx="12" cy="12" r="10"/>
+                                                        <line x1="12" y1="8" x2="12" y2="12"/>
+                                                        <line x1="12" y1="16" x2="12.01" y2="16"/>
+                                                    </svg>
+                                                </span>
+                                                <span>접근성 인증</span>
+                                            </div>
+
+                                            <!-- 제목 -->
+                                            <h2 class="title-inline-page3">
+                                                대부분의 LMS는<br>
+                                                <span class="highlight-inline">매년 재인증 필요</span>
+                                            </h2>
+
+                                            <!-- 반복 사이클 시각화 -->
+                                            <div class="cycle-visual">
+                                                <div class="cycle-container">
+                                                    <div class="cycle-ring"></div>
+                                                    <div class="cycle-dots">
+                                                        <div class="cycle-dot">
+                                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                                                <polyline points="14 2 14 8 20 8"/>
+                                                            </svg>
+                                                        </div>
+                                                        <div class="cycle-dot">
+                                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                                                <polyline points="22 4 12 14.01 9 11.01"/>
+                                                            </svg>
+                                                        </div>
+                                                        <div class="cycle-dot">
+                                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                                <circle cx="12" cy="12" r="10"/>
+                                                                <polyline points="12 6 12 12 16 14"/>
+                                                            </svg>
+                                                        </div>
+                                                        <div class="cycle-dot">
+                                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                                <line x1="12" y1="1" x2="12" y2="23"/>
+                                                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                    <div class="cycle-center">
+                                                        <span class="year">1년</span>
+                                                        <span class="label">주기</span>
+                                                    </div>
+                                                </div>
+                                                <div class="cycle-label">
+                                                    <div class="main">매년 반복되는 인증</div>
+                                                    <div class="sub">구축 사례마다 별도 인증 필요</div>
+                                                </div>
+                                            </div>
+
+                                            <!-- 문제점 리스트 -->
+                                            <div class="problems-inline">
+                                                <div class="problem-item-inline">
+                                                    <div class="problem-icon-inline">
+                                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                                            <polyline points="14 2 14 8 20 8"/>
+                                                            <line x1="16" y1="13" x2="8" y2="13"/>
+                                                            <line x1="16" y1="17" x2="8" y2="17"/>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="problem-content-inline">
+                                                        <div class="problem-text-inline">각 구축 사례마다 별도 인증</div>
+                                                        <div class="problem-desc-inline">동일한 LMS라도 매번 새로 인증 필요</div>
+                                                    </div>
+                                                </div>
+                                                <div class="problem-item-inline">
+                                                    <div class="problem-icon-inline">
+                                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                            <circle cx="12" cy="12" r="10"/>
+                                                            <polyline points="12 6 12 12 16 14"/>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="problem-content-inline">
+                                                        <div class="problem-text-inline">반복적인 인증 작업</div>
+                                                        <div class="problem-desc-inline">매년 시간이 소요되는 재인증 절차</div>
+                                                    </div>
+                                                </div>
+                                                <div class="problem-item-inline">
+                                                    <div class="problem-icon-inline">
+                                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                            <line x1="12" y1="1" x2="12" y2="23"/>
+                                                            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="problem-content-inline">
+                                                        <div class="problem-text-inline">비용 부담 증가</div>
+                                                        <div class="problem-desc-inline">인증 비용이 지속적으로 발생</div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="glass-card-content">
-                                            <div class="glass-badge">구조적 해결</div>
-                                            <div class="glass-badge">재인증 불필요</div>
-                                            <div class="glass-badge">안정적 충족</div>
+                                    </div>
+                                </div>
+                                <!-- 이미지 변형 2: 구조적 해결 -->
+                                <div class="feature-image-variant" data-variant="structural-solution">
+                                    <!-- page4.html의 HTML 코드 -->
+                                    <div class="section-inline-page4">
+                                        <div class="content-inline-page4">
+                                            <!-- 배지 -->
+                                            <div class="badge-inline-page4">
+                                                <span class="badge-icon-inline-page4">
+                                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                                        <polyline points="22 4 12 14.01 9 11.01"/>
+                                                    </svg>
+                                                </span>
+                                                <span>구조적 해결</span>
+                                            </div>
+
+                                            <!-- 제목 -->
+                                            <h2 class="title-inline-page4">
+                                                재인증 없이<br>
+                                                <span class="highlight-inline-page4">접근성 요구사항 충족</span>
+                                            </h2>
+
+                                            <!-- 해결책 시각화 -->
+                                            <div class="solution-visual">
+                                                <div class="solution-before">
+                                                    <div class="solution-icon-wrap">
+                                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                            <path d="M21 12a9 9 0 0 1-9 9m9-9a9 9 0 0 0-9-9m9 9H3m9 9a9 9 0 0 1-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 0 1 9-9"/>
+                                                        </svg>
+                                                    </div>
+                                                    <span class="solution-label">매년 재인증</span>
+                                                </div>
+
+                                                <div class="solution-arrow">
+                                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                                                    </svg>
+                                                </div>
+
+                                                <div class="solution-after">
+                                                    <div class="solution-icon-wrap">
+                                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                                            <path d="M9 12l2 2 4-4"/>
+                                                        </svg>
+                                                    </div>
+                                                    <span class="solution-label">인증 완료 구조</span>
+                                                </div>
+
+                                                <div class="solution-text">
+                                                    <div class="main">공공기관 인증 구조 기반</div>
+                                                    <div class="sub">이미 검증된 구조로 개발되어<br>별도 재인증 불필요</div>
+                                                </div>
+                                            </div>
+
+                                            <!-- 장점 리스트 -->
+                                            <div class="benefits-inline">
+                                                <div class="benefit-item-inline">
+                                                    <div class="benefit-icon-inline">
+                                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="benefit-content-inline">
+                                                        <div class="benefit-text-inline">공공기관 인증 구조 기반</div>
+                                                        <div class="benefit-desc-inline">이미 검증된 구조로 안정성 확보</div>
+                                                    </div>
+                                                </div>
+                                                <div class="benefit-item-inline">
+                                                    <div class="benefit-icon-inline">
+                                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                                                            <line x1="16" y1="2" x2="16" y2="6"/>
+                                                            <line x1="8" y1="2" x2="8" y2="6"/>
+                                                            <line x1="3" y1="10" x2="21" y2="10"/>
+                                                            <path d="M9 16l2 2 4-4"/>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="benefit-content-inline">
+                                                        <div class="benefit-text-inline">신규 구축 시 재인증 불필요</div>
+                                                        <div class="benefit-desc-inline">새로운 사례에서도 동일한 인증 효력</div>
+                                                    </div>
+                                                </div>
+                                                <div class="benefit-item-inline">
+                                                    <div class="benefit-icon-inline">
+                                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                            <circle cx="12" cy="12" r="10"/>
+                                                            <path d="M16 8l-4 4-4-4"/>
+                                                            <path d="M12 16V12"/>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="benefit-content-inline">
+                                                        <div class="benefit-text-inline">반복 인증 부담 해소</div>
+                                                        <div class="benefit-desc-inline">매년 발생하는 인증 비용 절감</div>
+                                                    </div>
+                                                </div>
+                                                <div class="benefit-item-inline">
+                                                    <div class="benefit-icon-inline">
+                                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                                            <polyline points="22 4 12 14.01 9 11.01"/>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="benefit-content-inline">
+                                                        <div class="benefit-text-inline">접근성 요구사항 자동 충족</div>
+                                                        <div class="benefit-desc-inline">기본 구조만으로 법적 기준 만족</div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -193,7 +736,7 @@
                         <div class="feature-right feature-text-right">
                             <h2 class="feature-title">매년 반복되는 웹접근성 인증 문제를 구조적으로 해결</h2>
                             <div class="feature-accordion">
-                                <div class="accordion-item">
+                                <div class="accordion-item" data-image-variant="accessibility-certification">
                                     <div class="accordion-header">
                                         <span>접근성 인증: 대부분의 LMS는 매년 재인증 필요</span>
                                         <span class="accordion-icon">+</span>
@@ -202,7 +745,7 @@
                                         <p>일반적인 LMS는 각 구축 사례마다 별도로 접근성 인증을 받아야 하기 때문에, 매년 반복적인 인증 작업이 필요합니다. 이는 시간과 비용이 소요되는 부담으로 작용합니다.</p>
                                     </div>
                                 </div>
-                                <div class="accordion-item">
+                                <div class="accordion-item" data-image-variant="structural-solution">
                                     <div class="accordion-header">
                                         <span>구조적 해결: 재인증 없이 접근성 요구사항 충족</span>
                                         <span class="accordion-icon">+</span>
@@ -220,7 +763,7 @@
                         <div class="feature-left">
                             <h2 class="feature-title">전자정부프레임워크 기반의 안정적 아키텍처</h2>
                             <div class="feature-accordion">
-                                <div class="accordion-item">
+                                <div class="accordion-item" data-image-variant="framework-standard">
                                     <div class="accordion-header">
                                         <span>전자정부프레임워크: 검증된 공공기관 표준 구조</span>
                                         <span class="accordion-icon">+</span>
@@ -229,7 +772,7 @@
                                         <p>전자정부프레임워크는 공공기관에서 널리 사용되는 검증된 프레임워크로, 보안, 확장성, 유지보수성 등 모든 측면에서 공공 기준을 만족합니다. LX2는 이 프레임워크를 기반으로 구축되어 안정성을 보장합니다.</p>
                                     </div>
                                 </div>
-                                <div class="accordion-item">
+                                <div class="accordion-item" data-image-variant="verified-structure">
                                     <div class="accordion-header">
                                         <span>검증된 구조: 보안·확장성·유지보수성 모두 충족</span>
                                         <span class="accordion-icon">+</span>
@@ -238,7 +781,7 @@
                                         <p>전자정부프레임워크는 수많은 공공기관에서 사용되며 검증된 구조입니다. 보안 취약점 대응, 시스템 확장, 유지보수 등 모든 측면에서 안정적인 운영이 가능합니다.</p>
                                     </div>
                                 </div>
-                                <div class="accordion-item">
+                                <div class="accordion-item" data-image-variant="long-term-operation">
                                     <div class="accordion-header">
                                         <span>장기 운영: 인력 교체·시스템 확장에도 안정적 대응</span>
                                         <span class="accordion-icon">+</span>
@@ -251,18 +794,358 @@
                         </div>
                         <div class="feature-right">
                             <div class="feature-image-large">
-                                <div class="feature-bg-blur framework"></div>
-                                <div class="feature-ui-overlay">
-                                    <div class="glass-card large">
-                                        <div class="glass-card-header">
-                                            <div class="glass-dot"></div>
-                                            <div class="glass-dot"></div>
-                                            <div class="glass-dot"></div>
+                                <!-- 이미지 변형 1: 전자정부프레임워크 -->
+                                <div class="feature-image-variant active" data-variant="framework-standard">
+                                    <!-- page5.html의 HTML 코드 -->
+                                    <div class="section-inline-page5">
+                                        <div class="content-inline-page5">
+                                            <!-- 배지 -->
+                                            <div class="badge-inline-page5">
+                                                <span class="badge-icon-inline-page5">
+                                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                                        <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                                                        <path d="M2 17l10 5 10-5"/>
+                                                        <path d="M2 12l10 5 10-5"/>
+                                                    </svg>
+                                                </span>
+                                                <span>전자정부프레임워크</span>
+                                            </div>
+
+                                            <!-- 제목 -->
+                                            <h2 class="title-inline-page5">
+                                                검증된 공공기관<br>
+                                                <span class="highlight-inline-page5">표준 구조</span>
+                                            </h2>
+
+                                            <!-- 프레임워크 시각화 -->
+                                            <div class="framework-visual">
+                                                <div class="framework-logo">
+                                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                                        <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                                                        <path d="M2 17l10 5 10-5"/>
+                                                        <path d="M2 12l10 5 10-5"/>
+                                                    </svg>
+                                                </div>
+                                                <div class="framework-info">
+                                                    <div class="framework-name">전자정부 표준프레임워크</div>
+                                                    <div class="framework-desc">공공기관에서 널리 사용되는<br>검증된 개발 프레임워크</div>
+                                                    <div class="framework-badge">
+                                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                                            <polyline points="22 4 12 14.01 9 11.01"/>
+                                                        </svg>
+                                                        공공 기준 충족
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- 특징 그리드 -->
+                                            <div class="features-grid">
+                                                <div class="feature-box">
+                                                    <div class="feature-box-icon">
+                                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="feature-box-title">보안</div>
+                                                    <div class="feature-box-desc">공공기관 보안 기준에<br>적합한 검증된 구조로<br>안전한 운영 보장</div>
+                                                </div>
+                                                <div class="feature-box">
+                                                    <div class="feature-box-icon">
+                                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                            <rect x="2" y="2" width="20" height="8" rx="2" ry="2"/>
+                                                            <rect x="2" y="14" width="20" height="8" rx="2" ry="2"/>
+                                                            <line x1="6" y1="6" x2="6.01" y2="6"/>
+                                                            <line x1="6" y1="18" x2="6.01" y2="18"/>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="feature-box-title">확장성</div>
+                                                    <div class="feature-box-desc">기관 규모와 요구사항에<br>맞춘 유연한 시스템<br>확장 구조 제공</div>
+                                                </div>
+                                                <div class="feature-box">
+                                                    <div class="feature-box-icon">
+                                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="feature-box-title">유지보수성</div>
+                                                    <div class="feature-box-desc">표준화된 구조로<br>효율적인 관리와<br>지속적 운영 가능</div>
+                                                </div>
+                                                <div class="feature-box">
+                                                    <div class="feature-box-icon">
+                                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                                            <polyline points="22 4 12 14.01 9 11.01"/>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="feature-box-title">표준 준수</div>
+                                                    <div class="feature-box-desc">보안, 확장성, 유지보수<br>모든 측면에서<br>공공 기준 만족</div>
+                                                </div>
+                                            </div>
+
+                                            <!-- 하단 메시지 -->
+                                            <div class="bottom-message">
+                                                <div class="message-icon">
+                                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                                                    </svg>
+                                                </div>
+                                                <div class="message-content">
+                                                    <div class="message-title">LX2는 전자정부프레임워크 기반 구축</div>
+                                                    <div class="message-desc">공공기관에서 널리 사용되는 검증된 프레임워크를<br>기반으로 안정성을 보장합니다.</div>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="glass-card-content">
-                                            <div class="glass-badge">전자정부프레임워크</div>
-                                            <div class="glass-badge">검증된 구조</div>
-                                            <div class="glass-badge">장기적 운영</div>
+                                    </div>
+                                </div>
+                                <!-- 이미지 변형 2: 검증된 구조 -->
+                                <div class="feature-image-variant" data-variant="verified-structure">
+                                    <!-- page6.html의 HTML 코드 -->
+                                    <div class="section-inline-page6">
+                                        <div class="content-inline-page6">
+                                            <!-- 배지 -->
+                                            <div class="badge-inline-page6">
+                                                <span class="badge-icon-inline-page6">
+                                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                                        <polyline points="22 4 12 14.01 9 11.01"/>
+                                                    </svg>
+                                                </span>
+                                                <span>검증된 구조</span>
+                                            </div>
+
+                                            <!-- 제목 -->
+                                            <h2 class="title-inline-page6">
+                                                보안·확장성·유지보수성<br>
+                                                <span class="highlight-inline-page6">모두 충족</span>
+                                            </h2>
+
+                                            <!-- 검증 배너 -->
+                                            <div class="verified-banner">
+                                                <div class="verified-icon">
+                                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                                        <path d="M9 12l2 2 4-4"/>
+                                                    </svg>
+                                                </div>
+                                                <div class="verified-info">
+                                                    <div class="verified-title">전자정부프레임워크 기반</div>
+                                                    <div class="verified-desc">수많은 공공기관에서 사용되며<br>검증된 안정적인 구조</div>
+                                                </div>
+                                            </div>
+
+                                            <!-- 3가지 특징 -->
+                                            <div class="features-inline-page6">
+                                                <div class="feature-card-inline">
+                                                    <div class="feature-icon-inline">
+                                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="feature-content-inline">
+                                                        <div class="feature-title-inline">
+                                                            보안 취약점 대응
+                                                            <span class="check">
+                                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                                                    <polyline points="20 6 9 17 4 12"/>
+                                                                </svg>
+                                                            </span>
+                                                        </div>
+                                                        <div class="feature-desc-inline">공공기관 보안 기준에 적합한 구조로<br>취약점 대응과 안전한 운영 보장</div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="feature-card-inline">
+                                                    <div class="feature-icon-inline">
+                                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                            <rect x="2" y="2" width="20" height="8" rx="2" ry="2"/>
+                                                            <rect x="2" y="14" width="20" height="8" rx="2" ry="2"/>
+                                                            <line x1="6" y1="6" x2="6.01" y2="6"/>
+                                                            <line x1="6" y1="18" x2="6.01" y2="18"/>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="feature-content-inline">
+                                                        <div class="feature-title-inline">
+                                                            시스템 확장
+                                                            <span class="check">
+                                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                                                    <polyline points="20 6 9 17 4 12"/>
+                                                                </svg>
+                                                            </span>
+                                                        </div>
+                                                        <div class="feature-desc-inline">기관 규모와 요구사항에 맞춘<br>유연한 시스템 확장 구조 제공</div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="feature-card-inline">
+                                                    <div class="feature-icon-inline">
+                                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="feature-content-inline">
+                                                        <div class="feature-title-inline">
+                                                            효율적 유지보수
+                                                            <span class="check">
+                                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                                                    <polyline points="20 6 9 17 4 12"/>
+                                                                </svg>
+                                                            </span>
+                                                        </div>
+                                                        <div class="feature-desc-inline">표준화된 구조로 효율적인 관리와<br>지속적인 운영이 가능</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- 하단 강조 -->
+                                            <div class="bottom-highlight">
+                                                <div class="bottom-icon">
+                                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                                                    </svg>
+                                                </div>
+                                                <div class="bottom-content">
+                                                    <div class="bottom-title">모든 측면에서 안정적인 운영</div>
+                                                    <div class="bottom-desc">보안, 확장성, 유지보수 등 모든 측면에서 검증된 구조</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 이미지 변형 3: 장기 운영 -->
+                                <div class="feature-image-variant" data-variant="long-term-operation">
+                                    <!-- page7.html의 HTML 코드 -->
+                                    <div class="section-inline-page7">
+                                        <div class="content-inline-page7">
+                                            <!-- 배지 -->
+                                            <div class="badge-inline-page7">
+                                                <span class="badge-icon-inline-page7">
+                                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                                        <circle cx="12" cy="12" r="10"/>
+                                                        <polyline points="12 6 12 12 16 14"/>
+                                                    </svg>
+                                                </span>
+                                                <span>장기 운영</span>
+                                            </div>
+
+                                            <!-- 제목 -->
+                                            <h2 class="title-inline-page7">
+                                                인력 교체·시스템 확장에도<br>
+                                                <span class="highlight-inline-page7">안정적 대응</span>
+                                            </h2>
+
+                                            <!-- 타임라인 시각화 -->
+                                            <div class="timeline-visual">
+                                                <div class="timeline-item">
+                                                    <div class="timeline-icon">
+                                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                                                            <path d="M2 17l10 5 10-5"/>
+                                                            <path d="M2 12l10 5 10-5"/>
+                                                        </svg>
+                                                    </div>
+                                                    <span class="timeline-label">구축</span>
+                                                </div>
+
+                                                <div class="timeline-connector"></div>
+
+                                                <div class="timeline-item">
+                                                    <div class="timeline-icon">
+                                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                                            <circle cx="9" cy="7" r="4"/>
+                                                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                                                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                                                        </svg>
+                                                    </div>
+                                                    <span class="timeline-label">인력 교체</span>
+                                                </div>
+
+                                                <div class="timeline-connector"></div>
+
+                                                <div class="timeline-item">
+                                                    <div class="timeline-icon">
+                                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                            <rect x="2" y="2" width="20" height="8" rx="2" ry="2"/>
+                                                            <rect x="2" y="14" width="20" height="8" rx="2" ry="2"/>
+                                                            <line x1="6" y1="6" x2="6.01" y2="6"/>
+                                                            <line x1="6" y1="18" x2="6.01" y2="18"/>
+                                                        </svg>
+                                                    </div>
+                                                    <span class="timeline-label">시스템 확장</span>
+                                                </div>
+
+                                                <div class="timeline-connector"></div>
+
+                                                <div class="timeline-item">
+                                                    <div class="timeline-icon active">
+                                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                                            <polyline points="22 4 12 14.01 9 11.01"/>
+                                                        </svg>
+                                                    </div>
+                                                    <span class="timeline-label">안정 운영</span>
+                                                </div>
+                                            </div>
+
+                                            <!-- 장점 카드 -->
+                                            <div class="benefits-inline-page7">
+                                                <div class="benefit-card-inline">
+                                                    <div class="benefit-icon-inline">
+                                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                            <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                                            <circle cx="8.5" cy="7" r="4"/>
+                                                            <polyline points="17 11 19 13 23 9"/>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="benefit-content-inline">
+                                                        <div class="benefit-title-inline">인력 교체에도 안정적</div>
+                                                        <div class="benefit-desc-inline">표준화된 구조로 새로운 개발 인력도<br>빠르게 적응하고 유지보수 가능</div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="benefit-card-inline">
+                                                    <div class="benefit-icon-inline">
+                                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                            <rect x="2" y="2" width="20" height="8" rx="2" ry="2"/>
+                                                            <rect x="2" y="14" width="20" height="8" rx="2" ry="2"/>
+                                                            <line x1="6" y1="6" x2="6.01" y2="6"/>
+                                                            <line x1="6" y1="18" x2="6.01" y2="18"/>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="benefit-content-inline">
+                                                        <div class="benefit-title-inline">시스템 확장 용이</div>
+                                                        <div class="benefit-desc-inline">기관 성장에 맞춰 기능 추가와<br>시스템 확장이 유연하게 가능</div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="benefit-card-inline">
+                                                    <div class="benefit-icon-inline">
+                                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                            <circle cx="12" cy="12" r="10"/>
+                                                            <polyline points="12 6 12 12 16 14"/>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="benefit-content-inline">
+                                                        <div class="benefit-title-inline">장기적 운영 관점</div>
+                                                        <div class="benefit-desc-inline">전자정부프레임워크 기반의 표준화된 구조로<br>장기적으로 안정적인 운영 보장</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- 하단 강조 -->
+                                            <div class="bottom-highlight-page7">
+                                                <div class="bottom-icon-page7">
+                                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                                        <path d="M9 12l2 2 4-4"/>
+                                                    </svg>
+                                                </div>
+                                                <div class="bottom-content-page7">
+                                                    <div class="bottom-title-page7">표준화된 구조의 장점</div>
+                                                    <div class="bottom-desc-page7">인력 교체나 시스템 확장에도 안정적으로 대응 가능</div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -274,18 +1157,231 @@
                     <div class="industry-feature-section" id="feature-compliance" data-feature="compliance">
                         <div class="feature-left feature-image-left">
                             <div class="feature-image-large">
-                                <div class="feature-bg-blur compliance"></div>
-                                <div class="feature-ui-overlay">
-                                    <div class="glass-card large">
-                                        <div class="glass-card-header">
-                                            <div class="glass-dot"></div>
-                                            <div class="glass-dot"></div>
-                                            <div class="glass-dot"></div>
+                                <!-- 이미지 변형 1: 규약 준수 -->
+                                <div class="feature-image-variant active" data-variant="regulation-compliance">
+                                    <!-- page8.html의 HTML 코드 -->
+                                    <div class="section-inline-page8">
+                                        <div class="content-inline-page8">
+                                            <!-- 배지 -->
+                                            <div class="badge-inline-page8">
+                                                <span class="badge-icon-inline-page8">
+                                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                                        <path d="M9 11l3 3L22 4"/>
+                                                        <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+                                                    </svg>
+                                                </span>
+                                                <span>규약 준수</span>
+                                            </div>
+
+                                            <!-- 제목 -->
+                                            <h2 class="title-inline-page8">
+                                                전자정부 가이드라인·공공데이터<br>
+                                                품질관리 등 <span class="highlight-inline-page8">모두 충족</span>
+                                            </h2>
+
+                                            <!-- 체크리스트 헤더 -->
+                                            <div class="checklist-header">
+                                                <div class="checklist-icon">
+                                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                                        <polyline points="14 2 14 8 20 8"/>
+                                                        <path d="M9 15l2 2 4-4"/>
+                                                    </svg>
+                                                </div>
+                                                <div>
+                                                    <div class="checklist-title">공공 분야 규약 준수 현황</div>
+                                                    <div class="checklist-subtitle">LX2가 충족하는 주요 가이드라인</div>
+                                                </div>
+                                            </div>
+
+                                            <!-- 규약 리스트 -->
+                                            <div class="regulations-inline">
+                                                <div class="regulation-item-inline">
+                                                    <div class="regulation-check">
+                                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                                            <polyline points="20 6 9 17 4 12"/>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="regulation-content-inline">
+                                                        <div class="regulation-name-inline">전자정부 UI/UX 가이드라인</div>
+                                                        <div class="regulation-desc-inline">사용자 경험 중심의 공공 서비스 디자인 기준 준수</div>
+                                                    </div>
+                                                    <span class="regulation-badge-inline">필수</span>
+                                                </div>
+
+                                                <div class="regulation-item-inline">
+                                                    <div class="regulation-check">
+                                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                                            <polyline points="20 6 9 17 4 12"/>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="regulation-content-inline">
+                                                        <div class="regulation-name-inline">공공데이터 품질관리</div>
+                                                        <div class="regulation-desc-inline">데이터 정확성, 일관성, 적시성 기준 충족</div>
+                                                    </div>
+                                                    <span class="regulation-badge-inline">필수</span>
+                                                </div>
+
+                                                <div class="regulation-item-inline">
+                                                    <div class="regulation-check">
+                                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                                            <polyline points="20 6 9 17 4 12"/>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="regulation-content-inline">
+                                                        <div class="regulation-name-inline">정보보안 가이드라인</div>
+                                                        <div class="regulation-desc-inline">공공기관 정보보안 기준에 맞춘 보안 구조</div>
+                                                    </div>
+                                                    <span class="regulation-badge-inline">필수</span>
+                                                </div>
+
+                                                <div class="regulation-item-inline">
+                                                    <div class="regulation-check">
+                                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                                            <polyline points="20 6 9 17 4 12"/>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="regulation-content-inline">
+                                                        <div class="regulation-name-inline">웹 접근성 지침</div>
+                                                        <div class="regulation-desc-inline">장애인·고령자 등 모든 사용자 접근성 보장</div>
+                                                    </div>
+                                                    <span class="regulation-badge-inline">필수</span>
+                                                </div>
+                                            </div>
+
+                                            <!-- 하단 강조 -->
+                                            <div class="bottom-highlight-page8">
+                                                <div class="bottom-icon-page8">
+                                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                                        <polyline points="22 4 12 14.01 9 11.01"/>
+                                                    </svg>
+                                                </div>
+                                                <div class="bottom-content-page8">
+                                                    <div class="bottom-title-page8">규정 준수 부담 최소화</div>
+                                                    <div class="bottom-desc-page8">다양한 규약을 기본 설계에서 충족하여 별도 작업 불필요</div>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="glass-card-content">
-                                            <div class="glass-badge">규약 준수</div>
-                                            <div class="glass-badge">감사 대응</div>
-                                            <div class="glass-badge">점검 완벽 대응</div>
+                                    </div>
+                                </div>
+                                <!-- 이미지 변형 2: 감사 대응 -->
+                                <div class="feature-image-variant" data-variant="audit-response">
+                                    <!-- page9.html의 HTML 코드 -->
+                                    <div class="section-inline-page9">
+                                        <div class="content-inline-page9">
+                                            <!-- 배지 -->
+                                            <div class="badge-inline-page9">
+                                                <span class="badge-icon-inline-page9">
+                                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                                        <path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/>
+                                                        <rect x="9" y="3" width="6" height="4" rx="1"/>
+                                                    </svg>
+                                                </span>
+                                                <span>감사 대응</span>
+                                            </div>
+
+                                            <!-- 제목 -->
+                                            <h2 class="title-inline-page9">
+                                                감독기관 점검에도<br>
+                                                <span class="highlight-inline-page9">완벽 대응</span>
+                                            </h2>
+
+                                            <!-- 감사 대응 시각화 -->
+                                            <div class="audit-visual">
+                                                <div class="audit-left">
+                                                    <div class="audit-icon">
+                                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                            <circle cx="11" cy="11" r="8"/>
+                                                            <path d="m21 21-4.35-4.35"/>
+                                                        </svg>
+                                                    </div>
+                                                    <span class="audit-label">감사·점검</span>
+                                                </div>
+                                                <div class="audit-right">
+                                                    <div class="audit-item">
+                                                        <div class="audit-check">
+                                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                                                <polyline points="20 6 9 17 4 12"/>
+                                                            </svg>
+                                                        </div>
+                                                        <span class="audit-text">모든 규약 준수 상태</span>
+                                                    </div>
+                                                    <div class="audit-item">
+                                                        <div class="audit-check">
+                                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                                                <polyline points="20 6 9 17 4 12"/>
+                                                            </svg>
+                                                        </div>
+                                                        <span class="audit-text">자료·로그 체계적 관리</span>
+                                                    </div>
+                                                    <div class="audit-item">
+                                                        <div class="audit-check">
+                                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                                                <polyline points="20 6 9 17 4 12"/>
+                                                            </svg>
+                                                        </div>
+                                                        <span class="audit-text">신속한 자료 제출 가능</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- 대응 카드 -->
+                                            <div class="response-cards-inline">
+                                                <div class="response-card-inline">
+                                                    <div class="response-icon-inline">
+                                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                                            <polyline points="14 2 14 8 20 8"/>
+                                                            <line x1="16" y1="13" x2="8" y2="13"/>
+                                                            <line x1="16" y1="17" x2="8" y2="17"/>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="response-content-inline">
+                                                        <div class="response-title-inline">체계적인 자료 관리</div>
+                                                        <div class="response-desc-inline">필요한 자료를 체계적으로 관리하여<br>감사 요청 시 즉시 제출 가능</div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="response-card-inline">
+                                                    <div class="response-icon-inline">
+                                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                            <path d="M12 20h9"/>
+                                                            <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="response-content-inline">
+                                                        <div class="response-title-inline">로그 기록 자동화</div>
+                                                        <div class="response-desc-inline">시스템 활동 로그를 자동으로 기록하여<br>추적 및 감사 증적 확보</div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="response-card-inline">
+                                                    <div class="response-icon-inline">
+                                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="response-content-inline">
+                                                        <div class="response-title-inline">신속한 대응 체계</div>
+                                                        <div class="response-desc-inline">감독기관 점검 시 문제 없이<br>신속하게 대응할 수 있는 구조</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- 하단 강조 -->
+                                            <div class="bottom-highlight-page9">
+                                                <div class="bottom-icon-page9">
+                                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                                        <path d="M9 12l2 2 4-4"/>
+                                                    </svg>
+                                                </div>
+                                                <div class="bottom-content-page9">
+                                                    <div class="bottom-title-page9">감사·점검 걱정 없는 운영</div>
+                                                    <div class="bottom-desc-page9">모든 규약을 준수하여 감독기관 점검에도 완벽 대응</div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -294,7 +1390,7 @@
                         <div class="feature-right feature-text-right">
                             <h2 class="feature-title">각종 규약 및 감독기관 점검에도 완벽 대응</h2>
                             <div class="feature-accordion">
-                                <div class="accordion-item">
+                                <div class="accordion-item" data-image-variant="regulation-compliance">
                                     <div class="accordion-header">
                                         <span>규약 준수: 전자정부 가이드라인·공공데이터 품질관리 등 모두 충족</span>
                                         <span class="accordion-icon">+</span>
@@ -303,7 +1399,7 @@
                                         <p>LX2는 전자정부 UI/UX 가이드라인, 공공데이터 품질관리, 정보보안 가이드라인 등 공공 분야에서 요구되는 다양한 규약을 모두 준수하도록 설계되었습니다. 이를 통해 규정 준수에 대한 부담을 최소화합니다.</p>
                                     </div>
                                 </div>
-                                <div class="accordion-item">
+                                <div class="accordion-item" data-image-variant="audit-response">
                                     <div class="accordion-header">
                                         <span>감사 대응: 감독기관 점검에도 완벽 대응</span>
                                         <span class="accordion-icon">+</span>
@@ -317,31 +1413,6 @@
                     </div>
                 </div>
 
-                <!-- Conclusion Section -->
-                <div class="industry-conclusion-section">
-                    <div class="conclusion-divider"></div>
-                    <p class="conclusion-text">LX2는 교육서비스 업체가 추가 검증 부담 없이, 안정적이고 안전한 공공기관 수준의 LMS 운영 환경을 확보할 수 있도록 돕는 최적의 솔루션입니다.</p>
-                </div>
-
-                <!-- Navigation Tabs -->
-                <div class="industry-nav-tabs">
-                    <button class="nav-tab active" data-tab="standard">
-                        <span class="tab-arrow">→</span>
-                        <span class="tab-text">공공기관 수준의 기준을 충족하는 LMS 구조</span>
-                    </button>
-                    <button class="nav-tab" data-tab="certification">
-                        <span class="tab-arrow">→</span>
-                        <span class="tab-text">매년 반복되는 웹접근성 인증 문제를 구조적으로 해결</span>
-                    </button>
-                    <button class="nav-tab" data-tab="framework">
-                        <span class="tab-arrow">→</span>
-                        <span class="tab-text">전자정부프레임워크 기반의 안정적 아키텍처</span>
-                    </button>
-                    <button class="nav-tab" data-tab="compliance">
-                        <span class="tab-arrow">→</span>
-                        <span class="tab-text">각종 규약 및 감독기관 점검에도 완벽 대응</span>
-                    </button>
-
             </section>
         </main>
     </div>
@@ -349,14 +1420,62 @@
     <script src="../articles-data.js"></script>
     <script src="../script.js"></script>
     <script>
+        // Movie Style Slider Functions
+        var expandedCard = null;
+
+        function toggleCard(index) {
+            var cards = document.querySelectorAll('.movie-slider-container .card');
+            
+            if (expandedCard === index) {
+                cards[index].classList.remove('expanded');
+                expandedCard = null;
+            } else {
+                cards.forEach(function(card) {
+                    card.classList.remove('expanded');
+                });
+                cards[index].classList.add('expanded');
+                expandedCard = index;
+            }
+        }
+
+        function closeCard(event) {
+            event.stopPropagation();
+            var cards = document.querySelectorAll('.movie-slider-container .card');
+            cards.forEach(function(card) {
+                card.classList.remove('expanded');
+            });
+            expandedCard = null;
+        }
+
+        function navigateSlider(direction) {
+            var cards = document.querySelectorAll('.movie-slider-container .card');
+            var currentIndex = expandedCard !== null ? expandedCard : 0;
+            var newIndex = currentIndex + direction;
+            
+            if (newIndex < 0) {
+                newIndex = cards.length - 1;
+            } else if (newIndex >= cards.length) {
+                newIndex = 0;
+            }
+            
+            toggleCard(newIndex);
+        }
+
         document.addEventListener('DOMContentLoaded', function() {
 
-            // Accordion functionality
+            // Accordion functionality with image switching
             const accordionHeaders = document.querySelectorAll('.accordion-header');
             accordionHeaders.forEach(header => {
                 header.addEventListener('click', function() {
                     const item = this.parentElement;
                     const isActive = item.classList.contains('active');
+                    
+                    // Get the feature section
+                    const featureSection = item.closest('.industry-feature-section');
+                    const imageContainer = featureSection ? featureSection.querySelector('.feature-image-large') : null;
+                    
+                    // Get the image variant to show
+                    const imageVariant = item.closest('.accordion-item')?.getAttribute('data-image-variant');
                     
                     // Close all accordion items in the same section
                     const allItems = item.parentElement.querySelectorAll('.accordion-item');
@@ -365,6 +1484,42 @@
                     // Toggle current item
                     if (!isActive) {
                         item.classList.add('active');
+                        
+                        // Switch image with fade effect
+                        if (imageVariant && imageContainer) {
+                            const allVariants = imageContainer.querySelectorAll('.feature-image-variant');
+                            const targetVariant = imageContainer.querySelector(`[data-variant="${imageVariant}"]`);
+                            
+                            if (targetVariant) {
+                                // Fade out all variants
+                                allVariants.forEach(variant => {
+                                    variant.style.opacity = '0';
+                                    variant.classList.remove('active');
+                                });
+                                
+                                // Fade in target variant
+                                setTimeout(() => {
+                                    targetVariant.style.opacity = '1';
+                                    targetVariant.classList.add('active');
+                                }, 150);
+                            }
+                        }
+                    } else {
+                        // If closing, reset to first variant
+                        if (imageContainer) {
+                            const allVariants = imageContainer.querySelectorAll('.feature-image-variant');
+                            const firstVariant = allVariants[0];
+                            if (firstVariant) {
+                                allVariants.forEach(variant => {
+                                    variant.style.opacity = '0';
+                                    variant.classList.remove('active');
+                                });
+                                setTimeout(() => {
+                                    firstVariant.style.opacity = '1';
+                                    firstVariant.classList.add('active');
+                                }, 150);
+                            }
+                        }
                     }
                 });
             });

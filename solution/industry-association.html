@@ -114,6 +114,139 @@
                     </div>
                 </div>
 
+                <!-- 도입 사례 슬라이더 -->
+                <div class="case-study-slider-section">
+                    <div class="case-study-content">
+                        <!-- 헤더 -->
+                        <div class="case-study-header">
+                            <div class="case-study-badge">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                    <polyline points="22 4 12 14.01 9 11.01"/>
+                                </svg>
+                                <span>도입 사례</span>
+                            </div>
+                            <h2 class="case-study-title">검증된 선택<br>많은 기관이 LX2를 선택했습니다</h2>
+                            <p class="case-study-subtitle">좌우로 스와이프하여 더 많은 사례를 확인하세요</p>
+                        </div>
+
+                        <!-- 슬라이더 -->
+                        <div class="case-study-slider-container">
+                            <div class="case-study-slider-track" id="caseStudySliderTrack">
+                                <!-- 카드 1 -->
+                                <div class="case-study-slide active">
+                                    <div class="case-study-card-header">
+                                        <div class="case-study-org-name">도로교통공단</div>
+                                        <div class="case-study-tag-list">
+                                            <span class="case-study-tag"># 메인화면</span>
+                                            <span class="case-study-tag"># 교육 자료실</span>
+                                            <span class="case-study-tag"># 수강교육</span>
+                                            <span class="case-study-tag"># 체험관 예약</span>
+                                        </div>
+                                    </div>
+                                    <div class="case-study-screenshot-area">
+                                        <div class="case-study-main-screenshot">
+                                        </div>
+                                        <div class="case-study-thumb-row">
+                                            <div class="case-study-thumb"></div>
+                                            <div class="case-study-thumb"></div>
+                                            <div class="case-study-thumb"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 카드 2 -->
+                                <div class="case-study-slide">
+                                    <div class="case-study-card-header">
+                                        <div class="case-study-org-name">한국산업안전공단</div>
+                                        <div class="case-study-tag-list">
+                                            <span class="case-study-tag"># 안전교육</span>
+                                            <span class="case-study-tag"># 수료관리</span>
+                                            <span class="case-study-tag"># 통계현황</span>
+                                            <span class="case-study-tag"># 증빙발급</span>
+                                        </div>
+                                    </div>
+                                    <div class="case-study-screenshot-area">
+                                        <div class="case-study-main-screenshot">
+                                        </div>
+                                        <div class="case-study-thumb-row">
+                                            <div class="case-study-thumb"></div>
+                                            <div class="case-study-thumb"></div>
+                                            <div class="case-study-thumb"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 카드 3 -->
+                                <div class="case-study-slide">
+                                    <div class="case-study-card-header">
+                                        <div class="case-study-org-name">대한건설협회</div>
+                                        <div class="case-study-tag-list">
+                                            <span class="case-study-tag"># 법정교육</span>
+                                            <span class="case-study-tag"># 회원관리</span>
+                                            <span class="case-study-tag"># 보고서</span>
+                                            <span class="case-study-tag"># 결제시스템</span>
+                                        </div>
+                                    </div>
+                                    <div class="case-study-screenshot-area">
+                                        <div class="case-study-main-screenshot">
+                                        </div>
+                                        <div class="case-study-thumb-row">
+                                            <div class="case-study-thumb"></div>
+                                            <div class="case-study-thumb"></div>
+                                            <div class="case-study-thumb"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 카드 4 -->
+                                <div class="case-study-slide">
+                                    <div class="case-study-card-header">
+                                        <div class="case-study-org-name">한국환경공단</div>
+                                        <div class="case-study-tag-list">
+                                            <span class="case-study-tag"># 환경교육</span>
+                                            <span class="case-study-tag"># 이수현황</span>
+                                            <span class="case-study-tag"># 수료증</span>
+                                            <span class="case-study-tag"># 대시보드</span>
+                                        </div>
+                                    </div>
+                                    <div class="case-study-screenshot-area">
+                                        <div class="case-study-main-screenshot">
+                                        </div>
+                                        <div class="case-study-thumb-row">
+                                            <div class="case-study-thumb"></div>
+                                            <div class="case-study-thumb"></div>
+                                            <div class="case-study-thumb"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 네비게이션 -->
+                        <div class="case-study-nav-container">
+                            <button class="case-study-nav-btn" id="caseStudyPrevBtn" disabled>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="15 18 9 12 15 6"/>
+                                </svg>
+                            </button>
+
+                            <div class="case-study-indicators" id="caseStudyIndicators">
+                                <div class="case-study-indicator active" data-index="0"></div>
+                                <div class="case-study-indicator" data-index="1"></div>
+                                <div class="case-study-indicator" data-index="2"></div>
+                                <div class="case-study-indicator" data-index="3"></div>
+                            </div>
+
+                            <button class="case-study-nav-btn" id="caseStudyNextBtn">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="9 18 15 12 9 6"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Introduction Section -->
                 <div class="industry-intro-section">
                     <p class="intro-text">법정의무교육은 '규정 변경·대규모 트래픽·수료 관리 자동화'가 필수입니다</p>
@@ -128,16 +261,16 @@
                         <div class="feature-left">
                             <h2 class="feature-title">임대형 LMS의 구조적 한계를 해결</h2>
                             <div class="feature-accordion">
-                                <div class="accordion-item">
+                                <div class="accordion-item active" data-image-variant="rental-lms-limit">
                                     <div class="accordion-header">
                                         <span>임대형 LMS의 한계: 기능 변경 어려움, 비용 상승, 규정 대응 지연</span>
-                                        <span class="accordion-icon">+</span>
+                                        <span class="accordion-icon">-</span>
                                     </div>
-                                    <div class="accordion-content">
+                                    <div class="accordion-content" style="display: block;">
                                         <p>임대형 LMS는 기본 구조가 고정되어 있어 기능 변경이 거의 불가능합니다. 또한 사용자가 늘어나면 비용이 증가하고, 작은 기능 요청에도 추가 비용이 발생합니다. 규정이 변경되어도 대응 속도가 느려 법정교육 운영에 적합하지 않습니다.</p>
                                     </div>
                                 </div>
-                                <div class="accordion-item">
+                                <div class="accordion-item" data-image-variant="long-term-operation">
                                     <div class="accordion-header">
                                         <span>장기 운영: 시간이 갈수록 불리해지는 구조</span>
                                         <span class="accordion-icon">+</span>
@@ -150,18 +283,233 @@
                         </div>
                         <div class="feature-right">
                             <div class="feature-image-large">
-                                <div class="feature-bg-blur"></div>
-                                <div class="feature-ui-overlay">
-                                    <div class="glass-card large">
-                                        <div class="glass-card-header">
-                                            <div class="glass-dot"></div>
-                                            <div class="glass-dot"></div>
-                                            <div class="glass-dot"></div>
+                                <!-- 이미지 변형 1: 임대형 LMS의 한계 -->
+                                <div class="feature-image-variant active" data-variant="rental-lms-limit">
+                                    <!-- new-project3/index.html의 HTML 코드 -->
+                                    <div class="section-inline-rental-lms-limit">
+                                        <div class="bg-pattern-inline-rental-lms-limit"></div>
+                                        <div class="content-inline-rental-lms-limit">
+                                            <!-- 헤더 -->
+                                            <div class="header-inline-rental-lms-limit">
+                                                <div class="badge-inline-rental-lms-limit">
+                                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                        <circle cx="12" cy="12" r="10"/>
+                                                        <line x1="12" y1="8" x2="12" y2="12"/>
+                                                        <line x1="12" y1="16" x2="12.01" y2="16"/>
+                                                    </svg>
+                                                    <span>임대형 LMS 한계</span>
+                                                </div>
+                                                <h2 class="title-inline-rental-lms-limit">
+                                                    임대형 LMS의 한계<br>
+                                                    기능 변경 어려움, 비용 상승, 규정 대응 지연
+                                                </h2>
+                                            </div>
+
+                                            <!-- 문제점 카드 3열 -->
+                                            <div class="problem-cards-inline-rental-lms-limit">
+                                                <div class="problem-card-inline-rental-lms-limit">
+                                                    <div class="problem-icon-inline-rental-lms-limit">
+                                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                                                            <line x1="9" y1="9" x2="15" y2="15"/>
+                                                            <line x1="15" y1="9" x2="9" y2="15"/>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="problem-title-inline-rental-lms-limit">기능 변경 불가</div>
+                                                    <div class="problem-desc-inline-rental-lms-limit">기본 구조 고정<br>커스터마이징 어려움</div>
+                                                </div>
+
+                                                <div class="problem-card-inline-rental-lms-limit">
+                                                    <div class="problem-icon-inline-rental-lms-limit">
+                                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                            <line x1="12" y1="1" x2="12" y2="23"/>
+                                                            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="problem-title-inline-rental-lms-limit">비용 상승</div>
+                                                    <div class="problem-desc-inline-rental-lms-limit">사용자 증가시<br>비용 계속 증가</div>
+                                                </div>
+
+                                                <div class="problem-card-inline-rental-lms-limit">
+                                                    <div class="problem-icon-inline-rental-lms-limit">
+                                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                            <circle cx="12" cy="12" r="10"/>
+                                                            <polyline points="12 6 12 12 16 14"/>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="problem-title-inline-rental-lms-limit">대응 지연</div>
+                                                    <div class="problem-desc-inline-rental-lms-limit">규정 변경 시<br>느린 대응 속도</div>
+                                                </div>
+                                            </div>
+
+                                            <!-- 상세 문제점 -->
+                                            <div class="detail-section-inline-rental-lms-limit">
+                                                <div class="detail-title-inline-rental-lms-limit">임대형 LMS의 구조적 문제</div>
+                                                <div class="detail-items-inline-rental-lms-limit">
+                                                    <div class="detail-item-inline-rental-lms-limit">
+                                                        <div class="detail-item-icon-inline-rental-lms-limit">
+                                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                                                                <line x1="9" y1="9" x2="15" y2="15"/>
+                                                                <line x1="15" y1="9" x2="9" y2="15"/>
+                                                            </svg>
+                                                        </div>
+                                                        <div class="detail-item-content-inline-rental-lms-limit">
+                                                            <div class="detail-item-title-inline-rental-lms-limit">기본 구조 고정</div>
+                                                            <div class="detail-item-desc-inline-rental-lms-limit">기능 변경이 거의 불가능하여 맞춤 운영 어려움</div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="detail-item-inline-rental-lms-limit">
+                                                        <div class="detail-item-icon-inline-rental-lms-limit">
+                                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                                <line x1="12" y1="1" x2="12" y2="23"/>
+                                                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                                                            </svg>
+                                                        </div>
+                                                        <div class="detail-item-content-inline-rental-lms-limit">
+                                                            <div class="detail-item-title-inline-rental-lms-limit">추가 비용 발생</div>
+                                                            <div class="detail-item-desc-inline-rental-lms-limit">작은 기능 요청에도 추가 비용 청구</div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="detail-item-inline-rental-lms-limit">
+                                                        <div class="detail-item-icon-inline-rental-lms-limit">
+                                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                                                <polyline points="14 2 14 8 20 8"/>
+                                                                <line x1="9" y1="15" x2="15" y2="15"/>
+                                                            </svg>
+                                                        </div>
+                                                        <div class="detail-item-content-inline-rental-lms-limit">
+                                                            <div class="detail-item-title-inline-rental-lms-limit">규정 대응 지연</div>
+                                                            <div class="detail-item-desc-inline-rental-lms-limit">법규 변경에 신속한 대응이 어려움</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- 하단 경고 -->
+                                            <div class="bottom-warning-inline-rental-lms-limit">
+                                                <div class="warning-icon-inline-rental-lms-limit">
+                                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                        <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+                                                        <line x1="12" y1="9" x2="12" y2="13"/>
+                                                        <line x1="12" y1="17" x2="12.01" y2="17"/>
+                                                    </svg>
+                                                </div>
+                                                <div class="warning-content-inline-rental-lms-limit">
+                                                    <div class="warning-title-inline-rental-lms-limit">법정교육 운영에 부적합</div>
+                                                    <div class="warning-desc-inline-rental-lms-limit">규정 변경에 빠르게 대응해야 하는 법정교육 운영에는 임대형 LMS가 적합하지 않습니다</div>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="glass-card-content">
-                                            <div class="glass-badge">자체 구축형</div>
-                                            <div class="glass-badge">비용 효율</div>
-                                            <div class="glass-badge">유연한 운영</div>
+                                    </div>
+                                </div>
+                                <!-- 이미지 변형 2: 장기 운영 -->
+                                <div class="feature-image-variant" data-variant="long-term-operation">
+                                    <!-- new-project3/page2.html의 HTML 코드 -->
+                                    <div class="section-inline-long-term-operation">
+                                        <div class="bg-pattern-inline-long-term-operation"></div>
+                                        <div class="content-inline-long-term-operation">
+                                            <!-- 헤더 -->
+                                            <div class="header-inline-long-term-operation">
+                                                <div class="badge-inline-long-term-operation">
+                                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                        <circle cx="12" cy="12" r="10"/>
+                                                        <polyline points="12 6 12 12 16 14"/>
+                                                    </svg>
+                                                    <span>장기 운영 리스크</span>
+                                                </div>
+                                                <h2 class="title-inline-long-term-operation">
+                                                    장기 운영<br>
+                                                    시간이 갈수록 불리해지는 구조
+                                                </h2>
+                                            </div>
+
+                                            <!-- 비용 그래프 시각화 -->
+                                            <div class="cost-graph-inline-long-term-operation">
+                                                <div class="graph-title-inline-long-term-operation">시간 경과에 따른 비용 증가</div>
+                                                <div class="graph-visual-inline-long-term-operation">
+                                                    <div class="graph-bar-inline-long-term-operation y1-inline-long-term-operation"><span>낮음</span></div>
+                                                    <div class="graph-bar-inline-long-term-operation y2-inline-long-term-operation"><span></span></div>
+                                                    <div class="graph-bar-inline-long-term-operation y3-inline-long-term-operation"><span></span></div>
+                                                    <div class="graph-bar-inline-long-term-operation y4-inline-long-term-operation"><span>높음</span></div>
+                                                </div>
+                                                <div class="graph-labels-inline-long-term-operation">
+                                                    <span class="graph-label-inline-long-term-operation">1년차</span>
+                                                    <span class="graph-label-inline-long-term-operation">2년차</span>
+                                                    <span class="graph-label-inline-long-term-operation">3년차</span>
+                                                    <span class="graph-label-inline-long-term-operation">4년차+</span>
+                                                </div>
+                                            </div>
+
+                                            <!-- 비교 카드 -->
+                                            <div class="compare-cards-inline-long-term-operation">
+                                                <div class="compare-card-inline-long-term-operation">
+                                                    <div class="compare-icon-inline-long-term-operation">
+                                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                            <line x1="12" y1="1" x2="12" y2="23"/>
+                                                            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="compare-title-inline-long-term-operation">비용 부담 증가</div>
+                                                    <div class="compare-desc-inline-long-term-operation">사용자·기능 증가시<br>비용이 계속 상승</div>
+                                                </div>
+
+                                                <div class="compare-card-inline-long-term-operation">
+                                                    <div class="compare-icon-inline-long-term-operation">
+                                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                                                            <line x1="9" y1="9" x2="15" y2="15"/>
+                                                            <line x1="15" y1="9" x2="9" y2="15"/>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="compare-title-inline-long-term-operation">유연성 저하</div>
+                                                    <div class="compare-desc-inline-long-term-operation">운영 기간이 길수록<br>변경 대응 어려움</div>
+                                                </div>
+                                            </div>
+
+                                            <!-- 문제점 리스트 -->
+                                            <div class="problem-list-inline-long-term-operation">
+                                                <div class="problem-list-title-inline-long-term-operation">장기 운영시 발생하는 문제</div>
+                                                <div class="problem-items-inline-long-term-operation">
+                                                    <div class="problem-item-inline-long-term-operation">
+                                                        <div class="problem-item-icon-inline-long-term-operation">
+                                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+                                                                <polyline points="17 6 23 6 23 12"/>
+                                                            </svg>
+                                                        </div>
+                                                        <span class="problem-item-text-inline-long-term-operation">사용자 증가 → 비용 증가</span>
+                                                    </div>
+                                                    <div class="problem-item-inline-long-term-operation">
+                                                        <div class="problem-item-icon-inline-long-term-operation">
+                                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                                <circle cx="12" cy="12" r="10"/>
+                                                                <line x1="12" y1="8" x2="12" y2="12"/>
+                                                                <line x1="12" y1="16" x2="12.01" y2="16"/>
+                                                            </svg>
+                                                        </div>
+                                                        <span class="problem-item-text-inline-long-term-operation">기능 요청 → 추가 비용 발생</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- 하단 결론 -->
+                                            <div class="bottom-conclusion-inline-long-term-operation">
+                                                <div class="conclusion-icon-inline-long-term-operation">
+                                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                        <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+                                                        <line x1="12" y1="9" x2="12" y2="13"/>
+                                                        <line x1="12" y1="17" x2="12.01" y2="17"/>
+                                                    </svg>
+                                                </div>
+                                                <div class="conclusion-content-inline-long-term-operation">
+                                                    <div class="conclusion-title-inline-long-term-operation">장기적으로 불리한 구조</div>
+                                                    <div class="conclusion-desc-inline-long-term-operation">초기 비용은 낮지만 운영 기간이 길수록 비용과 제약이 증가합니다</div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -173,18 +521,343 @@
                     <div class="industry-feature-section" id="feature-regulation" data-feature="regulation">
                         <div class="feature-left feature-image-left">
                             <div class="feature-image-large">
-                                <div class="feature-bg-blur certification"></div>
-                                <div class="feature-ui-overlay">
-                                    <div class="glass-card large">
-                                        <div class="glass-card-header">
-                                            <div class="glass-dot"></div>
-                                            <div class="glass-dot"></div>
-                                            <div class="glass-dot"></div>
+                                <!-- 이미지 변형 1: 법정교육 특화 -->
+                                <div class="feature-image-variant active" data-variant="legal-education-specialized">
+                                    <!-- new-project3/page3.html의 HTML 코드 -->
+                                    <div class="section-inline-legal-education-specialized">
+                                        <div class="bg-pattern-inline-legal-education-specialized"></div>
+                                        <div class="content-inline-legal-education-specialized">
+                                            <!-- 헤더 -->
+                                            <div class="header-inline-legal-education-specialized">
+                                                <div class="badge-inline-legal-education-specialized">
+                                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                                        <polyline points="22 4 12 14.01 9 11.01"/>
+                                                    </svg>
+                                                    <span>법정교육 특화</span>
+                                                </div>
+                                                <h2 class="title-inline-legal-education-specialized">
+                                                    법정교육 특화<br>
+                                                    협회에 최적화된 구축형 LMS
+                                                </h2>
+                                            </div>
+
+                                            <!-- 좌우 분할 메인 -->
+                                            <div class="main-split-inline-legal-education-specialized">
+                                                <!-- 왼쪽: 인증 마크 -->
+                                                <div class="cert-card-inline-legal-education-specialized">
+                                                    <div class="cert-badge-inline-legal-education-specialized">
+                                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="cert-title-inline-legal-education-specialized">LX2 구축형</div>
+                                                    <div class="cert-subtitle-inline-legal-education-specialized">법정의무교육 운영<br>협회 특화 LMS</div>
+                                                </div>
+
+                                                <!-- 오른쪽: 체크리스트 -->
+                                                <div class="check-card-inline-legal-education-specialized">
+                                                    <div class="check-title-inline-legal-education-specialized">법정교육 필수 요건</div>
+                                                    <div class="check-list-inline-legal-education-specialized">
+                                                        <div class="check-item-inline-legal-education-specialized">
+                                                            <div class="check-icon-inline-legal-education-specialized">
+                                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                                    <polyline points="20 6 9 17 4 12"/>
+                                                                </svg>
+                                                            </div>
+                                                            <span class="check-text-inline-legal-education-specialized">법정의무교육 규정 준수</span>
+                                                        </div>
+                                                        <div class="check-item-inline-legal-education-specialized">
+                                                            <div class="check-icon-inline-legal-education-specialized">
+                                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                                    <polyline points="20 6 9 17 4 12"/>
+                                                                </svg>
+                                                            </div>
+                                                            <span class="check-text-inline-legal-education-specialized">수료증 자동 발급 지원</span>
+                                                        </div>
+                                                        <div class="check-item-inline-legal-education-specialized">
+                                                            <div class="check-icon-inline-legal-education-specialized">
+                                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                                    <polyline points="20 6 9 17 4 12"/>
+                                                                </svg>
+                                                            </div>
+                                                            <span class="check-text-inline-legal-education-specialized">교육 이수 현황 관리</span>
+                                                        </div>
+                                                        <div class="check-item-inline-legal-education-specialized">
+                                                            <div class="check-icon-inline-legal-education-specialized">
+                                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                                    <polyline points="20 6 9 17 4 12"/>
+                                                                </svg>
+                                                            </div>
+                                                            <span class="check-text-inline-legal-education-specialized">규정 변경 신속 대응</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- 핵심 설명 -->
+                                            <div class="core-desc-inline-legal-education-specialized">
+                                                <p class="core-text-inline-legal-education-specialized">
+                                                    LX2는 <strong>국내 법정교육 환경</strong>에 맞춰 설계되어 있어,<br>
+                                                    <strong>규정 변경 시 빠르게 대응</strong>할 수 있습니다.
+                                                </p>
+                                            </div>
+
+                                            <!-- 4컬럼 강점 -->
+                                            <div class="strengths-row-inline-legal-education-specialized">
+                                                <div class="strength-item-inline-legal-education-specialized">
+                                                    <div class="strength-icon-inline-legal-education-specialized">
+                                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="strength-title-inline-legal-education-specialized">법정교육</div>
+                                                    <div class="strength-desc-inline-legal-education-specialized">규정 준수</div>
+                                                </div>
+
+                                                <div class="strength-item-inline-legal-education-specialized">
+                                                    <div class="strength-icon-inline-legal-education-specialized">
+                                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+                                                            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="strength-title-inline-legal-education-specialized">협회 특화</div>
+                                                    <div class="strength-desc-inline-legal-education-specialized">최적화 설계</div>
+                                                </div>
+
+                                                <div class="strength-item-inline-legal-education-specialized">
+                                                    <div class="strength-icon-inline-legal-education-specialized">
+                                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="strength-title-inline-legal-education-specialized">빠른 대응</div>
+                                                    <div class="strength-desc-inline-legal-education-specialized">규정 변경</div>
+                                                </div>
+
+                                                <div class="strength-item-inline-legal-education-specialized">
+                                                    <div class="strength-icon-inline-legal-education-specialized">
+                                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                            <circle cx="12" cy="12" r="10"/>
+                                                            <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/>
+                                                            <path d="M2 12h20"/>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="strength-title-inline-legal-education-specialized">국내 환경</div>
+                                                    <div class="strength-desc-inline-legal-education-specialized">맞춤 설계</div>
+                                                </div>
+                                            </div>
+
+                                            <!-- 하단 비교 -->
+                                            <div class="bottom-compare-inline-legal-education-specialized">
+                                                <div class="compare-box-inline-legal-education-specialized">
+                                                    <div class="compare-header-inline-legal-education-specialized">
+                                                        <div class="compare-icon-inline-legal-education-specialized">
+                                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                                <circle cx="12" cy="12" r="3"/>
+                                                                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06"/>
+                                                            </svg>
+                                                        </div>
+                                                        <div class="compare-title-inline-legal-education-specialized">구축형 장점</div>
+                                                    </div>
+                                                    <div class="compare-points-inline-legal-education-specialized">
+                                                        <div class="compare-point-inline-legal-education-specialized">자유로운 기능 커스터마이징</div>
+                                                        <div class="compare-point-inline-legal-education-specialized">독립적인 시스템 운영</div>
+                                                        <div class="compare-point-inline-legal-education-specialized">장기 비용 절감 효과</div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="compare-box-inline-legal-education-specialized">
+                                                    <div class="compare-header-inline-legal-education-specialized">
+                                                        <div class="compare-icon-inline-legal-education-specialized">
+                                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                                                <polyline points="14 2 14 8 20 8"/>
+                                                            </svg>
+                                                        </div>
+                                                        <div class="compare-title-inline-legal-education-specialized">협회 운영</div>
+                                                    </div>
+                                                    <div class="compare-points-inline-legal-education-specialized">
+                                                        <div class="compare-point-inline-legal-education-specialized">회원 관리 시스템 연동</div>
+                                                        <div class="compare-point-inline-legal-education-specialized">수료증 발급 자동화</div>
+                                                        <div class="compare-point-inline-legal-education-specialized">교육 이력 통합 관리</div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="glass-card-content">
-                                            <div class="glass-badge">규정 대응</div>
-                                            <div class="glass-badge">즉시 수정</div>
-                                            <div class="glass-badge">빠른 반영</div>
+                                    </div>
+                                </div>
+                                <!-- 이미지 변형 2: 규정 대응 -->
+                                <div class="feature-image-variant" data-variant="regulation-response">
+                                    <!-- new-project3/page4.html의 HTML 코드 -->
+                                    <div class="section-inline-regulation-response">
+                                        <div class="bg-pattern-inline-regulation-response"></div>
+                                        <div class="content-inline-regulation-response">
+                                            <!-- 헤더 -->
+                                            <div class="header-inline-regulation-response">
+                                                <div class="badge-inline-regulation-response">
+                                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                                                    </svg>
+                                                    <span>빠른 대응</span>
+                                                </div>
+                                                <h2 class="title-inline-regulation-response">
+                                                    규정 대응<br>
+                                                    즉시 수정 가능, 자유로운 커스터마이징
+                                                </h2>
+                                            </div>
+
+                                            <!-- 메인 2컬럼 -->
+                                            <div class="main-row-inline-regulation-response">
+                                                <div class="main-card-inline-regulation-response">
+                                                    <div class="main-icon-inline-regulation-response">
+                                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="main-title-inline-regulation-response">즉시 수정</div>
+                                                    <div class="main-desc-inline-regulation-response">규정 변경 시<br>빠른 기능 수정 가능</div>
+                                                </div>
+
+                                                <div class="main-card-inline-regulation-response">
+                                                    <div class="main-icon-inline-regulation-response">
+                                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                            <circle cx="12" cy="12" r="3"/>
+                                                            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4"/>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="main-title-inline-regulation-response">커스터마이징</div>
+                                                    <div class="main-desc-inline-regulation-response">협회 특성에 맞는<br>자유로운 설정</div>
+                                                </div>
+                                            </div>
+
+                                            <!-- 핵심 메시지 -->
+                                            <div class="core-msg-inline-regulation-response">
+                                                <p class="core-text-inline-regulation-response">
+                                                    <strong>국내 법정교육 환경</strong>에 맞춰 규정이 변경되면 <strong>기능 수정이 빠르게</strong> 이루어집니다.<br>
+                                                    각 협회의 특성에 맞는 <strong>교육 과정 구성, 수료 처리 방식</strong> 등도<br>자유롭게 커스터마이징할 수 있습니다.
+                                                </p>
+                                            </div>
+
+                                            <!-- 커스터마이징 4열 -->
+                                            <div class="custom-row-inline-regulation-response">
+                                                <div class="custom-box-inline-regulation-response">
+                                                    <div class="custom-icon-inline-regulation-response">
+                                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                                                            <path d="M2 17l10 5 10-5"/>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="custom-title-inline-regulation-response">교육 과정</div>
+                                                </div>
+                                                <div class="custom-box-inline-regulation-response">
+                                                    <div class="custom-icon-inline-regulation-response">
+                                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                                            <polyline points="22 4 12 14.01 9 11.01"/>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="custom-title-inline-regulation-response">수료 처리</div>
+                                                </div>
+                                                <div class="custom-box-inline-regulation-response">
+                                                    <div class="custom-icon-inline-regulation-response">
+                                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                                            <polyline points="14 2 14 8 20 8"/>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="custom-title-inline-regulation-response">수료증</div>
+                                                </div>
+                                                <div class="custom-box-inline-regulation-response">
+                                                    <div class="custom-icon-inline-regulation-response">
+                                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                                                            <line x1="16" y1="2" x2="16" y2="6"/>
+                                                            <line x1="8" y1="2" x2="8" y2="6"/>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="custom-title-inline-regulation-response">일정 관리</div>
+                                                </div>
+                                            </div>
+
+                                            <!-- 하단 2컬럼 상세 -->
+                                            <div class="bottom-row-inline-regulation-response">
+                                                <div class="detail-card-inline-regulation-response">
+                                                    <div class="detail-header-inline-regulation-response">
+                                                        <div class="detail-icon-inline-regulation-response">
+                                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                                                            </svg>
+                                                        </div>
+                                                        <div class="detail-title-inline-regulation-response">빠른 규정 대응</div>
+                                                    </div>
+                                                    <div class="detail-list-inline-regulation-response">
+                                                        <div class="detail-item-inline-regulation-response">
+                                                            <div class="detail-check-inline-regulation-response">
+                                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                                                    <polyline points="20 6 9 17 4 12"/>
+                                                                </svg>
+                                                            </div>
+                                                            <span class="detail-text-inline-regulation-response">법정교육 규정 변경 즉시 반영</span>
+                                                        </div>
+                                                        <div class="detail-item-inline-regulation-response">
+                                                            <div class="detail-check-inline-regulation-response">
+                                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                                                    <polyline points="20 6 9 17 4 12"/>
+                                                                </svg>
+                                                            </div>
+                                                            <span class="detail-text-inline-regulation-response">기능 수정 후 빠른 적용</span>
+                                                        </div>
+                                                        <div class="detail-item-inline-regulation-response">
+                                                            <div class="detail-check-inline-regulation-response">
+                                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                                                    <polyline points="20 6 9 17 4 12"/>
+                                                                </svg>
+                                                            </div>
+                                                            <span class="detail-text-inline-regulation-response">운영 중단 없이 업데이트</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="detail-card-inline-regulation-response">
+                                                    <div class="detail-header-inline-regulation-response">
+                                                        <div class="detail-icon-inline-regulation-response">
+                                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+                                                                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+                                                            </svg>
+                                                        </div>
+                                                        <div class="detail-title-inline-regulation-response">협회 맞춤 운영</div>
+                                                    </div>
+                                                    <div class="detail-list-inline-regulation-response">
+                                                        <div class="detail-item-inline-regulation-response">
+                                                            <div class="detail-check-inline-regulation-response">
+                                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                                                    <polyline points="20 6 9 17 4 12"/>
+                                                                </svg>
+                                                            </div>
+                                                            <span class="detail-text-inline-regulation-response">협회 고유 운영 방식 반영</span>
+                                                        </div>
+                                                        <div class="detail-item-inline-regulation-response">
+                                                            <div class="detail-check-inline-regulation-response">
+                                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                                                    <polyline points="20 6 9 17 4 12"/>
+                                                                </svg>
+                                                            </div>
+                                                            <span class="detail-text-inline-regulation-response">교육 과정 자유롭게 구성</span>
+                                                        </div>
+                                                        <div class="detail-item-inline-regulation-response">
+                                                            <div class="detail-check-inline-regulation-response">
+                                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                                                    <polyline points="20 6 9 17 4 12"/>
+                                                                </svg>
+                                                            </div>
+                                                            <span class="detail-text-inline-regulation-response">수료 처리 방식 맞춤 설정</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -193,16 +866,16 @@
                         <div class="feature-right feature-text-right">
                             <h2 class="feature-title">규정 변경 대응 기능 즉시 수정 가능</h2>
                             <div class="feature-accordion">
-                                <div class="accordion-item">
+                                <div class="accordion-item active" data-image-variant="legal-education-specialized">
                                     <div class="accordion-header">
                                         <span>법정교육 특화: 협회에 최적화된 구축형 LMS</span>
-                                        <span class="accordion-icon">+</span>
+                                        <span class="accordion-icon">-</span>
                                     </div>
-                                    <div class="accordion-content">
+                                    <div class="accordion-content" style="display: block;">
                                         <p>LX2는 법정의무교육을 운영하는 협회에 특화된 구축형 LMS입니다. 국내 법정교육 환경에 맞춰 설계되어 있어, 규정 변경 시 빠르게 대응할 수 있습니다.</p>
                                     </div>
                                 </div>
-                                <div class="accordion-item">
+                                <div class="accordion-item" data-image-variant="regulation-response">
                                     <div class="accordion-header">
                                         <span>규정 대응: 즉시 수정 가능, 자유로운 커스터마이징</span>
                                         <span class="accordion-icon">+</span>
@@ -220,16 +893,16 @@
                         <div class="feature-left">
                             <h2 class="feature-title">수료·보고 체계 자동화</h2>
                             <div class="feature-accordion">
-                                <div class="accordion-item">
+                                <div class="accordion-item active" data-image-variant="completion-report-automation">
                                     <div class="accordion-header">
                                         <span>수료·보고 자동화: 운영 부담을 크게 줄입니다</span>
-                                        <span class="accordion-icon">+</span>
+                                        <span class="accordion-icon">-</span>
                                     </div>
-                                    <div class="accordion-content">
+                                    <div class="accordion-content" style="display: block;">
                                         <p>법정의무교육에서는 수료 관리, 증빙 자료 생성, 보고서 작성 등이 필수입니다. LX2는 이러한 모든 과정을 자동화하여 운영자의 업무 부담을 크게 줄입니다.</p>
                                     </div>
                                 </div>
-                                <div class="accordion-item">
+                                <div class="accordion-item" data-image-variant="bulk-processing">
                                     <div class="accordion-header">
                                         <span>대량 처리: 수료와 보고서까지 완전 자동화</span>
                                         <span class="accordion-icon">+</span>
@@ -242,18 +915,534 @@
                         </div>
                         <div class="feature-right">
                             <div class="feature-image-large">
-                                <div class="feature-bg-blur framework"></div>
-                                <div class="feature-ui-overlay">
-                                    <div class="glass-card large">
-                                        <div class="glass-card-header">
-                                            <div class="glass-dot"></div>
-                                            <div class="glass-dot"></div>
-                                            <div class="glass-dot"></div>
+                                <!-- 이미지 변형 1: 수료·보고 자동화 -->
+                                <div class="feature-image-variant active" data-variant="completion-report-automation">
+                                    <!-- new-project3/page5.html의 HTML 코드 -->
+                                    <div class="section-inline-completion-report-automation">
+                                        <div class="bg-pattern-inline-completion-report-automation"></div>
+                                        
+                                        <!-- 떠다니는 아이콘들 -->
+                                        <div class="floating-icons-inline-completion-report-automation">
+                                            <div class="float-icon-inline-completion-report-automation">
+                                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                                </svg>
+                                            </div>
+                                            <div class="float-icon-inline-completion-report-automation">
+                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                    <polyline points="20 6 9 17 4 12"/>
+                                                </svg>
+                                            </div>
+                                            <div class="float-icon-inline-completion-report-automation">
+                                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                                                </svg>
+                                            </div>
+                                            <div class="float-icon-inline-completion-report-automation">
+                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                    <circle cx="12" cy="12" r="10"/>
+                                                    <polyline points="12 6 12 12 16 14"/>
+                                                </svg>
+                                            </div>
                                         </div>
-                                        <div class="glass-card-content">
-                                            <div class="glass-badge">수료 관리</div>
-                                            <div class="glass-badge">보고 자동화</div>
-                                            <div class="glass-badge">증빙 생성</div>
+
+                                        <div class="content-inline-completion-report-automation">
+                                            <!-- 헤더 -->
+                                            <div class="header-inline-completion-report-automation">
+                                                <div class="badge-inline-completion-report-automation">
+                                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                        <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+                                                    </svg>
+                                                    <span>업무 자동화</span>
+                                                </div>
+                                                <h2 class="title-inline-completion-report-automation">
+                                                    수료·보고 자동화<br>
+                                                    운영 부담을 크게 줄입니다
+                                                </h2>
+                                            </div>
+
+                                            <!-- 자동화 일러스트 -->
+                                            <div class="illustration-inline-completion-report-automation">
+                                                <div class="illust-container-inline-completion-report-automation">
+                                                    <!-- 톱니바퀴 애니메이션 -->
+                                                    <div class="gear-box-inline-completion-report-automation">
+                                                        <svg class="gear-inline-completion-report-automation gear-large-inline-completion-report-automation" viewBox="0 0 24 24">
+                                                            <circle cx="12" cy="12" r="3"/>
+                                                            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+                                                        </svg>
+                                                        <svg class="gear-inline-completion-report-automation gear-small-inline-completion-report-automation" viewBox="0 0 24 24">
+                                                            <circle cx="12" cy="12" r="3"/>
+                                                            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+                                                        </svg>
+                                                    </div>
+
+                                                    <!-- 프로세스 -->
+                                                    <div class="process-flow-inline-completion-report-automation">
+                                                        <div class="flow-item-inline-completion-report-automation">
+                                                            <div class="flow-icon-inline-completion-report-automation">
+                                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                                                    <polyline points="22 4 12 14.01 9 11.01"/>
+                                                                </svg>
+                                                            </div>
+                                                            <span class="flow-text-inline-completion-report-automation">수료 자동 판정</span>
+                                                        </div>
+                                                        <div class="flow-item-inline-completion-report-automation">
+                                                            <div class="flow-icon-inline-completion-report-automation">
+                                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                                                </svg>
+                                                            </div>
+                                                            <span class="flow-text-inline-completion-report-automation">증빙 자동 생성</span>
+                                                        </div>
+                                                        <div class="flow-item-inline-completion-report-automation">
+                                                            <div class="flow-icon-inline-completion-report-automation">
+                                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                                                                    <line x1="3" y1="9" x2="21" y2="9"/>
+                                                                </svg>
+                                                            </div>
+                                                            <span class="flow-text-inline-completion-report-automation">보고서 자동 작성</span>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- 화살표 -->
+                                                    <div class="arrow-anim-inline-completion-report-automation">
+                                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                                                        </svg>
+                                                    </div>
+
+                                                    <!-- 결과 -->
+                                                    <div class="result-box-inline-completion-report-automation">
+                                                        <div class="result-circle-inline-completion-report-automation">
+                                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                                <polyline points="20 6 9 17 4 12"/>
+                                                            </svg>
+                                                        </div>
+                                                        <span class="result-label-inline-completion-report-automation">완료!</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- 핵심 메시지 -->
+                                            <div class="core-msg-inline-completion-report-automation">
+                                                <p class="core-text-inline-completion-report-automation">
+                                                    <strong>법정의무교육</strong>에서는 수료 관리, 증빙 자료 생성, 보고서 작성 등이 필수입니다.<br>
+                                                    LX2는 이러한 <strong>모든 과정을 자동화</strong>하여 운영자의 <strong>업무 부담을 크게 줄입니다</strong>.
+                                                </p>
+                                            </div>
+
+                                            <!-- 자동화 기능 4열 -->
+                                            <div class="feature-row-inline-completion-report-automation">
+                                                <div class="feature-box-inline-completion-report-automation">
+                                                    <div class="feature-icon-inline-completion-report-automation">
+                                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                                            <polyline points="22 4 12 14.01 9 11.01"/>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="feature-title-inline-completion-report-automation">수료 관리</div>
+                                                    <div class="feature-desc-inline-completion-report-automation">자동 판정</div>
+                                                </div>
+                                                <div class="feature-box-inline-completion-report-automation">
+                                                    <div class="feature-icon-inline-completion-report-automation">
+                                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                                            <polyline points="14 2 14 8 20 8"/>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="feature-title-inline-completion-report-automation">증빙 생성</div>
+                                                    <div class="feature-desc-inline-completion-report-automation">자동 발급</div>
+                                                </div>
+                                                <div class="feature-box-inline-completion-report-automation">
+                                                    <div class="feature-icon-inline-completion-report-automation">
+                                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                                                            <line x1="3" y1="9" x2="21" y2="9"/>
+                                                            <line x1="9" y1="21" x2="9" y2="9"/>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="feature-title-inline-completion-report-automation">보고서</div>
+                                                    <div class="feature-desc-inline-completion-report-automation">자동 작성</div>
+                                                </div>
+                                                <div class="feature-box-inline-completion-report-automation">
+                                                    <div class="feature-icon-inline-completion-report-automation">
+                                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="feature-title-inline-completion-report-automation">통계 집계</div>
+                                                    <div class="feature-desc-inline-completion-report-automation">실시간</div>
+                                                </div>
+                                            </div>
+
+                                            <!-- 하단 결과 3열 -->
+                                            <div class="result-row-inline-completion-report-automation">
+                                                <div class="result-card-inline-completion-report-automation">
+                                                    <div class="result-header-inline-completion-report-automation">
+                                                        <div class="r-icon-inline-completion-report-automation">
+                                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                                <circle cx="12" cy="12" r="10"/>
+                                                                <polyline points="12 6 12 12 16 14"/>
+                                                            </svg>
+                                                        </div>
+                                                        <div class="r-title-inline-completion-report-automation">시간 절감</div>
+                                                    </div>
+                                                    <div class="result-list-inline-completion-report-automation">
+                                                        <div class="result-item-inline-completion-report-automation">
+                                                            <div class="r-check-inline-completion-report-automation">
+                                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                                                    <polyline points="20 6 9 17 4 12"/>
+                                                                </svg>
+                                                            </div>
+                                                            <span class="r-text-inline-completion-report-automation">반복 업무 자동화</span>
+                                                        </div>
+                                                        <div class="result-item-inline-completion-report-automation">
+                                                            <div class="r-check-inline-completion-report-automation">
+                                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                                                    <polyline points="20 6 9 17 4 12"/>
+                                                                </svg>
+                                                            </div>
+                                                            <span class="r-text-inline-completion-report-automation">즉시 처리 완료</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="result-card-inline-completion-report-automation">
+                                                    <div class="result-header-inline-completion-report-automation">
+                                                        <div class="r-icon-inline-completion-report-automation">
+                                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                                            </svg>
+                                                        </div>
+                                                        <div class="r-title-inline-completion-report-automation">정확성</div>
+                                                    </div>
+                                                    <div class="result-list-inline-completion-report-automation">
+                                                        <div class="result-item-inline-completion-report-automation">
+                                                            <div class="r-check-inline-completion-report-automation">
+                                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                                                    <polyline points="20 6 9 17 4 12"/>
+                                                                </svg>
+                                                            </div>
+                                                            <span class="r-text-inline-completion-report-automation">수작업 오류 방지</span>
+                                                        </div>
+                                                        <div class="result-item-inline-completion-report-automation">
+                                                            <div class="r-check-inline-completion-report-automation">
+                                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                                                    <polyline points="20 6 9 17 4 12"/>
+                                                                </svg>
+                                                            </div>
+                                                            <span class="r-text-inline-completion-report-automation">데이터 일관성</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="result-card-inline-completion-report-automation">
+                                                    <div class="result-header-inline-completion-report-automation">
+                                                        <div class="r-icon-inline-completion-report-automation">
+                                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                                            </svg>
+                                                        </div>
+                                                        <div class="r-title-inline-completion-report-automation">감사 대응</div>
+                                                    </div>
+                                                    <div class="result-list-inline-completion-report-automation">
+                                                        <div class="result-item-inline-completion-report-automation">
+                                                            <div class="r-check-inline-completion-report-automation">
+                                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                                                    <polyline points="20 6 9 17 4 12"/>
+                                                                </svg>
+                                                            </div>
+                                                            <span class="r-text-inline-completion-report-automation">이력 체계적 보관</span>
+                                                        </div>
+                                                        <div class="result-item-inline-completion-report-automation">
+                                                            <div class="r-check-inline-completion-report-automation">
+                                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                                                    <polyline points="20 6 9 17 4 12"/>
+                                                                </svg>
+                                                            </div>
+                                                            <span class="r-text-inline-completion-report-automation">증빙 즉시 조회</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 이미지 변형 2: 대량 처리 -->
+                                <div class="feature-image-variant" data-variant="bulk-processing">
+                                    <!-- new-project3/page6.html의 HTML 코드 -->
+                                    <div class="section-inline-bulk-processing">
+                                        <div class="bg-pattern-inline-bulk-processing"></div>
+                                        
+                                        <!-- 떠다니는 문서들 -->
+                                        <div class="floating-docs-inline-bulk-processing">
+                                            <div class="float-doc-inline-bulk-processing">
+                                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                                </svg>
+                                            </div>
+                                            <div class="float-doc-inline-bulk-processing">
+                                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                                </svg>
+                                            </div>
+                                            <div class="float-doc-inline-bulk-processing">
+                                                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                                </svg>
+                                            </div>
+                                            <div class="float-doc-inline-bulk-processing">
+                                                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                                </svg>
+                                            </div>
+                                            <div class="float-doc-inline-bulk-processing">
+                                                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                                </svg>
+                                            </div>
+                                        </div>
+
+                                        <div class="content-inline-bulk-processing">
+                                            <!-- 헤더 -->
+                                            <div class="header-inline-bulk-processing">
+                                                <div class="badge-inline-bulk-processing">
+                                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                                                        <line x1="3" y1="9" x2="21" y2="9"/>
+                                                    </svg>
+                                                    <span>대량 자동화</span>
+                                                </div>
+                                                <h2 class="title-inline-bulk-processing">
+                                                    대량 처리<br>
+                                                    수료와 보고서까지 완전 자동화
+                                                </h2>
+                                            </div>
+
+                                            <!-- 대량 처리 시각화 -->
+                                            <div class="visual-section-inline-bulk-processing">
+                                                <div class="visual-container-inline-bulk-processing">
+                                                    <div class="input-stack-inline-bulk-processing">
+                                                        <div class="stack-docs-inline-bulk-processing">
+                                                            <div class="stack-doc-inline-bulk-processing">
+                                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                                                </svg>
+                                                            </div>
+                                                            <div class="stack-doc-inline-bulk-processing">
+                                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                                                </svg>
+                                                            </div>
+                                                            <div class="stack-doc-inline-bulk-processing">
+                                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                                                </svg>
+                                                            </div>
+                                                        </div>
+                                                        <span class="input-label-inline-bulk-processing">대량 데이터</span>
+                                                    </div>
+
+                                                    <div class="arrow-flow-inline-bulk-processing">
+                                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                                                        </svg>
+                                                    </div>
+
+                                                    <div class="process-center-inline-bulk-processing">
+                                                        <div class="process-gear-inline-bulk-processing">
+                                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                                <circle cx="12" cy="12" r="3"/>
+                                                                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+                                                            </svg>
+                                                        </div>
+                                                        <span class="process-label-inline-bulk-processing">자동 처리</span>
+                                                    </div>
+
+                                                    <div class="arrow-flow-inline-bulk-processing">
+                                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                                                        </svg>
+                                                    </div>
+
+                                                    <div class="output-stack-inline-bulk-processing">
+                                                        <div class="output-icon-inline-bulk-processing">
+                                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                                <polyline points="20 6 9 17 4 12"/>
+                                                            </svg>
+                                                        </div>
+                                                        <span class="output-label-inline-bulk-processing">완료!</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- 핵심 메시지 -->
+                                            <div class="core-msg-inline-bulk-processing">
+                                                <p class="core-text-inline-bulk-processing">
+                                                    <strong>법정교육</strong>은 대량의 수료 처리가 필요하고, 정기적인 보고서 작성이 필수입니다.<br>
+                                                    LX2는 <strong>대량 수료 처리와 보고서 생성</strong>까지 자동화하여 <strong>업무를 최소화</strong>합니다.
+                                                </p>
+                                            </div>
+
+                                            <!-- 기능 2x2 그리드 -->
+                                            <div class="feature-grid-inline-bulk-processing">
+                                                <div class="feature-card-inline-bulk-processing">
+                                                    <div class="feature-icon-inline-bulk-processing">
+                                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                                            <circle cx="9" cy="7" r="4"/>
+                                                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                                                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="feature-content-inline-bulk-processing">
+                                                        <div class="feature-title-inline-bulk-processing">대량 수료 처리</div>
+                                                        <div class="feature-desc-inline-bulk-processing">수천 명 동시 처리<br>일괄 수료 판정</div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="feature-card-inline-bulk-processing">
+                                                    <div class="feature-icon-inline-bulk-processing">
+                                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                                                            <line x1="3" y1="9" x2="21" y2="9"/>
+                                                            <line x1="9" y1="21" x2="9" y2="9"/>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="feature-content-inline-bulk-processing">
+                                                        <div class="feature-title-inline-bulk-processing">보고서 자동 생성</div>
+                                                        <div class="feature-desc-inline-bulk-processing">정기 보고서 자동 작성<br>양식별 출력 지원</div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="feature-card-inline-bulk-processing">
+                                                    <div class="feature-icon-inline-bulk-processing">
+                                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                                            <polyline points="14 2 14 8 20 8"/>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="feature-content-inline-bulk-processing">
+                                                        <div class="feature-title-inline-bulk-processing">증빙 일괄 발급</div>
+                                                        <div class="feature-desc-inline-bulk-processing">수료증 대량 생성<br>PDF 일괄 다운로드</div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="feature-card-inline-bulk-processing">
+                                                    <div class="feature-icon-inline-bulk-processing">
+                                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="feature-content-inline-bulk-processing">
+                                                        <div class="feature-title-inline-bulk-processing">실시간 통계</div>
+                                                        <div class="feature-desc-inline-bulk-processing">현황 자동 집계<br>대시보드 제공</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- 하단 결과 3열 -->
+                                            <div class="result-row-inline-bulk-processing">
+                                                <div class="result-card-inline-bulk-processing">
+                                                    <div class="result-header-inline-bulk-processing">
+                                                        <div class="result-icon-inline-bulk-processing">
+                                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                                <circle cx="12" cy="12" r="10"/>
+                                                                <polyline points="12 6 12 12 16 14"/>
+                                                            </svg>
+                                                        </div>
+                                                        <div class="result-info-inline-bulk-processing">
+                                                            <div class="result-num-inline-bulk-processing">90% 절감</div>
+                                                            <div class="result-title-inline-bulk-processing">업무 시간</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="result-list-inline-bulk-processing">
+                                                        <div class="result-item-inline-bulk-processing">
+                                                            <div class="result-check-inline-bulk-processing">
+                                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                                                    <polyline points="20 6 9 17 4 12"/>
+                                                                </svg>
+                                                            </div>
+                                                            <span class="result-text-inline-bulk-processing">수동 작업 대폭 감소</span>
+                                                        </div>
+                                                        <div class="result-item-inline-bulk-processing">
+                                                            <div class="result-check-inline-bulk-processing">
+                                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                                                    <polyline points="20 6 9 17 4 12"/>
+                                                                </svg>
+                                                            </div>
+                                                            <span class="result-text-inline-bulk-processing">반복 업무 자동화</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="result-card-inline-bulk-processing">
+                                                    <div class="result-header-inline-bulk-processing">
+                                                        <div class="result-icon-inline-bulk-processing">
+                                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                                                                <line x1="3" y1="9" x2="21" y2="9"/>
+                                                            </svg>
+                                                        </div>
+                                                        <div class="result-info-inline-bulk-processing">
+                                                            <div class="result-num-inline-bulk-processing">100% 자동</div>
+                                                            <div class="result-title-inline-bulk-processing">보고서 생성</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="result-list-inline-bulk-processing">
+                                                        <div class="result-item-inline-bulk-processing">
+                                                            <div class="result-check-inline-bulk-processing">
+                                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                                                    <polyline points="20 6 9 17 4 12"/>
+                                                                </svg>
+                                                            </div>
+                                                            <span class="result-text-inline-bulk-processing">정기 보고 완전 자동</span>
+                                                        </div>
+                                                        <div class="result-item-inline-bulk-processing">
+                                                            <div class="result-check-inline-bulk-processing">
+                                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                                                    <polyline points="20 6 9 17 4 12"/>
+                                                                </svg>
+                                                            </div>
+                                                            <span class="result-text-inline-bulk-processing">양식별 출력 지원</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="result-card-inline-bulk-processing">
+                                                    <div class="result-header-inline-bulk-processing">
+                                                        <div class="result-icon-inline-bulk-processing">
+                                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                                            </svg>
+                                                        </div>
+                                                        <div class="result-info-inline-bulk-processing">
+                                                            <div class="result-num-inline-bulk-processing">0건 오류</div>
+                                                            <div class="result-title-inline-bulk-processing">처리 정확도</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="result-list-inline-bulk-processing">
+                                                        <div class="result-item-inline-bulk-processing">
+                                                            <div class="result-check-inline-bulk-processing">
+                                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                                                    <polyline points="20 6 9 17 4 12"/>
+                                                                </svg>
+                                                            </div>
+                                                            <span class="result-text-inline-bulk-processing">수작업 오류 제거</span>
+                                                        </div>
+                                                        <div class="result-item-inline-bulk-processing">
+                                                            <div class="result-check-inline-bulk-processing">
+                                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                                                    <polyline points="20 6 9 17 4 12"/>
+                                                                </svg>
+                                                            </div>
+                                                            <span class="result-text-inline-bulk-processing">데이터 정확성 보장</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -265,18 +1454,401 @@
                     <div class="industry-feature-section" id="feature-cost" data-feature="cost">
                         <div class="feature-left feature-image-left">
                             <div class="feature-image-large">
-                                <div class="feature-bg-blur compliance"></div>
-                                <div class="feature-ui-overlay">
-                                    <div class="glass-card large">
-                                        <div class="glass-card-header">
-                                            <div class="glass-dot"></div>
-                                            <div class="glass-dot"></div>
-                                            <div class="glass-dot"></div>
+                                <!-- 이미지 변형 1: 구축형 모델 -->
+                                <div class="feature-image-variant active" data-variant="builtin-model">
+                                    <!-- new-project3/page7.html의 HTML 코드 -->
+                                    <div class="section-inline-builtin-model">
+                                        <div class="bg-pattern-inline-builtin-model"></div>
+                                        <div class="content-inline-builtin-model">
+                                            <!-- 헤더 -->
+                                            <div class="header-inline-builtin-model">
+                                                <div class="badge-inline-builtin-model">
+                                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                                    </svg>
+                                                    <span>구축형 모델</span>
+                                                </div>
+                                                <h2 class="title-inline-builtin-model">
+                                                    구축형 모델<br>
+                                                    사용자 증가해도 비용 불변, 장기 안정 운영
+                                                </h2>
+                                            </div>
+
+                                            <!-- 비용 비교 그래프 -->
+                                            <div class="graph-section-inline-builtin-model">
+                                                <div class="graph-title-inline-builtin-model">사용자 증가에 따른 비용 변화</div>
+                                                <div class="graph-container-inline-builtin-model">
+                                                    <div class="graph-item-inline-builtin-model rental-inline-builtin-model">
+                                                        <div class="graph-bar-container-inline-builtin-model">
+                                                            <div class="graph-bar-inline-builtin-model"></div>
+                                                            <div class="graph-bar-inline-builtin-model"></div>
+                                                            <div class="graph-bar-inline-builtin-model"></div>
+                                                        </div>
+                                                        <div class="graph-label-inline-builtin-model">임대형</div>
+                                                        <div class="graph-desc-inline-builtin-model">비용 증가 ↑</div>
+                                                    </div>
+
+                                                    <div class="graph-item-inline-builtin-model builtin-inline-builtin-model">
+                                                        <div class="graph-bar-container-inline-builtin-model">
+                                                            <div class="graph-bar-inline-builtin-model"></div>
+                                                            <div class="graph-bar-inline-builtin-model"></div>
+                                                            <div class="graph-bar-inline-builtin-model"></div>
+                                                        </div>
+                                                        <div class="graph-label-inline-builtin-model">구축형</div>
+                                                        <div class="graph-desc-inline-builtin-model">비용 고정 →</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- 핵심 메시지 -->
+                                            <div class="core-msg-inline-builtin-model">
+                                                <p class="core-text-inline-builtin-model">
+                                                    LX2는 <strong>구축형 모델</strong>이기 때문에 초기 구축 비용 이후에는<br>
+                                                    <strong>사용자가 늘어나도 비용이 증가하지 않습니다</strong>.
+                                                </p>
+                                            </div>
+
+                                            <!-- 비교 카드 2열 -->
+                                            <div class="compare-row-inline-builtin-model">
+                                                <div class="compare-card-inline-builtin-model rental-inline-builtin-model">
+                                                    <div class="compare-header-inline-builtin-model">
+                                                        <div class="compare-icon-inline-builtin-model">
+                                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                                <line x1="12" y1="1" x2="12" y2="23"/>
+                                                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                                                            </svg>
+                                                        </div>
+                                                        <div class="compare-title-inline-builtin-model">임대형</div>
+                                                    </div>
+                                                    <div class="compare-list-inline-builtin-model">
+                                                        <div class="compare-item-inline-builtin-model">
+                                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                                <line x1="18" y1="6" x2="6" y2="18"/>
+                                                                <line x1="6" y1="6" x2="18" y2="18"/>
+                                                            </svg>
+                                                            <span>사용자 증가 시 비용 상승</span>
+                                                        </div>
+                                                        <div class="compare-item-inline-builtin-model">
+                                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                                <line x1="18" y1="6" x2="6" y2="18"/>
+                                                                <line x1="6" y1="6" x2="18" y2="18"/>
+                                                            </svg>
+                                                            <span>기능 추가 시 추가 비용</span>
+                                                        </div>
+                                                        <div class="compare-item-inline-builtin-model">
+                                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                                <line x1="18" y1="6" x2="6" y2="18"/>
+                                                                <line x1="6" y1="6" x2="18" y2="18"/>
+                                                            </svg>
+                                                            <span>장기적 비용 부담 증가</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="compare-card-inline-builtin-model builtin-inline-builtin-model">
+                                                    <div class="compare-header-inline-builtin-model">
+                                                        <div class="compare-icon-inline-builtin-model">
+                                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                                            </svg>
+                                                        </div>
+                                                        <div class="compare-title-inline-builtin-model">구축형 (LX2)</div>
+                                                    </div>
+                                                    <div class="compare-list-inline-builtin-model">
+                                                        <div class="compare-item-inline-builtin-model">
+                                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                                <polyline points="20 6 9 17 4 12"/>
+                                                            </svg>
+                                                            <span>사용자 무제한, 비용 고정</span>
+                                                        </div>
+                                                        <div class="compare-item-inline-builtin-model">
+                                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                                <polyline points="20 6 9 17 4 12"/>
+                                                            </svg>
+                                                            <span>기능 자유롭게 확장</span>
+                                                        </div>
+                                                        <div class="compare-item-inline-builtin-model">
+                                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                                <polyline points="20 6 9 17 4 12"/>
+                                                            </svg>
+                                                            <span>장기적으로 더 효율적</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- 하단 장점 3열 -->
+                                            <div class="benefit-row-inline-builtin-model">
+                                                <div class="benefit-card-inline-builtin-model">
+                                                    <div class="benefit-header-inline-builtin-model">
+                                                        <div class="benefit-icon-inline-builtin-model">
+                                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                                <line x1="12" y1="1" x2="12" y2="23"/>
+                                                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                                                            </svg>
+                                                        </div>
+                                                        <div class="benefit-title-inline-builtin-model">비용 안정</div>
+                                                    </div>
+                                                    <div class="benefit-list-inline-builtin-model">
+                                                        <div class="benefit-item-inline-builtin-model">
+                                                            <div class="benefit-check-inline-builtin-model">
+                                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                                                    <polyline points="20 6 9 17 4 12"/>
+                                                                </svg>
+                                                            </div>
+                                                            <span class="benefit-text-inline-builtin-model">초기 비용 이후 고정</span>
+                                                        </div>
+                                                        <div class="benefit-item-inline-builtin-model">
+                                                            <div class="benefit-check-inline-builtin-model">
+                                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                                                    <polyline points="20 6 9 17 4 12"/>
+                                                                </svg>
+                                                            </div>
+                                                            <span class="benefit-text-inline-builtin-model">예산 계획 용이</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="benefit-card-inline-builtin-model">
+                                                    <div class="benefit-header-inline-builtin-model">
+                                                        <div class="benefit-icon-inline-builtin-model">
+                                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                                                <circle cx="9" cy="7" r="4"/>
+                                                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                                                                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                                                            </svg>
+                                                        </div>
+                                                        <div class="benefit-title-inline-builtin-model">무제한 확장</div>
+                                                    </div>
+                                                    <div class="benefit-list-inline-builtin-model">
+                                                        <div class="benefit-item-inline-builtin-model">
+                                                            <div class="benefit-check-inline-builtin-model">
+                                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                                                    <polyline points="20 6 9 17 4 12"/>
+                                                                </svg>
+                                                            </div>
+                                                            <span class="benefit-text-inline-builtin-model">사용자 수 제한 없음</span>
+                                                        </div>
+                                                        <div class="benefit-item-inline-builtin-model">
+                                                            <div class="benefit-check-inline-builtin-model">
+                                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                                                    <polyline points="20 6 9 17 4 12"/>
+                                                                </svg>
+                                                            </div>
+                                                            <span class="benefit-text-inline-builtin-model">자유로운 기능 확장</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="benefit-card-inline-builtin-model">
+                                                    <div class="benefit-header-inline-builtin-model">
+                                                        <div class="benefit-icon-inline-builtin-model">
+                                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                                <circle cx="12" cy="12" r="10"/>
+                                                                <polyline points="12 6 12 12 16 14"/>
+                                                            </svg>
+                                                        </div>
+                                                        <div class="benefit-title-inline-builtin-model">장기 안정</div>
+                                                    </div>
+                                                    <div class="benefit-list-inline-builtin-model">
+                                                        <div class="benefit-item-inline-builtin-model">
+                                                            <div class="benefit-check-inline-builtin-model">
+                                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                                                    <polyline points="20 6 9 17 4 12"/>
+                                                                </svg>
+                                                            </div>
+                                                            <span class="benefit-text-inline-builtin-model">안정적 운영 보장</span>
+                                                        </div>
+                                                        <div class="benefit-item-inline-builtin-model">
+                                                            <div class="benefit-check-inline-builtin-model">
+                                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                                                    <polyline points="20 6 9 17 4 12"/>
+                                                                </svg>
+                                                            </div>
+                                                            <span class="benefit-text-inline-builtin-model">맞춤 기능 유지</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="glass-card-content">
-                                            <div class="glass-badge">장기 최적화</div>
-                                            <div class="glass-badge">비용 절감</div>
-                                            <div class="glass-badge">안정적 운영</div>
+                                    </div>
+                                </div>
+                                <!-- 이미지 변형 2: 검증된 선택 -->
+                                <div class="feature-image-variant" data-variant="verified-choice">
+                                    <!-- new-project3/page8.html의 HTML 코드 -->
+                                    <div class="section-inline-verified-choice">
+                                        <div class="bg-pattern-inline-verified-choice"></div>
+                                        <div class="content-inline-verified-choice">
+                                            <!-- 헤더 -->
+                                            <div class="header-inline-verified-choice">
+                                                <div class="badge-inline-verified-choice">
+                                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                                        <polyline points="22 4 12 14.01 9 11.01"/>
+                                                    </svg>
+                                                    <span>검증된 선택</span>
+                                                </div>
+                                                <h2 class="title-inline-verified-choice">
+                                                    검증된 선택<br>
+                                                    많은 협회가 LX2로 전환 중
+                                                </h2>
+                                            </div>
+
+                                            <!-- 전환 시각화 -->
+                                            <div class="transition-section-inline-verified-choice">
+                                                <div class="transition-container-inline-verified-choice">
+                                                    <div class="from-box-inline-verified-choice">
+                                                        <div class="from-icon-inline-verified-choice">
+                                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                                                                <line x1="9" y1="9" x2="15" y2="15"/>
+                                                                <line x1="15" y1="9" x2="9" y2="15"/>
+                                                            </svg>
+                                                        </div>
+                                                        <span class="from-label-inline-verified-choice">임대형 LMS</span>
+                                                    </div>
+
+                                                    <div class="arrow-flow-inline-verified-choice">
+                                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                                                        </svg>
+                                                        <span class="arrow-text-inline-verified-choice">전환</span>
+                                                    </div>
+
+                                                    <div class="to-box-inline-verified-choice">
+                                                        <div class="to-icon-inline-verified-choice">
+                                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                                                <polyline points="22 4 12 14.01 9 11.01"/>
+                                                            </svg>
+                                                        </div>
+                                                        <span class="to-label-inline-verified-choice">LX2 구축형</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- 핵심 메시지 -->
+                                            <div class="core-msg-inline-verified-choice">
+                                                <p class="core-text-inline-verified-choice">
+                                                    <strong>임대형 LMS의 한계</strong>를 경험한 많은 법정교육 협회가 <strong>LX2로 전환</strong>하고 있습니다.<br>
+                                                    비용 효율성, 운영 유연성, 규정 대응 속도 등 <strong>모든 측면에서 만족</strong>하고 있습니다.
+                                                </p>
+                                            </div>
+
+                                            <!-- 만족 포인트 3열 -->
+                                            <div class="point-row-inline-verified-choice">
+                                                <div class="point-card-inline-verified-choice">
+                                                    <div class="point-icon-inline-verified-choice">
+                                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                            <line x1="12" y1="1" x2="12" y2="23"/>
+                                                            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="point-title-inline-verified-choice">비용 효율성</div>
+                                                    <div class="point-desc-inline-verified-choice">사용자 증가해도<br>비용 고정</div>
+                                                </div>
+
+                                                <div class="point-card-inline-verified-choice">
+                                                    <div class="point-icon-inline-verified-choice">
+                                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                            <circle cx="12" cy="12" r="3"/>
+                                                            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4"/>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="point-title-inline-verified-choice">운영 유연성</div>
+                                                    <div class="point-desc-inline-verified-choice">협회 맞춤<br>자유로운 설정</div>
+                                                </div>
+
+                                                <div class="point-card-inline-verified-choice">
+                                                    <div class="point-icon-inline-verified-choice">
+                                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="point-title-inline-verified-choice">빠른 대응</div>
+                                                    <div class="point-desc-inline-verified-choice">규정 변경<br>즉시 반영</div>
+                                                </div>
+                                            </div>
+
+                                            <!-- 하단 결과 2열 -->
+                                            <div class="result-row-inline-verified-choice">
+                                                <div class="result-card-inline-verified-choice">
+                                                    <div class="result-header-inline-verified-choice">
+                                                        <div class="result-icon-inline-verified-choice">
+                                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                                                <polyline points="14 2 14 8 20 8"/>
+                                                            </svg>
+                                                        </div>
+                                                        <div class="result-title-inline-verified-choice">전환 이유</div>
+                                                    </div>
+                                                    <div class="result-list-inline-verified-choice">
+                                                        <div class="result-item-inline-verified-choice">
+                                                            <div class="result-check-inline-verified-choice">
+                                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                                                    <polyline points="20 6 9 17 4 12"/>
+                                                                </svg>
+                                                            </div>
+                                                            <span class="result-text-inline-verified-choice">임대형 비용 부담 해소</span>
+                                                        </div>
+                                                        <div class="result-item-inline-verified-choice">
+                                                            <div class="result-check-inline-verified-choice">
+                                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                                                    <polyline points="20 6 9 17 4 12"/>
+                                                                </svg>
+                                                            </div>
+                                                            <span class="result-text-inline-verified-choice">기능 제한 문제 해결</span>
+                                                        </div>
+                                                        <div class="result-item-inline-verified-choice">
+                                                            <div class="result-check-inline-verified-choice">
+                                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                                                    <polyline points="20 6 9 17 4 12"/>
+                                                                </svg>
+                                                            </div>
+                                                            <span class="result-text-inline-verified-choice">규정 대응 지연 해결</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="result-card-inline-verified-choice">
+                                                    <div class="result-header-inline-verified-choice">
+                                                        <div class="result-icon-inline-verified-choice">
+                                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                                                <polyline points="22 4 12 14.01 9 11.01"/>
+                                                            </svg>
+                                                        </div>
+                                                        <div class="result-title-inline-verified-choice">전환 후 만족</div>
+                                                    </div>
+                                                    <div class="result-list-inline-verified-choice">
+                                                        <div class="result-item-inline-verified-choice">
+                                                            <div class="result-check-inline-verified-choice">
+                                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                                                    <polyline points="20 6 9 17 4 12"/>
+                                                                </svg>
+                                                            </div>
+                                                            <span class="result-text-inline-verified-choice">장기 비용 절감 실현</span>
+                                                        </div>
+                                                        <div class="result-item-inline-verified-choice">
+                                                            <div class="result-check-inline-verified-choice">
+                                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                                                    <polyline points="20 6 9 17 4 12"/>
+                                                                </svg>
+                                                            </div>
+                                                            <span class="result-text-inline-verified-choice">맞춤 기능 자유 구현</span>
+                                                        </div>
+                                                        <div class="result-item-inline-verified-choice">
+                                                            <div class="result-check-inline-verified-choice">
+                                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                                                    <polyline points="20 6 9 17 4 12"/>
+                                                                </svg>
+                                                            </div>
+                                                            <span class="result-text-inline-verified-choice">안정적 장기 운영</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -285,16 +1857,16 @@
                         <div class="feature-right feature-text-right">
                             <h2 class="feature-title">가장 합리적인 비용 구조 제공</h2>
                             <div class="feature-accordion">
-                                <div class="accordion-item">
+                                <div class="accordion-item active" data-image-variant="builtin-model">
                                     <div class="accordion-header">
                                         <span>구축형 모델: 사용자 증가해도 비용 불변, 장기 안정 운영</span>
-                                        <span class="accordion-icon">+</span>
+                                        <span class="accordion-icon">-</span>
                                     </div>
-                                    <div class="accordion-content">
+                                    <div class="accordion-content" style="display: block;">
                                         <p>LX2는 구축형 모델이기 때문에 초기 구축 비용 이후에는 사용자가 늘어나도 비용이 증가하지 않습니다. 또한 운영 특성에 맞는 기능을 장기적으로 안정적으로 유지할 수 있어, 임대형 대비 장기적으로 더 효율적입니다.</p>
                                     </div>
                                 </div>
-                                <div class="accordion-item">
+                                <div class="accordion-item" data-image-variant="verified-choice">
                                     <div class="accordion-header">
                                         <span>검증된 선택: 많은 협회가 LX2로 전환 중</span>
                                         <span class="accordion-icon">+</span>
@@ -311,7 +1883,7 @@
                 <!-- Conclusion Section -->
                 <div class="industry-conclusion-section">
                     <div class="conclusion-divider"></div>
-                    <p class="conclusion-text">LX2는 법정의무교육 협회의 규정 준수·운영 효율·비용 절감·대량 운영 대응을 모두 충족하는 최적의 LMS입니다.</p>
+                    
                 </div>
             </section>
         </main>
@@ -321,12 +1893,19 @@
     <script src="../script.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Accordion functionality
+            // Accordion functionality with image switching
             const accordionHeaders = document.querySelectorAll('.accordion-header');
             accordionHeaders.forEach(header => {
                 header.addEventListener('click', function() {
                     const item = this.parentElement;
                     const isActive = item.classList.contains('active');
+                    
+                    // Get the feature section
+                    const featureSection = item.closest('.industry-feature-section');
+                    const imageContainer = featureSection.querySelector('.feature-image-large');
+                    
+                    // Get the image variant to show
+                    const imageVariant = item.closest('.accordion-item').getAttribute('data-image-variant');
                     
                     // Close all accordion items in the same section
                     const allItems = item.parentElement.querySelectorAll('.accordion-item');
@@ -335,10 +1914,148 @@
                     // Toggle current item
                     if (!isActive) {
                         item.classList.add('active');
+                        
+                        // Switch image with fade effect
+                        if (imageVariant && imageContainer) {
+                            const allVariants = imageContainer.querySelectorAll('.feature-image-variant');
+                            const targetVariant = imageContainer.querySelector(`[data-variant="${imageVariant}"]`);
+                            
+                            if (targetVariant) {
+                                // Fade out all variants
+                                allVariants.forEach(variant => {
+                                    variant.style.opacity = '0';
+                                    variant.classList.remove('active');
+                                });
+                                
+                                // Fade in target variant
+                                setTimeout(() => {
+                                    targetVariant.style.opacity = '1';
+                                    targetVariant.classList.add('active');
+                                }, 150);
+                            }
+                        }
+                    } else {
+                        // If closing, reset to first variant
+                        if (imageContainer) {
+                            const allVariants = imageContainer.querySelectorAll('.feature-image-variant');
+                            const firstVariant = allVariants[0];
+                            if (firstVariant) {
+                                allVariants.forEach(variant => {
+                                    variant.style.opacity = '0';
+                                    variant.classList.remove('active');
+                                });
+                                setTimeout(() => {
+                                    firstVariant.style.opacity = '1';
+                                    firstVariant.classList.add('active');
+                                }, 150);
+                            }
+                        }
                     }
                 });
             });
         });
+    </script>
+
+    <!-- 도입 사례 슬라이더 JavaScript -->
+    <script>
+        const caseStudyTrack = document.getElementById('caseStudySliderTrack');
+        const caseStudySlides = document.querySelectorAll('.case-study-slide');
+        const caseStudyPrevBtn = document.getElementById('caseStudyPrevBtn');
+        const caseStudyNextBtn = document.getElementById('caseStudyNextBtn');
+        const caseStudyIndicators = document.querySelectorAll('.case-study-indicator');
+
+        let caseStudyCurrentIndex = 0;
+        const caseStudyTotalSlides = caseStudySlides.length;
+        const caseStudySlideWidth = 100 / caseStudyTotalSlides;
+
+        function updateCaseStudySlider() {
+            // 트랙 이동
+            const offset = caseStudyCurrentIndex * (100 / caseStudyTotalSlides);
+            caseStudyTrack.style.transform = `translateX(-${offset}%)`;
+
+            // 활성 슬라이드 업데이트
+            caseStudySlides.forEach((slide, index) => {
+                slide.classList.toggle('active', index === caseStudyCurrentIndex);
+            });
+
+            // 인디케이터 업데이트
+            caseStudyIndicators.forEach((indicator, index) => {
+                indicator.classList.toggle('active', index === caseStudyCurrentIndex);
+            });
+
+            // 버튼 상태 업데이트
+            caseStudyPrevBtn.disabled = caseStudyCurrentIndex === 0;
+            caseStudyNextBtn.disabled = caseStudyCurrentIndex === caseStudyTotalSlides - 1;
+        }
+
+        caseStudyPrevBtn.addEventListener('click', () => {
+            if (caseStudyCurrentIndex > 0) {
+                caseStudyCurrentIndex--;
+                updateCaseStudySlider();
+                resetCaseStudyAutoSlide();
+            }
+        });
+
+        caseStudyNextBtn.addEventListener('click', () => {
+            if (caseStudyCurrentIndex < caseStudyTotalSlides - 1) {
+                caseStudyCurrentIndex++;
+                updateCaseStudySlider();
+                resetCaseStudyAutoSlide();
+            }
+        });
+
+        caseStudyIndicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => {
+                caseStudyCurrentIndex = index;
+                updateCaseStudySlider();
+                resetCaseStudyAutoSlide();
+            });
+        });
+
+        // 터치 스와이프 지원
+        let caseStudyStartX = 0;
+        let caseStudyIsDragging = false;
+
+        caseStudyTrack.addEventListener('touchstart', (e) => {
+            caseStudyStartX = e.touches[0].clientX;
+            caseStudyIsDragging = true;
+        });
+
+        caseStudyTrack.addEventListener('touchmove', (e) => {
+            if (!caseStudyIsDragging) return;
+        });
+
+        caseStudyTrack.addEventListener('touchend', (e) => {
+            if (!caseStudyIsDragging) return;
+            const endX = e.changedTouches[0].clientX;
+            const diff = caseStudyStartX - endX;
+
+            if (Math.abs(diff) > 50) {
+                if (diff > 0 && caseStudyCurrentIndex < caseStudyTotalSlides - 1) {
+                    caseStudyCurrentIndex++;
+                } else if (diff < 0 && caseStudyCurrentIndex > 0) {
+                    caseStudyCurrentIndex--;
+                }
+                updateCaseStudySlider();
+                resetCaseStudyAutoSlide();
+            }
+            caseStudyIsDragging = false;
+        });
+
+        // 자동 슬라이드
+        let caseStudyAutoSlide = setInterval(() => {
+            caseStudyCurrentIndex = (caseStudyCurrentIndex + 1) % caseStudyTotalSlides;
+            updateCaseStudySlider();
+        }, 4000);
+
+        // 사용자 인터랙션 시 자동 슬라이드 일시 정지 후 재시작
+        function resetCaseStudyAutoSlide() {
+            clearInterval(caseStudyAutoSlide);
+            caseStudyAutoSlide = setInterval(() => {
+                caseStudyCurrentIndex = (caseStudyCurrentIndex + 1) % caseStudyTotalSlides;
+                updateCaseStudySlider();
+            }, 4000);
+        }
     </script>
 </body>
 </html>
