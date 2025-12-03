@@ -15978,13 +15978,34 @@ body {
 
 .case-study-slider-track {
     display: flex;
-    transition: transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
     height: 100%;
     padding: 0 80px;
+    width: max-content;
+    animation: caseStudyScrollLoop 30s linear infinite;
 }
 
+.case-study-slider-track.paused {
+    animation-play-state: paused;
+}
+
+@keyframes caseStudyScrollLoop {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* 호버 시 일시정지 제거 - 자연스럽게 계속 이동 */
+
 .case-study-slide {
-    min-width: calc(100% - 240px);
+    flex: 0 0 600px;
+    min-width: 600px;
+    max-width: 600px;
+    height: 500px;
+    min-height: 500px;
+    max-height: 500px;
     margin: 0 12px;
     background: #ffffff;
     border-radius: 20px;
@@ -15992,15 +16013,15 @@ body {
     padding: 24px 20px;
     display: flex;
     flex-direction: column;
-    transition: transform 0.4s ease, opacity 0.4s ease;
-    opacity: 0.4;
-    transform: scale(0.92);
+    box-sizing: border-box;
 }
 
-.case-study-slide.active {
-    opacity: 1;
-    transform: scale(1);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+@media (max-width: 1400px) {
+    .case-study-slide {
+        flex: 0 0 calc(100% - 240px);
+        min-width: calc(100% - 240px);
+        max-width: calc(100% - 240px);
+    }
 }
 
 /* 카드 헤더 */
@@ -16041,29 +16062,25 @@ body {
     flex-direction: column;
     gap: 12px;
     min-height: 0;
+    height: 100%;
 }
 
 .case-study-main-screenshot {
     flex: 1;
-    background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%);
+    background: transparent;
     border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 0;
+    height: 350px;
+    max-height: 350px;
     position: relative;
     overflow: hidden;
 }
 
 .case-study-main-screenshot::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 28px;
-    background: linear-gradient(135deg, #818cf8 0%, #6366f1 100%);
-    border-radius: 12px 12px 0 0;
+    display: none;
 }
 
 .case-study-screenshot-placeholder {
@@ -16076,8 +16093,12 @@ body {
 .case-study-main-screenshot img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    min-height: 350px;
+    max-height: 350px;
+    object-fit: contain;
+    object-position: center;
     border-radius: 12px;
+    transition: opacity 0.3s ease;
 }
 
 .case-study-thumb-row {
@@ -16098,6 +16119,13 @@ body {
     color: #94a3b8;
     font-weight: 500;
     overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.case-study-thumb:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .case-study-thumb img {
@@ -16128,11 +16156,23 @@ body {
     cursor: pointer;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     transition: all 0.2s ease;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+.case-study-nav-btn-left {
+    left: 10px;
+}
+
+.case-study-nav-btn-right {
+    right: 10px;
 }
 
 .case-study-nav-btn:hover {
     background: #3b82f6;
-    transform: scale(1.05);
+    transform: translateY(-50%) scale(1.05);
 }
 
 .case-study-nav-btn:hover svg {
@@ -16153,7 +16193,7 @@ body {
 
 .case-study-nav-btn:disabled:hover {
     background: #ffffff;
-    transform: scale(1);
+    transform: translateY(-50%) scale(1);
 }
 
 .case-study-nav-btn:disabled:hover svg {

@@ -27,8 +27,6 @@
                 <a href="../manage/portfolio.html" class="sidebar-item" data-page="portfolio">디테일한 교육관리</a>
                 <a href="tips.html" class="sidebar-item" data-page="tips">가성비의 전문 솔루션</a>
                 <a href="industry.html" class="sidebar-item active" data-page="industry">산업별 최적의 솔루션</a>
-                <a href="../news/newsroom.html" class="sidebar-item" data-page="newsroom">뉴스룸</a>
-                <a href="../update/dev-update.html" class="sidebar-item" data-page="dev-update">업데이트 정보</a>
             </nav>
         </aside>
 
@@ -54,234 +52,154 @@
                             <p class="industry-hero-text">"다양한 교육 프로그램을 안정적으로 운영할 수 있는 통합 학습관리 솔루션을 제공합니다."</p>
                         </div>
                     </div>
-                    <!-- Movie Style Slider -->
-                    <div class="movie-slider-container">
-                        
+                </div>
 
-                        <div class="cards-wrapper">
-                            <div class="card" onclick="toggleCard(0)">
-                                <div class="card-bg" style="background: linear-gradient(135deg, #1a1a2e 0%, #1e3a8a 50%, #0f3460 100%)"></div>
-                                <div class="card-logo" style="background-image: url('../assets/slide/koroadlogo.png');"></div>
-                                <div class="card-main-image" style="background-image: url('../assets/slide/koroadmain.png');"></div>
-                                <div class="card-overlay" style="background: linear-gradient(135deg, #5b21b6 0%, #312e81 100%)"></div>
-                                <div class="card-content">
-                                    <div class="card-number">01</div>
-                                    <div class="card-title-vertical">
-                                        <div class="vertical-text">도로교통 공단</div>
-                                        <button class="add-btn">+</button>
-                                    </div>
-                                </div>
-                                <div class="expanded-content">
-                                    <button class="close-btn" onclick="closeCard(event)">&times;</button>
-                                    <div class="solution-header">
-                                        <h1>공공기관 수준</h1>
-                                        <h2>기준을 충족하는 LMS 구조</h2>
-                                        <div class="stars">
-                                            <span class="star">&#9733;</span>
-                                            <span class="star">&#9733;</span>
-                                            <span class="star">&#9733;</span>
-                                            <span class="star">&#9733;</span>
-                                            <span class="star">&#9733;</span>
-                                        </div>
-                                    </div>
-                                    <div class="solution-info">
-                                        <p class="description">
-                                            웹표준 준수, 웹취약점 점검, 개인정보보호 등 공공기관이 필수로 점검해야 하는 항목들을 LX2는 기본 구조에서 모두 충족하도록 설계되었습니다. 별도의 추가 작업이나 커스터마이징 없이도 법적·기술적 기준을 자연스럽게 만족할 수 있습니다.
-                                        </p>
-                                        <div class="details">
-                                            <div class="detail-row">
-                                                <span class="detail-label">산업 유형:</span>
-                                                <span>공공기관 솔루션</span>
-                                            </div>
-                                            <div class="detail-row">
-                                                <span class="detail-label">주요 기능:</span>
-                                                <span>웹표준 준수, 보안 체계, 개인정보보호</span>
-                                            </div>
-                                            <div class="detail-row">
-                                                <span class="detail-label">참고사항:</span>
-                                                <span>전자정부프레임워크, 공공데이터 품질관리</span>
-                                            </div>
-                                            <div class="detail-row">
-                                                <span class="detail-label">적용 범위:</span>
-                                                <span>공공기관, 교육기관, 공공서비스</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="solution-meta">
-                                        <div class="meta-item">&#9200; 즉시 운영 가능</div>
-                                        <div class="category-tag">공공기관 표준</div>
-                                        <div class="meta-item">&#128200; 검증 완료</div>
-                                    </div>
-                                    <button class="play-btn"><div class="play-icon"></div></button>
-                                    <button class="add-btn add-btn-expanded">+</button>
-                                </div>
-                            </div>
+                <!-- 도입 사례 슬라이더 -->
+                <div class="case-study-slider-section">
+                    <div class="case-study-content">
+                        <!-- 헤더 -->
+                        <div class="case-study-header">
+                        </div>
 
-                            <div class="card" onclick="toggleCard(1)">
-                                <div class="card-bg" style="background: linear-gradient(135deg, #06471e 0%, #059669 50%, #03410f 100%)"></div>
-                                <div class="card-overlay" style="background: linear-gradient(135deg, #1f2937 0%, #111827 100%)"></div>
-                                <div class="card-content">
-                                    <div class="card-number">02</div>
-                                    <div class="card-title-vertical">
-                                        <div class="vertical-text">웹접근성 인증</div>
-                                        <button class="add-btn">+</button>
-                                    </div>
-                                </div>
-                                <div class="expanded-content">
-                                    <button class="close-btn" onclick="closeCard(event)">&times;</button>
-                                    <div class="solution-header">
-                                        <h1>웹접근성 인증</h1>
-                                        <h2>구조적으로 해결</h2>
-                                        <div class="stars">
-                                            <span class="star">&#9733;</span>
-                                            <span class="star">&#9733;</span>
-                                            <span class="star">&#9733;</span>
-                                            <span class="star">&#9733;</span>
-                                            <span class="star">&#9733;</span>
+                        <!-- 슬라이더 -->
+                        <div class="case-study-slider-container">
+                            <div class="case-study-slider-track" id="caseStudySliderTrack">
+                                <!-- 1세트 -->
+                                <div class="case-study-slide">
+                                    <div class="case-study-card-header">
+                                        <div class="case-study-org-name">해양경찰교육원</div>
+                                        <div class="case-study-tag-list">
+                                            <span class="case-study-tag"># 경찰교육</span>
+                                            <span class="case-study-tag"># 수강관리</span>
+                                            <span class="case-study-tag"># 수료관리</span>
+                                            <span class="case-study-tag"># 통계현황</span>
                                         </div>
                                     </div>
-                                    <div class="solution-info">
-                                        <p class="description">
-                                            대부분의 LMS는 매년 웹접근성 인증을 받아야 하는 구조적 문제가 있습니다. LX2는 전자정부프레임워크 기반으로 구축되어 있어, 재인증 없이 접근성 요구사항을 구조적으로 충족합니다.
-                                        </p>
-                                        <div class="details">
-                                            <div class="detail-row">
-                                                <span class="detail-label">산업 유형:</span>
-                                                <span>접근성 인증 솔루션</span>
-                                            </div>
-                                            <div class="detail-row">
-                                                <span class="detail-label">주요 기능:</span>
-                                                <span>구조적 접근성, 재인증 불필요, 지속적 준수</span>
-                                            </div>
-                                            <div class="detail-row">
-                                                <span class="detail-label">참고사항:</span>
-                                                <span>웹 접근성 지침, 전자정부프레임워크</span>
-                                            </div>
-                                            <div class="detail-row">
-                                                <span class="detail-label">적용 범위:</span>
-                                                <span>모든 공공기관, 웹서비스 제공자</span>
-                                            </div>
+                                    <div class="case-study-screenshot-area">
+                                        <div class="case-study-main-screenshot">
+                                            <img src="../assets/slide/policestudy.png" alt="해양경찰교육원 메인 화면">
                                         </div>
                                     </div>
-                                    <div class="solution-meta">
-                                        <div class="meta-item">&#9200; 재인증 불필요</div>
-                                        <div class="category-tag">구조적 해결</div>
-                                        <div class="meta-item">&#128200; 지속적 준수</div>
-                                    </div>
-                                    <button class="play-btn"><div class="play-icon"></div></button>
-                                    <button class="add-btn add-btn-expanded">+</button>
                                 </div>
-                            </div>
 
-                            <div class="card" onclick="toggleCard(2)">
-                                <div class="card-bg" style="background: linear-gradient(135deg, #3c1d5e 0%, #6d28d9 50%, #4c1d95 100%)"></div>
-                                <div class="card-overlay" style="background: linear-gradient(135deg, #991b1b 0%, #c2410c 100%)"></div>
-                                <div class="card-content">
-                                    <div class="card-number">03</div>
-                                    <div class="card-title-vertical">
-                                        <div class="vertical-text">전자정부 프레임워크</div>
-                                        <button class="add-btn">+</button>
-                                    </div>
-                                </div>
-                                <div class="expanded-content">
-                                    <button class="close-btn" onclick="closeCard(event)">&times;</button>
-                                    <div class="solution-header">
-                                        <h1>전자정부 프레임워크</h1>
-                                        <h2>안정적 아키텍처</h2>
-                                        <div class="stars">
-                                            <span class="star">&#9733;</span>
-                                            <span class="star">&#9733;</span>
-                                            <span class="star">&#9733;</span>
-                                            <span class="star">&#9733;</span>
-                                            <span class="star">&#9733;</span>
+                                <div class="case-study-slide">
+                                    <div class="case-study-card-header">
+                                        <div class="case-study-org-name">인재개발원</div>
+                                        <div class="case-study-tag-list">
+                                            <span class="case-study-tag"># 인재개발</span>
+                                            <span class="case-study-tag"># 교육과정</span>
+                                            <span class="case-study-tag"># 학습관리</span>
+                                            <span class="case-study-tag"># 성과관리</span>
                                         </div>
                                     </div>
-                                    <div class="solution-info">
-                                        <p class="description">
-                                            LX2는 전자정부프레임워크를 기반으로 구축되어 있어, 공공기관에서 검증된 안정적인 구조를 제공합니다. 보안, 확장성, 유지보수성 모든 측면에서 검증된 아키텍처를 활용합니다.
-                                        </p>
-                                        <div class="details">
-                                            <div class="detail-row">
-                                                <span class="detail-label">산업 유형:</span>
-                                                <span>프레임워크 기반 솔루션</span>
-                                            </div>
-                                            <div class="detail-row">
-                                                <span class="detail-label">주요 기능:</span>
-                                                <span>전자정부프레임워크, 검증된 구조, 안정적 운영</span>
-                                            </div>
-                                            <div class="detail-row">
-                                                <span class="detail-label">참고사항:</span>
-                                                <span>전자정부프레임워크, 공공기관 표준</span>
-                                            </div>
-                                            <div class="detail-row">
-                                                <span class="detail-label">적용 범위:</span>
-                                                <span>공공기관, 정부기관, 공공서비스</span>
-                                            </div>
+                                    <div class="case-study-screenshot-area">
+                                        <div class="case-study-main-screenshot">
+                                            <img src="../assets/slide/devone.png" alt="인재개발원 메인 화면">
                                         </div>
                                     </div>
-                                    <div class="solution-meta">
-                                        <div class="meta-item">&#9200; 검증된 구조</div>
-                                        <div class="category-tag">안정적 운영</div>
-                                        <div class="meta-item">&#128200; 확장 가능</div>
-                                    </div>
-                                    <button class="play-btn"><div class="play-icon"></div></button>
-                                    <button class="add-btn add-btn-expanded">+</button>
                                 </div>
-                            </div>
 
-                            <div class="card" onclick="toggleCard(3)">
-                                <div class="card-bg" style="background: linear-gradient(135deg, #7c2d12 0%, #d97706 50%, #92410e 100%)"></div>
-                                <div class="card-overlay" style="background: linear-gradient(135deg, #1e40af 0%, #0e7490 100%)"></div>
-                                <div class="card-content">
-                                    <div class="card-number">04</div>
-                                    <div class="card-title-vertical">
-                                        <div class="vertical-text">규약 준수</div>
-                                        <button class="add-btn">+</button>
+                                <div class="case-study-slide">
+                                    <div class="case-study-card-header">
+                                        <div class="case-study-org-name">도로교통공단</div>
+                                        <div class="case-study-tag-list">
+                                            <span class="case-study-tag"># 메인화면</span>
+                                            <span class="case-study-tag"># 교육 자료실</span>
+                                            <span class="case-study-tag"># 수강교육</span>
+                                            <span class="case-study-tag"># 체험관 예약</span>
+                                        </div>
+                                    </div>
+                                    <div class="case-study-screenshot-area">
+                                        <div class="case-study-main-screenshot">
+                                            <img src="../assets/slide/도로교통공단메인화면.png" alt="도로교통공단 메인 화면">
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="expanded-content">
-                                    <button class="close-btn" onclick="closeCard(event)">&times;</button>
-                                    <div class="solution-header">
-                                        <h1>규약 준수</h1>
-                                        <h2>감독기관 점검에도 완벽 대응</h2>
-                                        <div class="stars">
-                                            <span class="star">&#9733;</span>
-                                            <span class="star">&#9733;</span>
-                                            <span class="star">&#9733;</span>
-                                            <span class="star">&#9733;</span>
-                                            <span class="star">&#9733;</span>
+
+                                <div class="case-study-slide">
+                                    <div class="case-study-card-header">
+                                        <div class="case-study-org-name">한국생명존중희망재단</div>
+                                        <div class="case-study-tag-list">
+                                            <span class="case-study-tag"># 예방교육</span>
+                                            <span class="case-study-tag"># 상담관리</span>
+                                            <span class="case-study-tag"># 학습관리</span>
+                                            <span class="case-study-tag"># 통계관리</span>
                                         </div>
                                     </div>
-                                    <div class="solution-info">
-                                        <p class="description">
-                                            LX2는 전자정부 UI/UX 가이드라인, 공공데이터 품질관리, 정보보안 가이드라인 등 공공 분야에서 요구되는 다양한 규약을 모두 준수하도록 설계되었습니다. 모든 규약을 준수하고 있기 때문에, 감사나 감독기관의 점검에서도 문제 없이 대응할 수 있습니다.
-                                        </p>
-                                        <div class="details">
-                                            <div class="detail-row">
-                                                <span class="detail-label">산업 유형:</span>
-                                                <span>규약 준수 솔루션</span>
-                                            </div>
-                                            <div class="detail-row">
-                                                <span class="detail-label">주요 기능:</span>
-                                                <span>규약 준수, 감사 대응, 체계적 관리</span>
-                                            </div>
-                                            <div class="detail-row">
-                                                <span class="detail-label">참고사항:</span>
-                                                <span>전자정부 가이드라인, 공공데이터 품질관리</span>
-                                            </div>
-                                            <div class="detail-row">
-                                                <span class="detail-label">적용 범위:</span>
-                                                <span>모든 공공기관, 감사 대상 기관</span>
-                                            </div>
+                                    <div class="case-study-screenshot-area">
+                                        <div class="case-study-main-screenshot">
+                                            <img src="../assets/slide/nurizip.png" alt="자살예방 메인 화면">
                                         </div>
                                     </div>
-                                    <div class="solution-meta">
-                                        <div class="meta-item">&#9200; 감사 대응</div>
-                                        <div class="category-tag">규약 준수</div>
-                                        <div class="meta-item">&#128200; 완벽 대응</div>
+                                </div>
+
+                                <!-- 2세트 (1세트와 동일하게 복제) -->
+                                <div class="case-study-slide">
+                                    <div class="case-study-card-header">
+                                        <div class="case-study-org-name">해양경찰교육원</div>
+                                        <div class="case-study-tag-list">
+                                            <span class="case-study-tag"># 경찰교육</span>
+                                            <span class="case-study-tag"># 수강관리</span>
+                                            <span class="case-study-tag"># 수료관리</span>
+                                            <span class="case-study-tag"># 통계현황</span>
+                                        </div>
                                     </div>
-                                    <button class="play-btn"><div class="play-icon"></div></button>
-                                    <button class="add-btn add-btn-expanded">+</button>
+                                    <div class="case-study-screenshot-area">
+                                        <div class="case-study-main-screenshot">
+                                            <img src="../assets/slide/policestudy.png" alt="해양경찰교육원 메인 화면">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="case-study-slide">
+                                    <div class="case-study-card-header">
+                                        <div class="case-study-org-name">인재개발원</div>
+                                        <div class="case-study-tag-list">
+                                            <span class="case-study-tag"># 인재개발</span>
+                                            <span class="case-study-tag"># 교육과정</span>
+                                            <span class="case-study-tag"># 학습관리</span>
+                                            <span class="case-study-tag"># 성과관리</span>
+                                        </div>
+                                    </div>
+                                    <div class="case-study-screenshot-area">
+                                        <div class="case-study-main-screenshot">
+                                            <img src="../assets/slide/devone.png" alt="인재개발원 메인 화면">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="case-study-slide">
+                                    <div class="case-study-card-header">
+                                        <div class="case-study-org-name">도로교통공단</div>
+                                        <div class="case-study-tag-list">
+                                            <span class="case-study-tag"># 메인화면</span>
+                                            <span class="case-study-tag"># 교육 자료실</span>
+                                            <span class="case-study-tag"># 수강교육</span>
+                                            <span class="case-study-tag"># 체험관 예약</span>
+                                        </div>
+                                    </div>
+                                    <div class="case-study-screenshot-area">
+                                        <div class="case-study-main-screenshot">
+                                            <img src="../assets/slide/도로교통공단메인화면.png" alt="도로교통공단 메인 화면">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="case-study-slide">
+                                    <div class="case-study-card-header">
+                                        <div class="case-study-org-name">한국생명존중희망재단</div>
+                                        <div class="case-study-tag-list">
+                                            <span class="case-study-tag"># 예방교육</span>
+                                            <span class="case-study-tag"># 상담관리</span>
+                                            <span class="case-study-tag"># 학습관리</span>
+                                            <span class="case-study-tag"># 통계관리</span>
+                                        </div>
+                                    </div>
+                                    <div class="case-study-screenshot-area">
+                                        <div class="case-study-main-screenshot">
+                                            <img src="../assets/slide/nurizip.png" alt="자살예방 메인 화면">
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -1524,6 +1442,88 @@
                 });
             });
         });
+    </script>
+
+    <!-- 도입 사례 슬라이더 JavaScript -->
+    <script>
+        const caseStudyTrack = document.getElementById('caseStudySliderTrack');
+        const caseStudyContainer = document.querySelector('.case-study-slider-container');
+        
+        let isDragging = false;
+        let startX = 0;
+        let currentTranslate = 0;
+        let animationId = 0;
+        let initialPosition = 0;
+        let isPaused = false;
+
+        // 마우스 이벤트
+        caseStudyContainer.addEventListener('mousedown', dragStart);
+        caseStudyContainer.addEventListener('mousemove', drag);
+        caseStudyContainer.addEventListener('mouseup', dragEnd);
+        caseStudyContainer.addEventListener('mouseleave', dragEnd);
+
+        // 터치 이벤트
+        caseStudyContainer.addEventListener('touchstart', dragStart);
+        caseStudyContainer.addEventListener('touchmove', drag);
+        caseStudyContainer.addEventListener('touchend', dragEnd);
+
+        function dragStart(e) {
+            const clientX = e.type.includes('mouse') ? e.clientX : e.touches[0].clientX;
+            startX = clientX;
+            isDragging = true;
+            
+            // 애니메이션 일시정지 (드래그 중에만)
+            caseStudyTrack.style.animationPlayState = 'paused';
+            initialPosition = currentTranslate;
+            
+            caseStudyContainer.style.cursor = 'grabbing';
+        }
+
+        function drag(e) {
+            if (!isDragging) return;
+            
+            e.preventDefault();
+            const clientX = e.type.includes('mouse') ? e.clientX : e.touches[0].clientX;
+            const moved = clientX - startX;
+            
+            currentTranslate = initialPosition + moved;
+            caseStudyTrack.style.transform = `translateX(${currentTranslate}px)`;
+            caseStudyTrack.style.transition = 'none';
+        }
+
+        function dragEnd() {
+            if (!isDragging) return;
+            
+            isDragging = false;
+            caseStudyContainer.style.cursor = 'grab';
+            
+            // 드래그 거리가 작으면 원래 위치로 복귀
+            const threshold = 50;
+            if (Math.abs(currentTranslate - initialPosition) < threshold) {
+                currentTranslate = initialPosition;
+                caseStudyTrack.style.transition = 'transform 0.3s ease-out';
+                caseStudyTrack.style.transform = `translateX(${currentTranslate}px)`;
+                
+                // 애니메이션 재개
+                setTimeout(() => {
+                    caseStudyTrack.style.animationPlayState = 'running';
+                    caseStudyTrack.style.transition = '';
+                    caseStudyTrack.style.transform = '';
+                }, 300);
+            } else {
+                // 애니메이션 재개
+                setTimeout(() => {
+                    caseStudyTrack.style.animationPlayState = 'running';
+                    caseStudyTrack.style.transition = '';
+                    caseStudyTrack.style.transform = '';
+                    currentTranslate = 0;
+                }, 100);
+            }
+        }
+
+        // 호버 시 일시정지 제거 - 자연스럽게 계속 이동
+        // 초기 커서 설정
+        caseStudyContainer.style.cursor = 'grab';
     </script>
 </body>
 </html>
